@@ -6,7 +6,11 @@ __powerline() {
     readonly PS_SYMBOL_DARWIN=''
     readonly PS_SYMBOL_LINUX='$'
     readonly PS_SYMBOL_OTHER='%'
-    readonly GIT_BRANCH_SYMBOL='♔  '
+#    readonly GIT_BRANCH_SYMBOL='♔  '
+    readonly GIT_BRANCH_MASTER='♔  '
+    readonly GIT_BRANCH_DEVELOPMENT='♙  '
+    readonly GIT_BRANCH_FEATURE='♘  '
+    readonly GIT_BRANCH_HOTFIX='♗  '
     readonly GIT_BRANCH_CHANGED_SYMBOL='+'
     readonly GIT_NEED_PUSH_SYMBOL='⇡'
     readonly GIT_NEED_PULL_SYMBOL='⇣'
@@ -69,6 +73,22 @@ __powerline() {
     __git_info() { 
         [ -x "$(which git)" ] || return    # git not found
 
+				# which branch?
+				case "$(git symbolic-ref --short HEAD 2>/dev/null)" in
+						master)
+								readonly GIT_BRANCH_SYMBOL=$GIT_BRANCH_MASTER
+								;;
+						development)
+								readonly GIT_BRANCH_SYMBOL=$GIT_BRANCH_DEVELOPMENT
+								;;
+						feature)
+								readonly GIT_BRANCH_SYMBOL=$GIT_BRANCH_FEATURE
+								;;
+						*)
+								readonly GIT_BRANCH_SYMBOL=$GIT_BRANCH_MASTER
+				esac
+
+
         # get current branch name or short SHA1 hash for detached head
         local branch="$(git symbolic-ref --short HEAD 2>/dev/null || git describe --tags --always 2>/dev/null)"
         [ -n "$branch" ] || return  # git branch not found
@@ -94,6 +114,7 @@ __powerline() {
         local behindN="$(echo $stat | grep -o 'behind \d\+' | grep -o '\d\+')"
         [ -n "$aheadN" ] && marks+=" $GIT_NEED_PUSH_SYMBOL$aheadN"
         [ -n "$behindN" ] && marks+=" $GIT_NEED_PULL_SYMBOL$behindN"
+
 
         # print the git branch segment without a trailing newline
         printf "$colour$FG_BASE3 $GIT_BRANCH_SYMBOL$branch$marks "
