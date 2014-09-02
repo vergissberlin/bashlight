@@ -1,5 +1,17 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
+####################################################################################
+# Bashly 	: 0.1.0
+# Copyright	: 2014, MIT
+# Author	: André Lademann <vergissberlin@googlemail.com>
+# Repository: https://github.com/vergissberlin/bashlight
+####################################################################################
+
+echo "prompt included"
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
 __powerline() {
 
     # Unicode symbols
@@ -70,15 +82,18 @@ __powerline() {
     esac
 
 		export GIT_PS1_SHOWDIRTYSTATE=1
-    __git_info() { 
+    __git_info() {
         [ -x "$(which git)" ] || return    # git not found
 
 				# which branch?
 				case "$(git symbolic-ref --short HEAD 2>/dev/null)" in
-						master)
+						[mM]|[aA][sS][tT][eR])
 								readonly GIT_BRANCH_SYMBOL=$GIT_BRANCH_MASTER
 								;;
-						development)
+						[dD][eE][vV]|[eE][lL][oO][pP][mM][eE][nN][tT])
+								readonly GIT_BRANCH_SYMBOL=$GIT_BRANCH_DEVELOPMENT
+								;;
+						dev[a-z])
 								readonly GIT_BRANCH_SYMBOL=$GIT_BRANCH_DEVELOPMENT
 								;;
 						feature)
@@ -122,7 +137,7 @@ __powerline() {
 
     ps1() {
         # Check the exit code of the previous command and display different
-        # colors in the prompt accordingly. 
+        # colors in the prompt accordingly.
         if [ $? -eq 0 ]; then
             local BG_EXIT="$BG_GREEN"
         else

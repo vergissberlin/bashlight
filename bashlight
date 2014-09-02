@@ -1,0 +1,39 @@
+#!/bin/sh
+
+####################################################################################
+# Bashly 	: 0.1.0
+# Copyright	: 2014, MIT
+# Author	: André Lademann <vergissberlin@googlemail.com>
+# Repository: https://github.com/vergissberlin/bashlight
+####################################################################################
+
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+if [ -f ~/.bash_aliases ]; then
+	. ~/.bash_aliases
+fi
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+if ! shopt -oq posix; then
+	if [ -f /usr/share/bash-completion/bash_completion ]; then
+		. /usr/share/bash-completion/bash_completion
+	elif [ -f .bash_completion ]; then
+		. .bash_completion
+	fi
+fi
+
+# Prompt
+# Includes
+if [ -f .bash_prompt ]; then
+	. .bash_prompt
+fi
+if [ -f ~/bash/.bash_aliases ]; then
+	. .bash_aliases
+fi
+if [ -f ~/bash/.bash_logout ]; then
+	. .bash_logout
+fi
