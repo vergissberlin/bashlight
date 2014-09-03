@@ -31,7 +31,7 @@ fi
 
 # furthermore modules
 [ -f "$PATH_BASHLIGHT/.bash_settings" ] && { . "$PATH_BASHLIGHT/.bash_settings"; }
-#[ -f "$PATH_BASHLIGHT/.bash_notify" ] && { . "$PATH_BASHLIGHT/.bash_notify"; }
+[ -f "$PATH_BASHLIGHT/.bash_notify" ] && { . "$PATH_BASHLIGHT/.bash_notify"; }
 [ -f "$PATH_BASHLIGHT/.bash_prompt" ] && { . "$PATH_BASHLIGHT/.bash_prompt"; }
 [ -f "$PATH_BASHLIGHT/.bash_logout" ] && { . "$PATH_BASHLIGHT/.bash_logout"; }
 

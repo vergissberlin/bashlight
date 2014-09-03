@@ -10,7 +10,7 @@
 ####################################################################################
 ## OS X
 
-readonly VOICE_RATE=300
+readonly VOICE_RATE=280
 readonly VOICE_TYPE="Bruce"
 readonly SOUND_RATE=2
 readonly SOUND_TYPE="Submarine"
