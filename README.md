@@ -23,7 +23,7 @@ git clone https://github.com/vergissberlin/bashlight.git
 
 <code>~/.bashrc</code> on *linux* **or** <code>~/.bash_profile</code> on *OS X*
 
-3.) Include bashlight/bashlight
+3.) Include bashlight/bashlight with followed line at the end of the bash file
 ```
 . .bashlight/bashlight
 ```
