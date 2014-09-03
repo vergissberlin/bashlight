@@ -6,9 +6,6 @@
 # Author	: André Lademann <vergissberlin@googlemail.com>
 # Repository: https://github.com/vergissberlin/bashlight
 ####################################################################################
-# #!/usr/bin/env bash
-
-echo "alias included"
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like

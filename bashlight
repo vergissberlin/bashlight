@@ -7,33 +7,31 @@
 # Repository: https://github.com/vergissberlin/bashlight
 ####################################################################################
 
+# Your settings here
+readonly PATH_BASHLIGHT="$HOME/bashlight"
+
+####################################################################################
+# Include modules
+####################################################################################
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
-if [ -f ~/.bash_aliases ]; then
-	. ~/.bash_aliases
-fi
+[ -f "$PATH_BASHLIGHT/.bash_aliases" ] && { . "$PATH_BASHLIGHT/.bash_aliases"; }
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# enable programmable completion features
 if ! shopt -oq posix; then
 	if [ -f /usr/share/bash-completion/bash_completion ]; then
 		. /usr/share/bash-completion/bash_completion
-	elif [ -f .bash_completion ]; then
-		. .bash_completion
+	elif [ -f ~/bashlight/.git_completion ]; then
+		. "$PATH_BASHLIGHT/.git_completion";
 	fi
 fi
 
-# Prompt
-# Includes
-if [ -f .bash_prompt ]; then
-	. .bash_prompt
-fi
-if [ -f ~/bash/.bash_aliases ]; then
-	. .bash_aliases
-fi
-if [ -f ~/bash/.bash_logout ]; then
-	. .bash_logout
-fi
+# furthermore modules
+[ -f "$PATH_BASHLIGHT/.bash_settings" ] && { . "$PATH_BASHLIGHT/.bash_settings"; }
+#[ -f "$PATH_BASHLIGHT/.bash_notify" ] && { . "$PATH_BASHLIGHT/.bash_notify"; }
+[ -f "$PATH_BASHLIGHT/.bash_prompt" ] && { . "$PATH_BASHLIGHT/.bash_prompt"; }
+[ -f "$PATH_BASHLIGHT/.bash_logout" ] && { . "$PATH_BASHLIGHT/.bash_logout"; }
+
