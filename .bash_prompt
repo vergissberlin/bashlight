@@ -16,11 +16,11 @@ __powerline() {
 	readonly PS_SYMBOL_DARWIN=''
 	readonly PS_SYMBOL_LINUX='$'
 	readonly PS_SYMBOL_OTHER='%'
-	readonly GIT_BRANCH_MASTER='♔  '
-	readonly GIT_BRANCH_DEVELOPMENT='♙  '
-	readonly GIT_BRANCH_FEATURE='♘  '
-	readonly GIT_BRANCH_HOTFIX='♗  '
-	readonly GIT_BRANCH_OTHER='?  '
+	readonly GIT_BRANCH_MASTER='♔'
+	readonly GIT_BRANCH_DEVELOPMENT='♙'
+	readonly GIT_BRANCH_FEATURE='♘'
+	readonly GIT_BRANCH_HOTFIX='♗'
+	readonly GIT_BRANCH_OTHER='?'
 	readonly GIT_BRANCH_CHANGED_SYMBOL='+'
 	readonly GIT_NEED_PUSH_SYMBOL='⇡'
 	readonly GIT_NEED_PULL_SYMBOL='⇣'
@@ -70,36 +70,36 @@ __powerline() {
 	# what OS?
 	case "$(uname)" in
 		Darwin)
-		readonly PS_SYMBOL=$PS_SYMBOL_DARWIN
+			readonly PS_SYMBOL=$PS_SYMBOL_DARWIN
 		;;
 		Linux)
-		readonly PS_SYMBOL=$PS_SYMBOL_LINUX
+			readonly PS_SYMBOL=$PS_SYMBOL_LINUX
 		;;
 		*)
-		readonly PS_SYMBOL=$PS_SYMBOL_OTHER
+			readonly PS_SYMBOL=$PS_SYMBOL_OTHER
 	esac
 
 	export GIT_PS1_SHOWDIRTYSTATE=1
 	__git_info() {
 		[ -x "$(which git)" ] || return	# git not found
 
-				# which branch?
-				case "$(git symbolic-ref --short HEAD)" in
-						master)
-						readonly GIT_BRANCH_SYMBOL=$GIT_BRANCH_MASTER
-								;;
-						[dD][eE][vV]|[eE][lL][oO][pP][mM][eE][nN][tT])
-						readonly GIT_BRANCH_SYMBOL=$GIT_BRANCH_DEVELOPMENT
-								;;
-						[fF][eE][aA][tT][uU][rR][eE]*)
-						readonly GIT_BRANCH_SYMBOL=$GIT_BRANCH_FEATURE
-								;;
-						[hH][oO][tT][fF][iI][xX]*)
-						readonly GIT_BRANCH_SYMBOL=$GIT_BRANCH_HOTFIX
-								;;
-						*)
-						readonly GIT_BRANCH_SYMBOL=$GIT_BRANCH_OTHER
-				esac
+			# which branch?
+			case "$(git symbolic-ref --short HEAD)" in
+				master)
+					readonly GIT_BRANCH_SYMBOL=$GIT_BRANCH_MASTER
+					;;
+				[dD][eE][vV]|[eE][lL][oO][pP][mM][eE][nN][tT])
+					readonly GIT_BRANCH_SYMBOL=$GIT_BRANCH_DEVELOPMENT
+					;;
+				[fF][eE][aA][tT][uU][rR][eE]*)
+					readonly GIT_BRANCH_SYMBOL=$GIT_BRANCH_FEATURE
+					;;
+				[hH][oO][tT][fF][iI][xX]*)
+					readonly GIT_BRANCH_SYMBOL=$GIT_BRANCH_HOTFIX
+					;;
+				*)
+					readonly GIT_BRANCH_SYMBOL=$GIT_BRANCH_OTHER
+			esac
 
 		# get current branch name or short SHA1 hash for detached head
 		local branch="$(git symbolic-ref --short HEAD 2>/dev/null || git describe --tags --always 2>/dev/null)"
@@ -109,16 +109,16 @@ __powerline() {
 
 		# branch is modified?
 		[ -n "$(git status --porcelain)" ] && marks+=" $GIT_BRANCH_CHANGED_SYMBOL"
-				local git_status="`git status -unormal --ignore-submodules 2>&1`"
-				if ! [[ "$git_status" =~ Not\ a\ git\ repo ]]; then
-						if [[ "$git_status" =~ nothing\ to\ commit ]]; then
-								local colour=$BG_GREEN
-						elif [[ "$git_status" =~ nothing\ added\ to\ commit\ but\ untracked\ files\ present ]]; then
-								local colour=$BG_RED
-						else
-								local colour=$BG_YELLOW
-						fi
+			local git_status="`git status -unormal --ignore-submodules 2>&1`"
+			if ! [[ "$git_status" =~ Not\ a\ git\ repo ]]; then
+				if [[ "$git_status" =~ nothing\ to\ commit ]]; then
+					local colour=$BG_GREEN
+				elif [[ "$git_status" =~ nothing\ added\ to\ commit\ but\ untracked\ files\ present ]]; then
+					local colour=$BG_RED
+				else
+					local colour=$BG_YELLOW
 				fi
+			fi
 
 		# how many commits local branch is ahead/behind of remote?
 		local stat="$(git status --porcelain --branch | grep '^##' | grep -o '\[.\+\]$')"
@@ -129,7 +129,7 @@ __powerline() {
 
 
 		# print the git branch segment without a trailing newline
-		printf "$colour$FG_BASE3 $GIT_BRANCH_SYMBOL$branch$marks "
+		printf "$colour$FG_BASE3 $GIT_BRANCH_SYMBOL  $branch$marks "
 	}
 
 	ps1() {

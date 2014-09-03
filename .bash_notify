@@ -24,30 +24,35 @@ readonly SOUND_TYPE="Submarine"
 # Glass.aiff	Submarine.aiff
 # Hero.aiff		Tink.aiff
 
-function blSay() {
-	say -r $VOICE_RATE -v $VOICE_TYPE "$@." 2> /dev/null
+
+### sound
+function blPlay() {
+	if type "afplay" >/dev/null 2>&1 ; then
+		if [ -f "/System/Library/Sounds/$1.aiff" ]; then
+			afplay -r $SOUND_RATE -v 2 "/System/Library/Sounds/$1.aiff";
+		fi
+	fi
 }
 
-if type "say" >/dev/null 2>&1 ; then
-	blSay "Welcome back $(whoami)";
-	blSay "Bash light terminal open";
-fi
-
-if type "afplay" >/dev/null 2>&1 ; then
-	if [ -f "/System/Library/Sounds/${SOUND_TYPE}.aiff" ]; then
-		afplay -r $SOUND_RATE -v 2 "/System/Library/Sounds/${SOUND_TYPE}.aiff";
+### speak
+function blSay() {
+	if type "say" >/dev/null 2>&1 ; then
+		say -r $VOICE_RATE -v $VOICE_TYPE "$@." 2> /dev/null
 	fi
-fi
+}
 
 ### notification
 if type "osascript" >/dev/null 2>&1 ; then
 	function alert() {
 		osascript -e "display notification \"$1\" with title \"$2\"";
 	}
-fi
-
-####################################################################################
-## Ubuntu
-if type "notify-send" >/dev/null 2>&1 ; then
+elif type "notify-send" >/dev/null 2>&1 ; then
 	alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 fi
+
+
+
+# run on init
+blSay "Welcome back $(whoami)";
+blSay "Bash light terminal open";
+blPlay $SOUND_TYPE;
