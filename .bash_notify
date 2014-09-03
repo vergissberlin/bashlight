@@ -1,0 +1,53 @@
+#!/bin/sh
+
+####################################################################################
+# Bashly 	: 0.1.0
+# Copyright	: 2014, MIT
+# Author	: André Lademann <vergissberlin@googlemail.com>
+# Repository: https://github.com/vergissberlin/bashlight
+####################################################################################
+
+####################################################################################
+## OS X
+
+readonly VOICE_RATE=300
+readonly VOICE_TYPE="Bruce"
+readonly SOUND_RATE=2
+readonly SOUND_TYPE="Submarine"
+
+# Available sounds on OS X
+# Basso.aiff	Morse.aiff
+# Blow.aiff		Ping.aiff
+# Bottle.aiff	Pop.aiff
+# Frog.aiff		Purr.aiff
+# Funk.aiff		Sosumi.aiff
+# Glass.aiff	Submarine.aiff
+# Hero.aiff		Tink.aiff
+
+function blSay() {
+	say -r $VOICE_RATE -v $VOICE_TYPE "$@." 2> /dev/null
+}
+
+if type "say" >/dev/null 2>&1 ; then
+	blSay "Welcome back $(whoami)";
+	blSay "Bash light terminal open";
+fi
+
+if type "afplay" >/dev/null 2>&1 ; then
+	if [ -f "/System/Library/Sounds/${SOUND_TYPE}.aiff" ]; then
+		afplay -r $SOUND_RATE -v 2 "/System/Library/Sounds/${SOUND_TYPE}.aiff";
+	fi
+fi
+
+### notification
+if type "osascript" >/dev/null 2>&1 ; then
+	function alert() {
+		osascript -e "display notification \"$1\" with title \"$2\"";
+	}
+fi
+
+####################################################################################
+## Ubuntu
+if type "notify-send" >/dev/null 2>&1 ; then
+	alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+fi
