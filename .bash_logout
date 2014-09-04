@@ -13,3 +13,10 @@
 if [ "$SHLVL" = 1 ]; then
 	[ -x /usr/bin/clear_console ] && /usr/bin/clear_console -q
 fi
+
+function goodBye() {
+	blSay "Thank you for using $USER"
+	blPlay Hero
+}
+
+trap goodBye EXIT
