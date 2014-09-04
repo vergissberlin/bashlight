@@ -14,13 +14,13 @@ __powerline() {
 
 	# Unicode symbols
 	readonly PS_SYMBOL_DARWIN=''
-	readonly PS_SYMBOL_LINUX='$'
-	readonly PS_SYMBOL_OTHER='%'
+	readonly PS_SYMBOL_LINUX='★'
+	readonly PS_SYMBOL_OTHER='☯'
 	readonly GIT_BRANCH_MASTER='♔'
 	readonly GIT_BRANCH_DEVELOPMENT='♙'
 	readonly GIT_BRANCH_FEATURE='♘'
 	readonly GIT_BRANCH_HOTFIX='♗'
-	readonly GIT_BRANCH_OTHER='�'
+	readonly GIT_BRANCH_OTHER='☂'
 	readonly GIT_BRANCH_CHANGED_SYMBOL='+'
 	readonly GIT_NEED_PUSH_SYMBOL='⇡'
 	readonly GIT_NEED_PULL_SYMBOL='⇣'
