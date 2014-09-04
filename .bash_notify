@@ -53,6 +53,6 @@ fi
 
 
 # run on init
-blSay "Welcome back $(whoami)";
-blSay "Bash light terminal open";
-blPlay $SOUND_TYPE;
+# blSay "Welcome back $(whoami)";
+# blSay "Bash light terminal open";
+# blPlay $SOUND_TYPE;
