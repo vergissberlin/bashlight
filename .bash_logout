@@ -19,4 +19,4 @@ function goodBye() {
 	blPlay Hero
 }
 
-trap goodBye EXIT
+# trap goodBye EXIT
