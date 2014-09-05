@@ -24,8 +24,6 @@ readonly PATH_BASHLIGHT="$HOME/bashlight"
 if ! shopt -oq posix; then
 	if [ -f /usr/share/bash-completion/bash_completion ]; then
 		. /usr/share/bash-completion/bash_completion
-	elif [ -f ~/bashlight/.git_completion ]; then
-		. "$PATH_BASHLIGHT/.git_completion";
 	fi
 fi
 
@@ -33,5 +31,6 @@ fi
 [ -f "$PATH_BASHLIGHT/.bash_settings" ] && { . "$PATH_BASHLIGHT/.bash_settings"; }
 [ -f "$PATH_BASHLIGHT/.bash_notify" ] && { . "$PATH_BASHLIGHT/.bash_notify"; }
 [ -f "$PATH_BASHLIGHT/.bash_prompt" ] && { . "$PATH_BASHLIGHT/.bash_prompt"; }
+[ -f "$PATH_BASHLIGHT/git-bash-completion/git-completion.bash" ] && { . "$PATH_BASHLIGHT/git-bash-completion/git-completion.bash"; }
 [ -f "$PATH_BASHLIGHT/.bash_logout" ] && { . "$PATH_BASHLIGHT/.bash_logout"; }
 
