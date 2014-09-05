@@ -125,6 +125,4 @@ You can contact me (@vergissberlin) on GitHub. Use the issue tracker to report b
 - .. to @markgandolfo, the founder of [git-bash-completion](https://github.com/markgandolfo/git-bash-completion), which is included as subtree to this project.
 - Further thanks **JetBrains** for a free license for PhpStorm.
 
-<a href="http://www.jetbrains.com/phpstorm/" style="float: right;position: relative;display:block; width:230px; height:33px; border:0; margin:0;padding:0;text-decoration:none;text-indent:0;"><span style="margin: 0;padding: 0;position: absolute;top: 10px;left:3px;font-size: 11px;cursor:pointer;  background-image:none;border:0;color: #fff;font-family: trebuchet ms,arial,sans-serif;font-weight: normal;text-align:left;">Proud user of</span><img src="http://www.jetbrains.com/phpstorm/documentation/phpstorm_banners/phpstorm1/phpstorm230x33_violet.gif" alt="Proud user of" border="0"/></a>
-
-
+<a href="http://www.jetbrains.com/phpstorm/"><img src="http://www.jetbrains.com/phpstorm/documentation/phpstorm_banners/phpstorm1/phpstorm120x30_violet.gif" alt="Can't code without" border="0"/ align="right"></a>
