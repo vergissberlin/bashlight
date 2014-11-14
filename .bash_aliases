@@ -39,11 +39,12 @@ alias gb='git branch '
 alias gc='git commit'
 alias gd='git diff'
 alias go='git checkout '
+alias gp='git pull'
 alias gk='gitk --all&'
 alias gx='gitx --all'
 alias master='git checkout master && git pull'
+alias rebase='git rebase -i origin/master'
 
-
-
+# git typos
 alias got='git '
 alias get='git '
