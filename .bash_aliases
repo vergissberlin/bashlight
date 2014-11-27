@@ -42,6 +42,7 @@ alias go='git checkout '
 alias gk='gitk --all&'
 alias gx='gitx --all'
 alias master='git checkout master && git pull'
+alias rebase='git rebase -i origin/master'
 
 alias got='git '
 alias get='git '
