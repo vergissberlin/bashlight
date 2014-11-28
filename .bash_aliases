@@ -43,7 +43,7 @@ alias gp='git pull'
 alias gk='gitk --all&'
 alias gx='gitx --all'
 alias master='git checkout master && git pull'
-alias rebase='git rebase -i origin/master'
+alias rebase='git pull && git rebase -i origin/master'
 
 # git typos
 alias got='git '
