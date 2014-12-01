@@ -41,7 +41,7 @@ alias gd='git diff'
 alias go='git checkout '
 alias gk='gitk --all&'
 alias gx='gitx --all'
-alias master='git checkout master && git pull'
+alias master='git checkout master && git pull && git remote prune origin'
 alias rebase='git rebase -i origin/master'
 
 alias got='git '
