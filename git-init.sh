@@ -16,7 +16,7 @@ git config --global alias.di 'diff'
 git config --global alias.dump 'cat-file -p'
 git config --global alias.hist 'log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short'
 git config --global alias.sl 'log --color --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
-git config --global alias.st 'status'
+git config --global alias.st 'status --ignore-submodules=all'
 git config --global alias.type 'cat-file -t'
 
 ## branch setting
