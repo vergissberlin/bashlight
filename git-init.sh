@@ -39,5 +39,5 @@ git config --global color.interactive auto
 
 git config --global color.push.default current
 
-git config --global color.status.added yellow
-git config --global color.status.changed green
+git config --global color.status.added green bold
+git config --global color.status.changed yellow
