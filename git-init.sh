@@ -19,11 +19,14 @@ git config --global alias.hist 'log --pretty=format:\"%h %ad | %s%d [%an]\" --gr
 git config --global alias.prune 'fetch origin --prune'
 git config --global alias.sl 'log --color --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
 git config --global alias.st 'status --ignore-submodules=all'
+git config --global alias.tush 'push --tags'
 git config --global alias.type 'cat-file -t'
 
 ## branch setting
 git config --global branch.autosetuprebase always
 
+## tag setting
+git config remote.origin.tagopt --tags
 
 ## colours
 git config --global color.branch.current yellow
