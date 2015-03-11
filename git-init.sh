@@ -7,6 +7,19 @@
 # Repository: https://github.com/vergissberlin/bashlight
 ####################################################################################
 
+# Preparing
+mkdir -p ~/.git
+
+# User settings
+read -p "What's you name? " name
+if [ "$name" != "" ]; then
+  git config --global user.name "$name"
+fi
+
+read -p "What is your git email address? " email
+if [ "$email" != "" ]; then
+  git config --global user.email $email
+fi
 
 ## aliases
 git config --global alias.br 'branch'
