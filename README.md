@@ -125,4 +125,7 @@ You can contact me (@vergissberlin) on GitHub. Use the issue tracker to report b
 - .. to @markgandolfo, the founder of [git-bash-completion](https://github.com/markgandolfo/git-bash-completion), which is included as subtree to this project.
 - Further thanks **JetBrains** for a free license for PhpStorm.
 
+---
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/vergissberlin/bashlight/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
 <a href="http://www.jetbrains.com/phpstorm/"><img src="http://www.jetbrains.com/phpstorm/documentation/phpstorm_banners/phpstorm1/phpstorm120x30_violet.gif" alt="Can't code without" border="0"/ align="right"></a>
