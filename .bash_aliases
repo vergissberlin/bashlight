@@ -45,6 +45,7 @@ alias gx='gitx --all'
 alias master='git checkout master && git pull && git remote prune origin'
 alias rebase='git pull && git rebase -i origin/master'
 alias flush='git push -f'
+alias po='git checkout $0 && git pull'
 
 # git typos
 alias got='git '
