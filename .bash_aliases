@@ -42,6 +42,8 @@ alias go='git checkout '
 alias gp='git pull'
 alias gk='gitk --all&'
 alias gx='gitx --all'
+
+alias purge='git branch --merged | grep -v "\*" | grep -v "master" | grep -v "develop" | grep -v "staging" | xargs -n 1 git branch -d'
 alias master='git checkout master && git pull && git remote prune origin'
 alias rebase='git pull && git rebase -i origin/master'
 alias flush='git push -f'
