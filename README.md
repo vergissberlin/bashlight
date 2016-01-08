@@ -32,8 +32,6 @@ Furthermore it contains many commonly used aliases, which allow a fast working o
 
 - [git-bash-completion](https://github.com/markgandolfo/git-bash-completion) is included as subtree to this project. Use <code>git [tab][tab]</code> to list all available commands.
 
-![Git management](https://farm4.staticflickr.com/3866/14945500388_f2d83739a8_o.png)
-
 ### Prompt
 - Platform-dependent prompt symbol for OS X and Linux 
 - No need for patched fonts Remote
