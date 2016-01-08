@@ -22,7 +22,7 @@ Furthermore it contains many commonly used aliases, which allow a fast working o
 - ♗ = bishop = hotfix
 - ☂ = umbrella = *other*
 
-**Phter signs**
+**Ohter signs**
 
 - Arrows "⇡⇣"  and number behind represent how many commits you are behind/ahead of the remote
 - Display "+" symbol when current branch is changed but uncommited
