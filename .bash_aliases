@@ -48,7 +48,7 @@ alias master='git checkout master && git pull && git remote prune origin'
 alias rebase='git pull && git rebase -i origin/master'
 alias flush='git push -f'
 alias po='git checkout $0 && git pull'
-alias create='git checkout master && git pull && git checkout -B $0 && git push --set-upstream origin $0'
+alias create='git checkout master&&git pull&&git checkout -B $1&&git push --set-upstream origin $1'
 
 
 # git typos
