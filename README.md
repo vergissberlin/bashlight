@@ -90,14 +90,14 @@ git checkout master
 **3.** Include bashlight/bashlight with followed line at the end of the bash file
 
 ```
-. .bashlight/bashlight
+. ./bashlight/bashlight
 ```
 
 ### Optional global git settings
 To install common git settings are tailored to bashlight simply run:
 
 ```
-sh ~/bashlight/git-settings.sh
+bash ~/bashlight/git-init.sh
 ```
 
 ### Supported operating systems
