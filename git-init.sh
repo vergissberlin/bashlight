@@ -23,7 +23,7 @@ fi
 
 
 ## aliases
-git config --global alias.br 'branch'
+git config --global alias.br 'branch -av'
 git config --global alias.ci 'commit -a'
 git config --global alias.co 'checkout'
 git config --global alias.di 'diff'

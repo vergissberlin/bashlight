@@ -45,11 +45,11 @@ alias gx='gitx --all'
 
 alias purge='git branch --merged | grep -v "\*" | grep -v "master" | grep -v "develop" | grep -v "staging" | xargs -n 1 git branch -d'
 alias master='git checkout master && git pull && git remote prune origin'
-alias rebase='git pull && git rebase -i origin/master'
+alias staging='git checkout agp-staging && git pull && git remote prune origin'
+alias rebase='git pull && git rebase -i origin/agp-staging'
 alias flush='git push -f'
 alias po='git checkout $0 && git pull'
-alias create='git checkout master&&git pull&&git checkout -B $1&&git push --set-upstream origin $1'
-
+alias create='git checkout master&&git pull&&git checkout -B $1'
 
 # git typos
 alias got='git '
