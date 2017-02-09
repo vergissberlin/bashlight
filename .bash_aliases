@@ -43,7 +43,7 @@ alias gp='git pull'
 alias gk='gitk --all&'
 alias gx='gitx --all'
 
-alais hard="git reset --hard && git clean -fd"
+alias hard="git reset --hard && git clean -fd"
 alias purge='git branch --merged | grep -v "\*" | grep -v "master" | grep -v "develop" | grep -v "staging" | xargs -n 1 git branch -d'
 alias master='git checkout master && git pull && git remote prune origin'
 alias staging='git checkout agp-staging && git pull && git remote prune origin'
