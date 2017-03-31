@@ -81,7 +81,6 @@ It also include a shell script to set common global bash settings. Before you ru
 ```
 cd
 git clone https://github.com/vergissberlin/bashlight.git
-git checkout master
 ```
 
 **2.** Open your home bash file in editor 
@@ -90,7 +89,7 @@ git checkout master
 **3.** Include bashlight/bashlight with followed line at the end of the bash file
 
 ```
-. ./bashlight/bashlight
+. ~/bashlight/bashlight
 ```
 
 ### Optional global git settings
