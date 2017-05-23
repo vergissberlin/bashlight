@@ -1,0 +1,10 @@
+language: bash
+os:
+    - linux
+    - osx
+before_install:
+    - if [ $TRAVIS_OS_NAME = linux ]; then sudo apt-get -qq update && sudo apt-get install -y git-core; fi
+    - if [ $TRAVIS_OS_NAME = osx ]; then brew update && brew install git; fi
+    - curl -L -O https://raw.githubusercontent.com/lehmannro/assert.sh/master/assert.sh
+script:
+    - bash ./tests/tests.sh
