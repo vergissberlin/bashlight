@@ -13,6 +13,7 @@ PATH_INIT=$(pwd)
 PATH_TESTS="${PATH_INIT}/tests"
 PATH_HELPER="${PATH_TESTS}/helper"
 PATH_FIXTURES="${PATH_TESTS}/fixtures"
+PROMPT_DEFAULT=$PS1
 
 
 #
@@ -40,17 +41,18 @@ function setup() {
 # tests
 
 function test_prompt() {
-  local default_prompt=$PS1
-  echo ${default_prompt}
+  echo ${PROMPT_DEFAULT}
   . ${PATH_INIT}/bashlight
-  local custom_prompt=$PS1
-  echo ${custom_prompt}
 
-  if is not equal $default_prompt $custom_prompt; then
+  PROMPT_CUSTOM=$PS1
+  echo ${PROMPT_CUSTOM}
+
+  if is not equal $PROMPT_DEFAULT $PROMPT_CUSTOM; then
     echo "Prompt is not equal"
   else
     echo "Prompt is equal"
   fi
+  PS1=$PROMPT_DEFAULT
 }
 
 # Roll back
