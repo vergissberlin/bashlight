@@ -1,9 +1,12 @@
 # bashlight
-This bash script enhanced your OSX/Linux console.
-The console or "terminal" on OS X comes in the basic equipment therefore very slim. This is good as long as you do not work with it every day. If you often go to the console, you should do something for their eyes and install the [Solarized
-colorscheme](https://github.com/altercation/solarized) theme. 
-If you still were working a lot with **GIT**, *then bashlight can* be you a great help. The Bash extension offers you information for Branch and status of your current GIT repositories. 
-Furthermore it contains many commonly used aliases, which allow a fast working on the console. *Let amazed your colleagues!*
+
+[![Build Status](https://travis-ci.org/vergissberlin/bashlight.svg?branch=master)](https://travis-ci.org/vergissberlin/bashlight)
+
+      This bash script enhanced your OSX/Linux console.
+      The console or "terminal" on OS X comes in the basic equipment therefore very slim. This is good as long as you do not work with it every day. If you often go to the console, you should do something for their eyes and install the [Solarized
+      colorscheme](https://github.com/altercation/solarized) theme. 
+      If you working a lot with **GIT**, *then bashlight can* be you a great help. The Bash extension offers you information for Branch and status of your current GIT repositories. 
+      Furthermore it contains many commonly used aliases, which allow a fast working on the console. *Let amazed your colleagues!*
 
 ## Features
 ### Git management
@@ -124,4 +127,5 @@ You can contact me (@vergissberlin) on GitHub. Use the issue tracker to report b
 
 ---
 
-<a href="http://www.jetbrains.com/phpstorm/"><img src="http://www.jetbrains.com/phpstorm/documentation/phpstorm_banners/phpstorm1/phpstorm120x30_violet.gif" alt="Can't code without" border="0"/ align="right"></a>
+*Made with*
+[![Atom.io](url(//github-atom-io-herokuapp-com.global.ssl.fastly.net/assets/logo-4e073dbd4c0ce67ece1b30a6b31253b9.png))](https://atom.io/)
