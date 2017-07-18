@@ -1,0 +1,57 @@
+#!/bin/bash
+
+####################################################################################
+# Bashlight 	: 0.1.1
+# Copyright		: 2017, MIT
+# Author			: André Lademann <vergissberlin@googlemail.com>
+# Repository	: https://github.com/vergissberlin/bashlight
+####################################################################################
+
+# Plugins
+unless Vagrant.has_plugin?("vagrant-hosts")
+  system("vagrant plugin install vagrant-hosts")
+  puts "Dependencies installed, please try the command again."
+  exit
+end
+
+
+Vagrant.configure("2") do |config|
+
+  config.vm.hostname = "bashlight-testbox-ubuntu"
+  config.vm.box = "ubuntu/trusty64"
+  config.vm.provider "virtualbox" do |vb|
+  #   # Display the VirtualBox GUI when booting the machine
+  #   vb.gui = true
+    # Customize the amount of memory on the VM:
+    vb.memory = "1024"
+  end
+  config.vm.provision "file", source: ".bashrc", destination: ".bashrc"
+  config.vm.provision "file", source: ".bash_aliases", destination: ".bash_aliases"
+  config.vm.provision "shell", inline: <<-SHELL
+    apt-get update
+    apt-get install -y \
+      curl \
+      git-core \
+      mc \
+      vim \
+      wget
+
+      update-alternatives --set editor /usr/bin/vim.basic
+
+      if [ ! -d "/home/vagrant/bashlight" ]; then
+        cd /home/vagrant
+        git clone https://github.com/vergissberlin/bashlight.git
+      else
+        cd /home/vagrant/bashlight
+        git checkout master
+        git pull origin master
+      fi
+
+      chown -R vagrant:vagrant /home/vagrant/
+  SHELL
+
+  # Always use Vagrant's default insecure key
+  config.ssh.forward_agent    = true
+  config.ssh.insert_key       = false
+
+end

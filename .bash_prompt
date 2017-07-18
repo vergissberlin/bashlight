@@ -1,16 +1,16 @@
 #!/bin/sh
 
 ####################################################################################
-# Bashly 	: 0.1.0
-# Copyright	: 2014, MIT
-# Author	: André Lademann <vergissberlin@googlemail.com>
-# Repository: https://github.com/vergissberlin/bashlight
+# Bashlight 	: 0.1.1
+# Copyright		: 2017, MIT
+# Author			: André Lademann <vergissberlin@googlemail.com>
+# Repository	: https://github.com/vergissberlin/bashlight
 ####################################################################################
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
-__powerline() {
+function __powerline() {
 
 	# Unicode symbols
 	readonly PS_SYMBOL_DARWIN=''
@@ -81,15 +81,15 @@ __powerline() {
 
 	export GIT_PS1_SHOWDIRTYSTATE=1
 
-	__is_git_repo() {
+	function __is_git_repo() {
 		$(git rev-parse --is-inside-work-tree &> /dev/null)
 	}
 
-	__is_git_dir() {
+	function __is_git_dir() {
 		$(git rev-parse --is-inside-git-dir 2> /dev/null)
 	}
 
-	__git_info() {
+	function __git_info() {
 
 		# check requirements
 		[ -x "$(which git)" ] || return	# git not found

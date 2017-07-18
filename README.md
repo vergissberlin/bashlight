@@ -1,11 +1,12 @@
 # bashlight
 
 [![Build Status](https://travis-ci.org/vergissberlin/bashlight.svg?branch=master)](https://travis-ci.org/vergissberlin/bashlight)
+[![Version](https://img.shields.io/badge/version-0.1.1-green.svg)](https://github.com/vergissberlin/bashlight)
 
 > This bash script enhanced your OSX/Linux console.
 > The console or "terminal" on OS X comes in the basic equipment therefore very slim. This is good as long as you do not work with it every day. If you often go to the console, you should do something for their eyes and install the [Solarized
-      colorscheme](https://github.com/altercation/solarized) theme. 
-> If you working a lot with **GIT**, *then bashlight can* be you a great help. The Bash extension offers you information for Branch and status of your current GIT repositories. 
+      colorscheme](https://github.com/altercation/solarized) theme.
+> If you working a lot with **GIT**, *then bashlight can* be you a great help. The Bash extension offers you information for Branch and status of your current GIT repositories.
 > Furthermore it contains many commonly used aliases, which allow a fast working on the console. *Let amazed your colleagues!*
 
 ## Features
@@ -14,7 +15,7 @@
 **The background colour** represents the git status
 
 - green = no changes
-- yellow = changes detected 
+- yellow = changes detected
 - red = untracked files
 
 **The chess figure** represents the branch you are. [Git flow](https://github.com/nvie/gitflow) is also supported.
@@ -36,7 +37,7 @@
 - [git-bash-completion](https://github.com/markgandolfo/git-bash-completion) is included as subtree to this project. Use <code>git [tab][tab]</code> to list all available commands.
 
 ### Prompt
-- Platform-dependent prompt symbol for OS X and Linux 
+- Platform-dependent prompt symbol for OS X and Linux
 - No need for patched fonts Remote
 
 
@@ -86,7 +87,7 @@ cd
 git clone https://github.com/vergissberlin/bashlight.git
 ```
 
-**2.** Open your home bash file in editor 
+**2.** Open your home bash file in editor
 <code>~/.bashrc</code> on *linux* **or** <code>~/.bash_profile</code> on *OS X*
 
 **3.** Include bashlight/bashlight with followed line at the end of the bash file

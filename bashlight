@@ -2,9 +2,9 @@
 
 ####################################################################################
 # Bashlight 	: 0.1.1
-# Copyright	: 2017, MIT
-# Author	: André Lademann <vergissberlin@googlemail.com>
-# Repository: https://github.com/vergissberlin/bashlight
+# Copyright		: 2017, MIT
+# Author			: André Lademann <vergissberlin@googlemail.com>
+# Repository	: https://github.com/vergissberlin/bashlight
 ####################################################################################
 
 # Your settings here
@@ -33,4 +33,3 @@ fi
 [ -f "$PATH_BASHLIGHT/.bash_prompt" ] && { . "$PATH_BASHLIGHT/.bash_prompt"; }
 [ -f "$PATH_BASHLIGHT/git-bash-completion/git-completion.bash" ] && { . "$PATH_BASHLIGHT/git-bash-completion/git-completion.bash"; }
 [ -f "$PATH_BASHLIGHT/.bash_logout" ] && { . "$PATH_BASHLIGHT/.bash_logout"; }
-

@@ -2,9 +2,9 @@
 
 ####################################################################################
 # Bashlight 	: 0.1.1
-# Copyright	: 2017, MIT
-# Author	: André Lademann <vergissberlin@googlemail.com>
-# Repository: https://github.com/vergissberlin/bashlight
+# Copyright		: 2017, MIT
+# Author			: André Lademann <vergissberlin@googlemail.com>
+# Repository	: https://github.com/vergissberlin/bashlight
 ####################################################################################
 
 

@@ -1,10 +1,10 @@
 #!/bin/sh
 
 ####################################################################################
-# Bashly 	: 0.1.0
-# Copyright	: 2014, MIT
-# Author	: André Lademann <vergissberlin@googlemail.com>
-# Repository: https://github.com/vergissberlin/bashlight
+# Bashlight 	: 0.1.1
+# Copyright		: 2017, MIT
+# Author			: André Lademann <vergissberlin@googlemail.com>
+# Repository	: https://github.com/vergissberlin/bashlight
 ####################################################################################
 
 # Alias definitions.
@@ -59,7 +59,3 @@ alias get='gt '
 
 # File system
 alias shared="find . -type d -exec chmod 2770 {} \;find . -type f -exec chmod 0660 {} \;"
-
-# Quality assurence
-alias cs-php="git diff --name-only $(git branch | cut -c 3-)..master -- '*.php' '.phtml' | xargs phpcs"
-
