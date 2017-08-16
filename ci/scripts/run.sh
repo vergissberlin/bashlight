@@ -3,7 +3,7 @@
 export CI=true
 export TERM=xterm
 
-figlet "bashlib"
+figlet "bashlight"
 figlet -f digital "Run tests"
 
 echo
@@ -13,5 +13,5 @@ echo
 [ -e /etc/lsb-release ] && cat /etc/lsb-release
 echo
 
-cd ./resource-bashlib/
+cd ./resource-bashlight/
 sh ./test/suite.sh

@@ -5,7 +5,7 @@ image_resource:
   source: {repository: vergissberlin/ubuntu-development}
 
 inputs:
-- name: resource-bashlib
+- name: resource-bashlight
 
 outputs:
 - name: test-result

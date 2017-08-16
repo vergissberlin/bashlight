@@ -5,7 +5,7 @@ image_resource:
   source: {repository: vergissberlin/centos-development}
 
 inputs:
-- name: resource-bashlib
+- name: resource-bashlight
 
 outputs:
 - name: test-result
