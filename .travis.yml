@@ -6,4 +6,4 @@ before_install:
     - if [ $TRAVIS_OS_NAME = linux ]; then sudo apt-get -qq update && sudo apt-get install -y git-core; fi
     - if [ $TRAVIS_OS_NAME = osx ]; then brew upgrade git; fi
 script:
-    - bash -i ./test/tests.sh
+    - bash -i ./test/suite.sh
