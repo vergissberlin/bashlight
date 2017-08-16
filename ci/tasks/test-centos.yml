@@ -12,4 +12,4 @@ outputs:
 
 run:
   path: sh
-  args: ['./tests/tests.sh']
+  args: ['./resource-bashlight/ci/scripts/run.sh']
