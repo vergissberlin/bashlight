@@ -14,4 +14,4 @@ echo
 echo
 
 cd ./resource-bashlight/
-sh ./test/suite.sh
+bash ./test/suite.sh
