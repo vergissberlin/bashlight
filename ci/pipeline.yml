@@ -1,0 +1,51 @@
+---
+resources:
+- name:                 resource-bashlight
+  type:                 git
+  source:
+    uri:                {{github-uri}}
+    branch:             master
+    private_key:        {{github-private-key}}
+- name:                 slack-alert
+  type:                 slack-notification
+  source:
+    url:                {{slack-hook-url}}
+
+resource_types:
+- name:                 slack-notification
+  type:                 docker-image
+  source:
+    repository:         cfcommunity/slack-notification-resource
+    tag:                latest
+
+jobs:
+- name:                 test
+  public:               true
+  plan:
+  - get:                resource-bashlight
+    trigger:            true
+  - aggregate:
+    - task:             task-test-alpine
+      file:             resource-bashlight/ci/tasks/test-alpine.yml
+    - task:             task-test-centos
+      file:             resource-bashlight/ci/tasks/test-centos.yml
+    - task:             task-test-debian
+      file:             resource-bashlight/ci/tasks/test-debian.yml
+    - task:             task-test-fedora
+      file:             resource-bashlight/ci/tasks/test-fedora.yml
+    - task:             task-test-opensuse
+      file:             resource-bashlight/ci/tasks/test-opensuse.yml
+    - task:             task-test-ubuntu
+      file:             resource-bashlight/ci/tasks/test-ubuntu.yml
+  on_success:
+    put:                slack-alert
+    params:
+      username:         {{message-username}}
+      icon_emoji:       {{message-success-emoji}}
+      text:             {{message-success-text}}
+  on_failure:
+    put:                slack-alert
+    params:
+      username:         {{message-username}}
+      icon_emoji:       {{message-fail-emoji}}
+      text:             {{message-fail-text}}

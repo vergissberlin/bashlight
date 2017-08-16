@@ -1,0 +1,15 @@
+---
+platform: linux
+image_resource:
+  type: docker-image
+  source: {repository: vergissberlin/ubuntu-development}
+
+inputs:
+- name: resource-bashlib
+
+outputs:
+- name: test-result
+
+run:
+  path: sh
+  args: ['./tests/tests.sh']

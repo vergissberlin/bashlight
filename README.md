@@ -9,6 +9,18 @@
 > If you working a lot with **GIT**, *then bashlight can* be you a great help. The Bash extension offers you information for Branch and status of your current GIT repositories.
 > Furthermore it contains many commonly used aliases, which allow a fast working on the console. *Let amazed your colleagues!*
 
+
+````
+ _               _     _ _       _     _
+| |__   __ _ ___| |__ | (_) __ _| |__ | |_
+| '_ \ / _` / __| '_ \| | |/ _` | '_ \| __|
+| |_) | (_| \__ \ | | | | | (_| | | | | |_
+|_.__/ \__,_|___/_| |_|_|_|\__, |_| |_|\__|
+                           |___/
+
+````
+
+
 ## Features
 ### Git management
 
@@ -115,6 +127,23 @@ bash ~/bashlight/git-init.sh
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+### Testing
+
+````
+bash test/suite.sh
+````
+
+### CI
+
+```
+fly set-pipeline \
+	-t box \
+	-p bashlight \
+	-c ci/pipeline.yml \
+	-l ci/variables/messages.yml \
+	-l ci/variables/credentials.yml -n
+```
 
 
 ## Support or Contact

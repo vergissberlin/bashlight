@@ -1,0 +1,16 @@
+message-username: "concourse ci"
+message-channel: "#transformers"
+message-success-emoji: ":sunny:"
+message-success-text: |
+  *Success !!*
+
+  > Team:   $BUILD_TEAM_NAME
+  > Job:    bashlight
+  > Build:  $BUILD_NAME.$BUILD_ID
+message-fail-emoji: ":thunder_cloud_and_rain:"
+message-fail-text: |
+  *Build failed !!*
+
+  > Team:   $BUILD_TEAM_NAME
+  > Job:    bashlight
+  > Build:  $BUILD_NAME.$BUILD_ID
