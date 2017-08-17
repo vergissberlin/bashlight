@@ -3,13 +3,13 @@ resources:
 - name:                 resource-bashlight
   type:                 git
   source:
-    uri:                {{github-uri}}
+    uri:                ((github-uri))
     branch:             master
-    private_key:        {{github-private-key}}
+    private_key:        ((github-private-key))
 - name:                 slack-alert
   type:                 slack-notification
   source:
-    url:                {{slack-hook-url}}
+    url:                ((slack-hook-url))
 
 resource_types:
 - name:                 slack-notification
@@ -40,12 +40,12 @@ jobs:
   on_success:
     put:                slack-alert
     params:
-      username:         {{message-username}}
-      icon_emoji:       {{message-success-emoji}}
-      text:             {{message-success-text}}
+      username:         ((message-username))
+      icon_emoji:       ((message-success-emoji))
+      text:             ((message-success-text))
   on_failure:
     put:                slack-alert
     params:
-      username:         {{message-username}}
-      icon_emoji:       {{message-fail-emoji}}
-      text:             {{message-fail-text}}
+      username:         ((message-username))
+      icon_emoji:       ((message-fail-emoji))
+      text:             ((message-fail-text))
