@@ -41,6 +41,7 @@ jobs:
     put:                slack-alert
     params:
       username:         ((message-username))
+      channel:          ((message-channel))
       icon_emoji:       ((message-success-emoji))
       text:             ((message-success-text))
   on_failure:
