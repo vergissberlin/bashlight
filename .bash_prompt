@@ -67,7 +67,7 @@ function __powerline() {
 	readonly RESET="\[$(tput sgr0)\]"
 	readonly BOLD="\[$(tput bold)\]"
 
-	# what OS?
+	# What OS?
 	case "$(uname)" in
 		Darwin)
 			readonly PS_SYMBOL=$PS_SYMBOL_DARWIN
@@ -90,14 +90,13 @@ function __powerline() {
 	}
 
 	function __git_info() {
-
-		# check requirements
+		# Check requirements
 		[ -x "$(which git)" ] || return	# git not found
 		if ! __is_git_repo || __is_git_dir; then
 			return
 		fi
 
-		# which branch?
+		# Which branch?
 		case "$(git symbolic-ref --short HEAD)" in
 			master)
 				readonly GIT_BRANCH_SYMBOL=$GIT_BRANCH_MASTER
@@ -115,36 +114,63 @@ function __powerline() {
 				readonly GIT_BRANCH_SYMBOL=$GIT_BRANCH_OTHER
 		esac
 
-		# get current branch name or short SHA1 hash for detached head
+		# Get current branch name or short SHA1 hash for detached head
 		local branch="$(git symbolic-ref --short HEAD 2>/dev/null || git describe --tags --always 2>/dev/null)"
 		[ -n "$branch" ] || return  # git branch not found
 
 		local marks
 
-		# branch is modified?
+		# Branch is modified?
 		[ -n "$(git status --porcelain)" ] && marks+=" $GIT_BRANCH_CHANGED_SYMBOL"
 		local git_status="`git status -unormal --ignore-submodules=all 2>&1`"
 		if ! [[ "$git_status" =~ Not\ a\ git\ repo ]]; then
 			if [[ "$git_status" =~ nothing\ to\ commit ]]; then
 				local colour=$BG_GREEN
 			elif [[ "$git_status" =~ nothing\ added\ to\ commit\ but\ untracked\ files\ present ]]; then
-				local colour=$BG_RED
+				local colour=$BG_MAGENTA
 			else
 				local colour=$BG_YELLOW
 			fi
 		fi
 
-		# how many commits local branch is ahead/behind of remote?
+		# How many commits local branch is ahead/behind of remote?
 		local stat="$(git status --porcelain --branch | grep '^##' | grep -o '\[.\+\]$')"
 		local aheadN="$(echo $stat | grep -o 'ahead \d\+' | grep -o '\d\+')"
 		local behindN="$(echo $stat | grep -o 'behind \d\+' | grep -o '\d\+')"
 		[ -n "$aheadN" ] && marks+=" $GIT_NEED_PUSH_SYMBOL$aheadN"
 		[ -n "$behindN" ] && marks+=" $GIT_NEED_PULL_SYMBOL$behindN"
 
-
-		# print the git branch segment without a trailing newline
-		printf "$colour$FG_BASE3 $GIT_BRANCH_SYMBOL  $branch$marks "
+		# Print the git branch segment without a trailing newline
+		printf "${colour}${FG_BASE3} ${GIT_BRANCH_SYMBOL}  ${branch}${marks} "
 	}
+
+	function __info() {
+		case "${PS_INFO_BRAND}" in
+			success)
+				local BG_COLOR=${BG_GREEN}
+				local FG_COLOR=${FG_BASE2}
+				;;
+			warn)
+				local BG_COLOR=${BG_ORANGE}
+				local FG_COLOR=${FG_BASE2}
+				;;
+			danger)
+				local BG_COLOR=${BG_RED}
+				local FG_COLOR=${FG_BASE3}
+				;;
+			[hH][oO][tT][fF][iI][xX]*)
+				readonly GIT_BRANCH_SYMBOL=$GIT_BRANCH_HOTFIX
+				;;
+			*)
+				local BG_COLOR=${BG_BLUE}
+				local FG_COLOR=${FG_BASE2}
+		esac
+
+		if [[ ! -z ${PS_INFO} ]]; then
+			printf "${BG_COLOR}${FG_COLOR} ${PS_INFO} ${RESET}"
+		fi
+	}
+
 
 	ps1() {
 		# Check the exit code of the previous command and display different
@@ -156,6 +182,7 @@ function __powerline() {
 		fi
 
 		PS1="$BG_BASE02$FG_BASE00 \w $RESET"
+		PS1+="$(__info)"
 		PS1+="$(__git_info)$RESET"
 		PS1+="$BG_EXIT$FG_BASE3 $PS_SYMBOL $RESET "
 	}
