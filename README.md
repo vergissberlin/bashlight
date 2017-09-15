@@ -10,7 +10,7 @@
 > Furthermore it contains many commonly used aliases, which allow a fast working on the console. *Let amazed your colleagues!*
 
 
-````
+```
  _               _     _ _       _     _
 | |__   __ _ ___| |__ | (_) __ _| |__ | |_
 | '_ \ / _` / __| '_ \| | |/ _` | '_ \| __|
@@ -18,8 +18,7 @@
 |_.__/ \__,_|___/_| |_|_|_|\__, |_| |_|\__|
                            |___/
 
-````
-
+```
 
 ## Features
 ### Git management
@@ -68,23 +67,28 @@ export PS_INFO_BRAND="warning"
 ```
 
 ### Notification
+
 On macOS and Linux, you have the option to send notifications from the console. However, the commands are different for this purpose. *bashlight* provides you a unified interface. You can play sounds, open the message window and use the voice output.
 
 
 #### Play sounds
+
 ```
 blPlay Submarine
 ```
+
 #### Say something
+
 ```
 blSay "OK Computer. I just understand train station."
 ```
+
 #### Notification messages
+
 ```
 alert "This is the title" "... and this is the content"
 ```
 ![Notifications](https://farm6.staticflickr.com/5568/15131688612_12f1cd7a2b_o.png)
-
 
 #### Contains configurations for ...
 
@@ -115,7 +119,8 @@ git clone https://github.com/vergissberlin/bashlight.git
 ```
 
 **2.** Open your home bash file in editor
-<code>~/.bashrc</code> on *linux* **or** <code>~/.bash_profile</code> on *macOS*
+
+``~/.bashrc`` on *linux* **or** ``~/.bash_profile`` on *macOS*
 
 **3.** Include bashlight/bashlight with followed line at the end of the bash file
 
@@ -148,9 +153,9 @@ bash ~/bashlight/git-init.sh
 
 ### Testing
 
-````
+```
 bash test/suite.sh
-````
+```
 
 ### CI
 
@@ -165,18 +170,19 @@ fly set-pipeline \
 
 
 ## Support or Contact
+
 You can contact me (@vergissberlin) on GitHub. Use the issue tracker to report bugs.
 
 
 ## Thank you
+
 - .. to @riobard, the founder of [bash-powrline](https://github.com/riobard/bash-powerline) which this project is based on.
 - .. to @markgandolfo, the founder of [git-bash-completion](https://github.com/markgandolfo/git-bash-completion), which is included as subtree to this project.
 - Further thanks **JetBrains** for a free license for PhpStorm.
 
 ---
 
-*Made with*
-
+*Made with love and*
 
 
 [![Atom.IO](http://github-atom-io-herokuapp-com.global.ssl.fastly.net/assets/logo-4e073dbd4c0ce67ece1b30a6b31253b9.png)](https://atom.io/)
