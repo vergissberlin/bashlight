@@ -16,7 +16,6 @@ resource_types:
   type:                 docker-image
   source:
     repository:         cfcommunity/slack-notification-resource
-    tag:                latest
 
 jobs:
 - name:                 test
