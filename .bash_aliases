@@ -55,7 +55,6 @@ alias create='git checkout master&&git pull&&git checkout -B $1'
 # git typos
 alias got='git '
 alias get='git '
-alias get='gt '
 
 # File system
 alias shared="find . -type d -exec chmod 2770 {} \;find . -type f -exec chmod 0660 {} \;"
