@@ -38,8 +38,6 @@ git config --global alias.sl 'log --color --graph --pretty=format:"%Cred%h%Crese
 git config --global alias.st 'status --ignore-submodules=all'
 git config --global alias.tush 'push --tags'
 git config --global alias.type 'cat-file -t'
-<<<<<<< Updated upstream
-=======
 git config --global alias.up = !git fetch origin && git rebase origin/master
 git config --global alias.amend  = !git log -n 1 --pretty=tformat:%s%n%n%b | git commit -F - --amend
 git config --global core.excludesfile ~/.gitignore_global
@@ -49,7 +47,6 @@ git config --global alias.develop   = checkout develop
 git config --global alias.create-branch = !sh -c 'git push origin HEAD:refs/heads/$1 && git fetch origin && git branch --track $1 origin/$1 && cd . && git checkout $1' -
 git config --global alias.delete-branch = !sh -c 'git push origin :refs/heads/$1 && git branch -D $1' -
 git config --global alias.merge-branch = !git checkout master && git merge @{-1}
->>>>>>> Stashed changes
 
 ## Branch setting
 git config --global branch.autosetuprebase always
