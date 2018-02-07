@@ -13,7 +13,7 @@ mkdir -p ~/.git
 # User settings
 if [ -z "$(git config --global --get user.name)" ]; then
   read -p "What's your name? " name
-  if [ "${name}" !== "" ]; then
+  if [ "${name}" != "" ]; then
     git config --global user.name "${name}"
   fi
 fi
@@ -38,15 +38,17 @@ git config --global alias.sl 'log --color --graph --pretty=format:"%Cred%h%Crese
 git config --global alias.st 'status --ignore-submodules=all'
 git config --global alias.tush 'push --tags'
 git config --global alias.type 'cat-file -t'
-git config --global alias.up = !git fetch origin && git rebase origin/master
-git config --global alias.amend  = !git log -n 1 --pretty=tformat:%s%n%n%b | git commit -F - --amend
-git config --global core.excludesfile ~/.gitignore_global
+git config --global alias.up  'git fetch origin && git rebase origin/master'
+git config --global alias.amend 'git log -n 1 --pretty=tformat:%s%n%n%b | git commit -F - --amend'
+git config --global alias.master 'git checkout master'
+git config --global alias.development 'checkout development'
+git config --global alias.staging 'checkout staging'
+git config --global alias.create-branch 'git push origin HEAD:refs/heads/$1 && git fetch origin && git branch --track $1 origin/$1 && cd . && git checkout $1'
+git config --global alias.delete-branch 'git push origin :refs/heads/$1 && git branch -D $1'
+git config --global alias.merge-branch 'git checkout master && git merge @{-1}'
 
-git config --global alias.master    = checkout master
-git config --global alias.develop   = checkout develop
-git config --global alias.create-branch = !sh -c 'git push origin HEAD:refs/heads/$1 && git fetch origin && git branch --track $1 origin/$1 && cd . && git checkout $1' -
-git config --global alias.delete-branch = !sh -c 'git push origin :refs/heads/$1 && git branch -D $1' -
-git config --global alias.merge-branch = !git checkout master && git merge @{-1}
+## Ignore setting
+git config --global core.excludesfile ~/.gitignoreglobal
 
 ## Branch setting
 git config --global branch.autosetuprebase always
