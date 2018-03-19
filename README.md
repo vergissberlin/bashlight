@@ -125,7 +125,9 @@ git clone https://github.com/vergissberlin/bashlight.git
 **3.** Include bashlight/bashlight with followed line at the end of the bash file
 
 ```
-. ~/bashlight/bashlight
+if [ -f ~/bashlight/bashlight ]; then
+    . ~/bashlight/bashlight
+fi
 ```
 
 ### Optional global git settings
