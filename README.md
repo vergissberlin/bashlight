@@ -122,7 +122,7 @@ git clone https://github.com/vergissberlin/bashlight.git
 
 ``~/.bashrc`` on *linux* **or** ``~/.bash_profile`` on *macOS*
 
-**3.** Include bashlight/bashlight with followed line at the end of the bash file
+**3.** Include bashlight/bashlight with the following line at the end of the bash file
 
 ```
 if [ -f ~/bashlight/bashlight ]; then
