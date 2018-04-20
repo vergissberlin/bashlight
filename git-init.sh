@@ -73,4 +73,4 @@ git config --global color.push.default current
 git config --global color.status.added green bold
 git config --global color.status.changed yellow
 
-echo "    ✓  All git configuration setted."
+echo "    ✓  All git configurations have been adjusted successfully."
