@@ -1,15 +1,15 @@
 #!/bin/sh
 
 ####################################################################################
-# Bashlight 	: 0.1.1
-# Copyright		: 2017, MIT
+# Bashlight 	: 0.1.2
+# Copyright		: 2018, MIT
 # Author			: André Lademann <vergissberlin@googlemail.com>
 # Repository	: https://github.com/vergissberlin/bashlight
 ####################################################################################
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
+# ~/src/aliases, instead of adding them here directly.
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then

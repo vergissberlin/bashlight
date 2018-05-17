@@ -1,7 +1,7 @@
 # bashlight
 
 [![Build Status](https://travis-ci.org/vergissberlin/bashlight.svg?branch=master)](https://travis-ci.org/vergissberlin/bashlight)
-[![Version](https://img.shields.io/badge/version-0.1.1-green.svg)](https://github.com/vergissberlin/bashlight)
+[![Version](https://img.shields.io/badge/version-0.1.2-green.svg)](https://github.com/vergissberlin/bashlight)
 
 > This bash script enhanced your OSX/Linux console.
 > The console or "terminal" on macOS comes in the basic equipment therefore very slim. This is good as long as you do not work with it every day. If you often go to the console, you should do something for their eyes and install the [Solarized
@@ -59,7 +59,7 @@ You are able to add informations to you prompt by setting following environment 
 1. ``PS_INFO``: (string) e.g. dev/stage/prod.
 2. ``PS_INFO_BRAND``: (string) e.g. info/success/warning/danger
 
-Set this variables in your .bashrc (Linux) ord .bash_profile (macOS) file like so:
+Set this variables in your .bashrc (Linux) ord src/profile (macOS) file like so:
 
 ```
 export PS_INFO="stage"
@@ -120,7 +120,7 @@ git clone https://github.com/vergissberlin/bashlight.git
 
 **2.** Open your home bash file in editor
 
-``~/.bashrc`` on *linux* **or** ``~/.bash_profile`` on *macOS*
+``~/.bashrc`` on *linux* **or** ``~/src/profile`` on *macOS*
 
 **3.** Include bashlight/bashlight with the following line at the end of the bash file
 
@@ -130,12 +130,12 @@ if [ -f ~/bashlight/bashlight ]; then
 fi
 ```
 
-### Optional global git settings
+### Optional settings
 
-To install common git settings are tailored to bashlight simply run:
+To install common git and tmux settings are tailored to bashlight simply run:
 
 ```
-bash ~/bashlight/git-init.sh
+bash ~/bashlight/install.sh
 ```
 
 ### Supported operating systems

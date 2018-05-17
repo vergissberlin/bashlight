@@ -1,8 +1,8 @@
 #!/bin/bash
 
 ####################################################################################
-# Bashlight 	: 0.1.1
-# Copyright		: 2017, MIT
+# Bashlight 	: 0.1.2
+# Copyright		: 2018, MIT
 # Author			: André Lademann <vergissberlin@googlemail.com>
 # Repository	: https://github.com/vergissberlin/bashlight
 ####################################################################################
