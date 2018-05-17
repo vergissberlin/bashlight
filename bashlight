@@ -10,6 +10,9 @@
 # Your settings here
 readonly PATH_BASHLIGHT="$HOME/bashlight"
 
+# Check update
+. ${PATH_BASHLIGHT}/update.sh
+
 ####################################################################################
 # Include modules
 ####################################################################################

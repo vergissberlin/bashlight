@@ -47,6 +47,7 @@ function blPlay() {
 ### speak
 function blSay() {
 	# OS X
+	say $1
 	if type "say" >/dev/null 2>&1 ; then
 		say -r $VOICE_RATE -v $VOICE_TYPE "$@." 2> /dev/null
 	fi
