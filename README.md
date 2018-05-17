@@ -186,5 +186,4 @@ You can contact me (@vergissberlin) on GitHub. Use the issue tracker to report b
 
 *Made with love and*
 
-
 [![Atom.IO](http://github-atom-io-herokuapp-com.global.ssl.fastly.net/assets/logo-4e073dbd4c0ce67ece1b30a6b31253b9.png)](https://atom.io/)

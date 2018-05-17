@@ -7,14 +7,20 @@
 # Repository	: https://github.com/vergissberlin/bashlight
 ####################################################################################
 
-GIT_DIR=~/bashlight/.git
+if [ -z "${1}" ]; then
+	PATH_BASHLIGHT="${HOME}/bashlight"
+else
+  PATH_BASHLIGHT="${1}"
+fi
+
+GIT_DIR=${PATH_BASHLIGHT}/.git
 
 VERSION_LOCAL=$(GIT_DIR=~/bashlight/.git git describe --tags --abbrev=0)
 DAY_UPDATE=~/bashlight/DAY_UPDATE
 DAY_TODAY=$(date +%j)
 
 function version_gt() {
-  test "$(printf '%s\n' "$@" | sort -V | head -n 1)" != "$1";
+  test "$(printf '%s\n' "$@" | sort -V | head -n 1)" != "${1}";
 }
 
 
@@ -42,7 +48,7 @@ else
 
      while true; do
        read -p "Do you wish to install this program (yes/no)? " yn
-       case $yn in
+       case ${yn} in
          [Yy]* ) GIT_DIR=~/bashlight/.git git pull --tags; echo ${DAY_TODAY} > ${DAY_UPDATE}; break;;
          [Nn]* ) break;;
          * ) echo "Please answer yes or no.";;

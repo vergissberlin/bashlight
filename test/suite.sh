@@ -9,11 +9,11 @@
 
 
 # Variables
-PATH_INIT=$(pwd)
-PATH_TESTS="${PATH_INIT}/tests"
-PATH_HELPER="${PATH_TESTS}/helper"
-PATH_FIXTURES="${PATH_TESTS}/fixtures"
-PROMPT_DEFAULT=$PS1
+PATH_BASHLIGHT=$(pwd)
+readonly PATH_TESTS="${PATH_BASHLIGHT}/tests"
+readonly PATH_HELPER="${PATH_TESTS}/helper"
+readonly PATH_FIXTURES="${PATH_TESTS}/fixtures"
+PROMPT_DEFAULT=${PS1}
 
 
 #
@@ -38,11 +38,12 @@ function setup() {
   touch file
 }
 
-# tests
-
+#
+# Tests
+#
 function test_prompt() {
   echo ${PROMPT_DEFAULT}
-  . ${PATH_INIT}/bashlight
+  . ${PATH_BASHLIGHT}/bashlight
 
   PROMPT_CUSTOM=$PS1
   echo ${PROMPT_CUSTOM}
@@ -57,7 +58,7 @@ function test_prompt() {
 
 # Roll back
 function teardown() {
-  cd ${PATH_INIT}
+  cd ${PATH_BASHLIGHT}
   rm -Rf ${PATH_FIXTURES} ${PATH_HELPER}
 }
 
@@ -77,7 +78,6 @@ assert_false() {
 #
 # Tests
 #
-
 setup
 test_prompt
 teardown

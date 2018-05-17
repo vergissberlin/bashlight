@@ -8,10 +8,12 @@
 ####################################################################################
 
 # Your settings here
-readonly PATH_BASHLIGHT="$HOME/bashlight"
+if [ -z "${PATH_BASHLIGHT}" ]; then
+	PATH_BASHLIGHT="${HOME}/bashlight"
+fi
 
 # Check update
-. ${PATH_BASHLIGHT}/update.sh
+. ${PATH_BASHLIGHT}/update.sh ${PATH_BASHLIGHT}
 
 ####################################################################################
 # Include modules
@@ -21,7 +23,7 @@ readonly PATH_BASHLIGHT="$HOME/bashlight"
 # You may want to put all your additions into a separate file like
 # ~/src/aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
-[ -f "$PATH_BASHLIGHT/src/aliases" ] && { . "$PATH_BASHLIGHT/src/aliases"; }
+[ -f "${PATH_BASHLIGHT}/src/aliases" ] && { . "${PATH_BASHLIGHT}/src/aliases"; }
 
 # enable programmable completion features
 if ! shopt -oq posix; then
@@ -31,7 +33,7 @@ if ! shopt -oq posix; then
 fi
 
 # Furthermore modules
-[ -f "$PATH_BASHLIGHT/src/settings" ] && { . "$PATH_BASHLIGHT/src/settings"; }
-[ -f "$PATH_BASHLIGHT/src/notify" ] && { . "$PATH_BASHLIGHT/src/notify"; }
-[ -f "$PATH_BASHLIGHT/src/prompt" ] && { . "$PATH_BASHLIGHT/src/prompt"; }
-[ -f "$PATH_BASHLIGHT/src/logout" ] && { . "$PATH_BASHLIGHT/src/logout"; }
+[ -f "${PATH_BASHLIGHT}/src/settings" ] && { . "${PATH_BASHLIGHT}/src/settings"; }
+[ -f "${PATH_BASHLIGHT}/src/notify"   ] && { . "${PATH_BASHLIGHT}/src/notify"; }
+[ -f "${PATH_BASHLIGHT}/src/prompt"   ] && { . "${PATH_BASHLIGHT}/src/prompt"; }
+[ -f "${PATH_BASHLIGHT}/src/logout"   ] && { . "${PATH_BASHLIGHT}/src/logout"; }
