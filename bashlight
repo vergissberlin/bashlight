@@ -1,8 +1,8 @@
 #!/bin/sh
 
 ####################################################################################
-# Bashlight 	: 0.1.1
-# Copyright		: 2017, MIT
+# Bashlight 	: 0.1.2
+# Copyright		: 2018, MIT
 # Author			: André Lademann <vergissberlin@googlemail.com>
 # Repository	: https://github.com/vergissberlin/bashlight
 ####################################################################################
@@ -27,7 +27,7 @@ if ! shopt -oq posix; then
 	fi
 fi
 
-# furthermore modules
+# Furthermore modules
 [ -f "$PATH_BASHLIGHT/.bash_settings" ] && { . "$PATH_BASHLIGHT/.bash_settings"; }
 [ -f "$PATH_BASHLIGHT/.bash_notify" ] && { . "$PATH_BASHLIGHT/.bash_notify"; }
 [ -f "$PATH_BASHLIGHT/.bash_prompt" ] && { . "$PATH_BASHLIGHT/.bash_prompt"; }

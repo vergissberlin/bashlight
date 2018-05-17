@@ -1,8 +1,8 @@
 #!/bin/sh
 
 ####################################################################################
-# Bashlight 	: 0.1.1
-# Copyright		: 2017, MIT
+# Bashlight 	: 0.1.2
+# Copyright		: 2018, MIT
 # Author			: André Lademann <vergissberlin@googlemail.com>
 # Repository	: https://github.com/vergissberlin/bashlight
 ####################################################################################
@@ -24,6 +24,9 @@ if [ -z "$(git config --global --get user.email)" ]; then
     git config --global user.email ${email}
   fi
 fi
+
+# Copy configurations
+cp -n ~/bashlight/config/.gitignore_global ~/.gitignore_global
 
 ## Aliases
 git config --global alias.br 'branch -av'
@@ -48,7 +51,7 @@ git config --global alias.delete-branch 'git push origin :refs/heads/$1 && git b
 git config --global alias.merge-branch 'git checkout master && git merge @{-1}'
 
 ## Ignore setting
-git config --global core.excludesfile ~/.gitignoreglobal
+git config --global core.excludesfile ~/.gitignore_global
 
 ## Branch setting
 git config --global branch.autosetuprebase always
