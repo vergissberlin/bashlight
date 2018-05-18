@@ -11,6 +11,9 @@
 
 load helper
 
+BATS_TEST_NAME="Test the bats"
+BATS_TEST_DESCRIPTION="This is a test of the test framework bats"
+
 setup() {
     echo "setup ${BATS_TEST_NAME} ..." >> ./bats.log
 }
