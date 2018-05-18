@@ -22,10 +22,14 @@ teardown() {
     echo "teardown ${BATS_TEST_NAME} ..." >> ./bats.log
 }
 
-@test "udate needed" {
+@test "Udate needed" {
+  skip "Not implemented yet"
+
   [ 4 -eq 4 ]
 }
 
-@test "udate not needed" {
-    [ 4 -eq 4 ]
+@test "Udate not needed" {
+  skip "Not implemented yet"
+
+  [ 4 -eq 4 ]
 }

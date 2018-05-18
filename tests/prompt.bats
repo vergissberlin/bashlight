@@ -23,6 +23,7 @@ teardown() {
 }
 
 @test "addition using bc" {
+    skip "Not implemented yet"
     result="$(echo 2 + 2 | bc)"
 
     [ "${result}" -eq 4 ]
