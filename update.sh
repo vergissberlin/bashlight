@@ -14,6 +14,7 @@ else
 fi
 
 GIT_DIR=${PATH_BASHLIGHT}/.git
+GIT_REPOSITORY=https://github.com/vergissberlin/bashlight.git
 
 VERSION_LOCAL=$(GIT_DIR=~/bashlight/.git git describe --tags --abbrev=0)
 DAY_UPDATE=~/bashlight/DAY_UPDATE
@@ -33,7 +34,7 @@ if [ ${DAY_TODAY} -le $(cat ${DAY_UPDATE}) ]; then
   echo -e "\033[34;5;;172mBashlight ${VERSION_LOCAL}\033[0m"
 else
   # Update check
-  VERSION_REMOTE=$(git ls-remote --tags git@github.com:vergissberlin/bashlight.git | sort -t '/' -k 3 -V | awk -F/ '{ print $3 }' | tail -1)
+  VERSION_REMOTE=$(git ls-remote --tags ${GIT_REPOSITORY} | sort -t '/' -k 3 -V | awk -F/ '{ print $3 }' | tail -1)
 
   if version_gt ${VERSION_REMOTE} ${VERSION_LOCAL}; then
     echo -e "\a";
