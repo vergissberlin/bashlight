@@ -1,4 +1,5 @@
 /tests/assert.sh
 /tests/fixtures/
+bats.log
 credentials.yml
 DAY_UPDATE
