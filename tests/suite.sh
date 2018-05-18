@@ -10,11 +10,10 @@
 
 # Variables
 PATH_BASHLIGHT=$(pwd)
+PROMPT_DEFAULT=${PS1}
 readonly PATH_TESTS="${PATH_BASHLIGHT}/tests"
 readonly PATH_HELPER="${PATH_TESTS}/helper"
 readonly PATH_FIXTURES="${PATH_TESTS}/fixtures"
-PROMPT_DEFAULT=${PS1}
-
 
 #
 # Prepare working directory
@@ -32,6 +31,9 @@ function setup() {
   . ${PATH_HELPER}/is.sh
 
   cd ./tests
+  ls -lisah
+
+  # Create fixtures
   mkdir -p ${PATH_FIXTURES}/without-git
   mkdir -p ${PATH_FIXTURES}/with-git
   cd ${PATH_FIXTURES}/with-git && git init
@@ -50,16 +52,39 @@ function test_prompt() {
 
   if is not equal $PROMPT_DEFAULT $PROMPT_CUSTOM; then
     echo "Prompt is not equal"
+    exit 1;
   else
     echo "Prompt is equal"
   fi
   PS1=$PROMPT_DEFAULT
 }
 
+
+#
+# Tests
+#
+function test_update() {
+  echo ${PROMPT_DEFAULT}
+  . ${PATH_BASHLIGHT}/bashlight
+
+  PROMPT_CUSTOM=$PS1
+  echo ${PROMPT_CUSTOM}
+
+  if is not equal $PROMPT_DEFAULT $PROMPT_CUSTOM; then
+    echo "Prompt is not equal"
+    exit 1;
+  else
+    echo "Prompt is equal"
+  fi
+  PS1=$PROMPT_DEFAULT
+}
+
+
 # Roll back
 function teardown() {
   cd ${PATH_BASHLIGHT}
   rm -Rf ${PATH_FIXTURES} ${PATH_HELPER}
+  assert_end bashlight
 }
 
 
@@ -67,11 +92,11 @@ function teardown() {
 # Helpers
 #
 assert_true() {
-    assert_raises "$1" 0
+  assert_raises "$1" 0
 }
 
 assert_false() {
-    assert_raises "$1" 1
+  assert_raises "$1" 1
 }
 
 

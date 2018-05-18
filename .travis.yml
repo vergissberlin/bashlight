@@ -1,9 +1,14 @@
+sudo: false
 language: bash
 os:
-    - linux
-    - osx
+  - linux
+  - osx
 before_install:
-    - if [ $TRAVIS_OS_NAME = linux ]; then sudo apt-get -qq update && sudo apt-get install -y git-core; fi
-    - if [ $TRAVIS_OS_NAME = osx ]; then brew update && brew upgrade git; fi
+  - if [ $TRAVIS_OS_NAME = linux ]; then sudo apt-get -qq update && sudo apt-get install -y git-core; fi
+  - if [ $TRAVIS_OS_NAME = osx ]; then brew update && brew upgrade git; fi
+  - sudo add-apt-repository ppa:duggan/bats --yes
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq bats
 script:
-    - bash -i ./test/suite.sh
+  - bash -i ./tests/suite.sh
+  - bats ./tests/test.bats
