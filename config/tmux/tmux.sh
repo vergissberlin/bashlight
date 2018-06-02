@@ -1,6 +1,13 @@
 #!/bin/bash
 
-SESSION=ala
+####################################################################################
+# Bashlight 	: 0.1.5
+# Copyright		: 2018, MIT
+# Author		: André Lademann <vergissberlin@googlemail.com>
+# Repository	: https://github.com/vergissberlin/bashlight
+####################################################################################
+
+SESSION=bashlight
 tmux="tmux -2 -f tmux.conf"
 
 # If the session is already running, just attach to it.

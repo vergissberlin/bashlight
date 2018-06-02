@@ -1,9 +1,9 @@
 #!/bin/sh
 
 ####################################################################################
-# Bashlight 	: 0.1.2
+# Bashlight 	: 0.1.5
 # Copyright		: 2018, MIT
-# Author			: André Lademann <vergissberlin@googlemail.com>
+# Author		: André Lademann <vergissberlin@googlemail.com>
 # Repository	: https://github.com/vergissberlin/bashlight
 ####################################################################################
 
@@ -22,11 +22,11 @@ fi
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/src/aliases, instead of adding them here directly.
-[ -f "${PATH_BASHLIGHT}/src/aliases" ] && { . "${PATH_BASHLIGHT}/src/aliases"; }
-[ -f "${PATH_BASHLIGHT}/src/logout"   ] && { . "${PATH_BASHLIGHT}/src/logout"; }
-[ -f "${PATH_BASHLIGHT}/src/notify"   ] && { . "${PATH_BASHLIGHT}/src/notify"; }
-[ -f "${PATH_BASHLIGHT}/src/settings" ] && { . "${PATH_BASHLIGHT}/src/settings"; }
-[ -f "${PATH_BASHLIGHT}/src/prompt"   ] && { . "${PATH_BASHLIGHT}/src/prompt"; }
+[ -f "${PATH_BASHLIGHT}/src/aliases.bash"  ] && { . "${PATH_BASHLIGHT}/src/aliases.bash"; }
+[ -f "${PATH_BASHLIGHT}/src/logout.bash"   ] && { . "${PATH_BASHLIGHT}/src/logout.bash"; }
+[ -f "${PATH_BASHLIGHT}/src/notify.bash"   ] && { . "${PATH_BASHLIGHT}/src/notify.bash"; }
+[ -f "${PATH_BASHLIGHT}/src/settings.bash" ] && { . "${PATH_BASHLIGHT}/src/settings.bash"; }
+[ -f "${PATH_BASHLIGHT}/src/prompt.bash"   ] && { . "${PATH_BASHLIGHT}/src/prompt.bash"; }
 
 # enable programmable completion features
 if ! shopt -oq posix; then
