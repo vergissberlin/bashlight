@@ -10,4 +10,4 @@ before_install:
   - sudo apt-get install -qq bats
 script:
   - bats ./tests/
-#  - bash -i ./tests/suite.sh
+  - bash -i ./tests/suite.sh

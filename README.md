@@ -156,7 +156,8 @@ bash ~/bashlight/install.sh
 ### Testing
 
 ```
-bash test/suite.sh
+bash tests/suite.sh
+bats ./tests/
 ```
 
 ### CI
