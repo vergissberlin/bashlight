@@ -172,6 +172,14 @@ fly set-pipeline \
 ```
 
 
+### Change log
+
+Update the changelog
+```
+conventional-changelog -i CHANGELOG.md -s -r 0
+```
+
+
 ## Support or Contact
 
 You can contact me (@vergissberlin) on GitHub. Use the issue tracker to report bugs.
