@@ -3,7 +3,7 @@ os:
   - linux
   - osx
 before_install:
-  - if [ $TRAVIS_OS_NAME = linux ]; then sudo add-apt-repository ppa:duggan/bats --yes && apt-get update -qq; fi
+  - if [ $TRAVIS_OS_NAME = linux ]; then sudo add-apt-repository ppa:duggan/bats --yes; fi
   - if [ $TRAVIS_OS_NAME = linux ]; then sudo apt-get -qq update && sudo apt-get install -y git-core bats; fi
   - if [ $TRAVIS_OS_NAME = osx ]; then brew update && brew upgrade git bats; fi
 script:
