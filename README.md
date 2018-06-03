@@ -135,7 +135,7 @@ fi
 To install common git and tmux settings are tailored to bashlight simply run:
 
 ```
-bash ~/bashlight/install.sh
+bash ~/bashlight/install.bash
 ```
 
 ### Supported operating systems
@@ -144,6 +144,11 @@ bash ~/bashlight/install.sh
 - macOS
 - Windows with bash shell
 
+### Optional dependencies
+
+- `coreutils` for a colourful, easy to handle directory listing
+-- `apt install coreutils`
+-- `brew install coreutils`
 
 ## Contributing
 

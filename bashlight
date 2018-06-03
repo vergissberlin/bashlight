@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
 
 ####################################################################################
 # Bashlight 	: 0.1.5
@@ -13,7 +14,8 @@ if [ -z "${PATH_BASHLIGHT}" ]; then
 fi
 
 # Check update
-. ${PATH_BASHLIGHT}/update.sh ${PATH_BASHLIGHT}
+# shellcheck source=update.bash
+. "${PATH_BASHLIGHT}/update.bash" "${PATH_BASHLIGHT}"
 
 ####################################################################################
 # Include modules
@@ -22,13 +24,38 @@ fi
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/src/aliases, instead of adding them here directly.
-[ -f "${PATH_BASHLIGHT}/src/aliases.bash"  ] && { . "${PATH_BASHLIGHT}/src/aliases.bash"; }
-[ -f "${PATH_BASHLIGHT}/src/logout.bash"   ] && { . "${PATH_BASHLIGHT}/src/logout.bash"; }
-[ -f "${PATH_BASHLIGHT}/src/notify.bash"   ] && { . "${PATH_BASHLIGHT}/src/notify.bash"; }
-[ -f "${PATH_BASHLIGHT}/src/settings.bash" ] && { . "${PATH_BASHLIGHT}/src/settings.bash"; }
-[ -f "${PATH_BASHLIGHT}/src/prompt.bash"   ] && { . "${PATH_BASHLIGHT}/src/prompt.bash"; }
+
+# shellcheck source=src/aliases.bash
+[ -f "${PATH_BASHLIGHT}/src/aliases.bash"  ] && {
+	# shellcheck source=src/aliases.bash
+	. "${PATH_BASHLIGHT}/src/aliases.bash";
+	}
+
+# shellcheck source=src/logout.bash
+[ -f "${PATH_BASHLIGHT}/src/logout.bash"   ] && {
+	# shellcheck source=src/logout.bash
+	. "${PATH_BASHLIGHT}/src/logout.bash";
+	}
+
+# shellcheck source=src/notify.bash
+[ -f "${PATH_BASHLIGHT}/src/notify.bash"   ] && {
+	# shellcheck source=src/notify.bash
+	. "${PATH_BASHLIGHT}/src/notify.bash";
+	}
+
+# shellcheck source=src/settings.bash
+[ -f "${PATH_BASHLIGHT}/src/settings.bash" ] && {
+	# shellcheck source=src/settings.bash
+	. "${PATH_BASHLIGHT}/src/settings.bash";
+	}
+# shellcheck source=src/prompt.bash
+[ -f "${PATH_BASHLIGHT}/src/prompt.bash"   ] && {
+	# shellcheck source=src/prompt.bash
+	. "${PATH_BASHLIGHT}/src/prompt.bash";
+	}
 
 # enable programmable completion features
+# shellcheck disable=SC1091
 if ! shopt -oq posix; then
 	if [ -f /usr/share/bash-completion/bash_completion ]; then
 		. /usr/share/bash-completion/bash_completion

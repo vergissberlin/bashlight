@@ -47,20 +47,19 @@ function blPlay() {
 ### speak
 function blSay() {
 	# OS X
-	say $1
 	if type "say" >/dev/null 2>&1 ; then
-		say -r $VOICE_RATE -v $VOICE_TYPE "$@." 2> /dev/null
+		say -r "${VOICE_RATE}" -v "${VOICE_TYPE}" "${*}." 2> /dev/null
 	fi
 
 	# Ubuntu
 	if type "espeak" >/dev/null 2>&1 ; then
-		espeak "$@." 2> /dev/null
+		espeak "${*}." 2> /dev/null
 	fi
 }
 
 ### beep
 function blBeep() {
-	echo -e "\a"
+	echo -e "\\a"
 }
 
 ### notification

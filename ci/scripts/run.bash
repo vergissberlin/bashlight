@@ -20,5 +20,5 @@ echo
 [ -e /etc/lsb-release ] && cat /etc/lsb-release
 echo
 
-cd ./resource-bashlight/
-bash ./test/suite.sh
+cd ./resource-bashlight/ || exit 1;
+bash ./test/suite.bash

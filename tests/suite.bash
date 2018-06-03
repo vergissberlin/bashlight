@@ -19,21 +19,23 @@ readonly PATH_FIXTURES="${PATH_TESTS}/fixtures"
 # Prepare working directory
 #
 function setup() {
-  mkdir -p ${PATH_HELPER}
-  mkdir -p ${PATH_FIXTURES}
+  mkdir -p "${PATH_HELPER}"
+  mkdir -p "${PATH_FIXTURES}"
 
   # Download helper
-  curl -L -o ${PATH_HELPER}/assert.sh -O https://raw.githubusercontent.com/lehmannro/assert.sh/master/assert.sh
-  curl -L -o ${PATH_HELPER}/is.sh -O https://raw.githubusercontent.com/qzb/is.sh/master/is.sh
+  curl -L -o "${PATH_HELPER}/assert.sh" -O https://raw.githubusercontent.com/lehmannro/assert.sh/master/assert.sh
+  curl -L -o "${PATH_HELPER}/is.sh" -O https://raw.githubusercontent.com/qzb/is.sh/master/is.sh
 
-  # Include helper
-  . ${PATH_HELPER}/assert.sh
-  . ${PATH_HELPER}/is.sh
+  # Include helpe
+  # shellcheck disable=SC1090
+  . "${PATH_HELPER}/assert.sh"
+  # shellcheck disable=SC1090
+  . "${PATH_HELPER}/is.sh"
 
   # Create fixtures
-  mkdir -p ${PATH_FIXTURES}/without-git
-  mkdir -p ${PATH_FIXTURES}/with-git
-  cd ${PATH_FIXTURES}/with-git && git init
+  mkdir -p "${PATH_FIXTURES}/without-git"
+  mkdir -p "${PATH_FIXTURES}/with-git"
+  cd "${PATH_FIXTURES}/with-git" && git init
   touch file
 }
 
@@ -41,19 +43,20 @@ function setup() {
 # Tests
 #
 function test_prompt() {
-  echo ${PROMPT_DEFAULT}
-  . ${PATH_BASHLIGHT}/bashlight
+  echo "${PROMPT_DEFAULT}"
+  # shellcheck source=bashlight
+  . "${PATH_BASHLIGHT}/bashlight" || exit 1;
 
-  PROMPT_CUSTOM=$PS1
-  echo ${PROMPT_CUSTOM}
+  PROMPT_CUSTOM="${PS1}"
+  echo "${PROMPT_CUSTOM}"
 
-  if is not equal ${PROMPT_DEFAULT} ${PROMPT_CUSTOM}; then
+  if is not equal "${PROMPT_DEFAULT}" "${PROMPT_CUSTOM}"; then
     echo "Prompt is not equal"
     exit 1;
   else
     echo "Prompt is equal"
   fi
-  PS1=${PROMPT_DEFAULT}
+  PS1="${PROMPT_DEFAULT}"
 }
 
 
@@ -61,13 +64,15 @@ function test_prompt() {
 # Tests
 #
 function test_update() {
-  echo ${PROMPT_DEFAULT}
-  . ${PATH_BASHLIGHT}/bashlight
+  echo "${PROMPT_DEFAULT}"
 
-  PROMPT_CUSTOM=$PS1
-  echo ${PROMPT_CUSTOM}
+  # shellcheck source=bashlight
+  . "${PATH_BASHLIGHT}/bashlight"
 
-  if is not equal ${PROMPT_DEFAULT} ${PROMPT_CUSTOM}; then
+  PROMPT_CUSTOM="${PS1}"
+  echo "${PROMPT_CUSTOM}"
+
+  if is not equal "${PROMPT_DEFAULT}" "${PROMPT_CUSTOM}"; then
     echo "Prompt is not equal"
     exit 1;
   else
@@ -79,8 +84,8 @@ function test_update() {
 
 # Roll back
 function teardown() {
-  cd ${PATH_BASHLIGHT}
-  rm -Rf ${PATH_FIXTURES} ${PATH_HELPER}
+  cd "${PATH_BASHLIGHT}" || exit 1;
+  rm -Rf "${PATH_FIXTURES}" "${PATH_HELPER}"
   assert_end bashlight
 }
 

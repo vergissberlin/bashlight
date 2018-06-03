@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 ####################################################################################
 # Bashlight 	: 0.1.5
@@ -7,5 +7,8 @@
 # Repository	: https://github.com/vergissberlin/bashlight
 ####################################################################################
 
-. ~/bashlight/install/git.sh
-. ~/bashlight/install/tmux.sh
+# shellcheck source=install/git.bash
+. ~/bashlight/install/git.bash
+
+# shellcheck source=install/tmux.bash
+. ~/bashlight/install/tmux.bash

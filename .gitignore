@@ -9,6 +9,6 @@
 !/.gitignore
 !/.travis.yml
 !/bashlight
-!/install.sh
+!/install.bash
 !/README.md
-!/update.sh
+!/update.bash

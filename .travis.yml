@@ -8,4 +8,6 @@ before_install:
   - if [ $TRAVIS_OS_NAME = osx ]; then brew update && brew upgrade git && brew install bats; fi
 script:
   - bats ./tests/
-  - shellcheck src/*.bash
+  - shellcheck -x bashlight
+  - shellcheck -x *.bash
+  - shellcheck -x **/*.bash
