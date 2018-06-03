@@ -1,7 +1,9 @@
 # bashlight
 
 [![Build Status](https://travis-ci.org/vergissberlin/bashlight.svg?branch=master)](https://travis-ci.org/vergissberlin/bashlight)
-[![Version](https://img.shields.io/badge/version-0.1.5-green.svg)](https://github.com/vergissberlin/bashlight)
+[![Tags](https://img.shields.io/github/tag/vergissberlin/bashlight.svg)](https://github.com/vergissberlin/bashlight/tags)
+[![Releases](https://img.shields.io/github/release/vergissberlin/bashlight.svg)](https://github.com/vergissberlin/bashlight/releases)
+
 
 > This bash script enhanced your OSX/Linux console.
 > The console or "terminal" on macOS comes in the basic equipment therefore very slim. This is good as long as you do not work with it every day. If you often go to the console, you should do something for their eyes and install the [Solarized
