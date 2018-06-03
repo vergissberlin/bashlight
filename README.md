@@ -1,8 +1,8 @@
 # bashlight
 
 [![Build Status](https://travis-ci.org/vergissberlin/bashlight.svg?branch=master)](https://travis-ci.org/vergissberlin/bashlight)
-[![Tags](https://img.shields.io/github/tag/vergissberlin/bashlight.svg)](https://github.com/vergissberlin/bashlight/tags)
 [![Releases](https://img.shields.io/github/release/vergissberlin/bashlight.svg)](https://github.com/vergissberlin/bashlight/releases)
+[![Github commits (since latest release)](https://img.shields.io/github/commits-since/vergissberlin/bashlight/latest.svg)](https://github.com/vergissberlin/bashlight/commits)
 
 
 > This bash script enhanced your OSX/Linux console.
