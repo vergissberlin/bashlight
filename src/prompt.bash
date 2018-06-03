@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 ####################################################################################
 # Bashlight 	: 0.1.5
@@ -10,7 +10,7 @@
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/src/aliases, instead of adding them here directly.
-function __powerline() {
+function __bashlight() {
 
 	# Unicode symbols
 	readonly PS_SYMBOL_DARWIN=''
@@ -25,7 +25,7 @@ function __powerline() {
 	readonly GIT_NEED_PUSH_SYMBOL='⇡'
 	readonly GIT_NEED_PULL_SYMBOL='⇣'
 
-	# Solarized colorscheme
+	# Solarized color scheme
 	readonly FG_BASE03="\[$(tput setaf 8)\]"
 	readonly FG_BASE02="\[$(tput setaf 0)\]"
 	readonly FG_BASE01="\[$(tput setaf 10)\]"
@@ -90,6 +90,14 @@ function __powerline() {
 	}
 
 	function __git_info() {
+		local aheadN
+		local behindN
+		local branch
+		local colour
+		local git_status
+		local marks
+		local stat
+
 		# Check requirements
 		[ -x "$(which git)" ] || return	# git not found
 		if ! __is_git_repo || __is_git_dir; then
@@ -99,44 +107,43 @@ function __powerline() {
 		# Which branch?
 		case "$(git symbolic-ref --short HEAD)" in
 			master)
-				readonly GIT_BRANCH_SYMBOL=$GIT_BRANCH_MASTER
+				readonly GIT_BRANCH_SYMBOL=${GIT_BRANCH_MASTER}
 				;;
 			[dD][eE][vV]|[eE][lL][oO][pP][mM][eE][nN][tT])
-				readonly GIT_BRANCH_SYMBOL=$GIT_BRANCH_DEVELOPMENT
+				readonly GIT_BRANCH_SYMBOL=${GIT_BRANCH_DEVELOPMENT}
 				;;
 			[fF][eE][aA][tT][uU][rR][eE]*)
-				readonly GIT_BRANCH_SYMBOL=$GIT_BRANCH_FEATURE
+				readonly GIT_BRANCH_SYMBOL=${GIT_BRANCH_FEATURE}
 				;;
 			[hH][oO][tT][fF][iI][xX]*)
-				readonly GIT_BRANCH_SYMBOL=$GIT_BRANCH_HOTFIX
+				readonly GIT_BRANCH_SYMBOL=${GIT_BRANCH_HOTFIX}
 				;;
 			*)
-				readonly GIT_BRANCH_SYMBOL=$GIT_BRANCH_OTHER
+				readonly GIT_BRANCH_SYMBOL=${GIT_BRANCH_OTHER}
 		esac
 
 		# Get current branch name or short SHA1 hash for detached head
-		local branch="$(git symbolic-ref --short HEAD 2>/dev/null || git describe --tags --always 2>/dev/null)"
+		branch="$(git symbolic-ref --short HEAD 2>/dev/null || git describe --tags --always 2>/dev/null)"
 		[ -n "$branch" ] || return  # git branch not found
 
-		local marks
 
 		# Branch is modified?
-		[ -n "$(git status --porcelain)" ] && marks+=" $GIT_BRANCH_CHANGED_SYMBOL"
-		local git_status="`git status -unormal --ignore-submodules=all 2>&1`"
-		if ! [[ "$git_status" =~ Not\ a\ git\ repo ]]; then
-			if [[ "$git_status" =~ nothing\ to\ commit ]]; then
-				local colour=$BG_GREEN
-			elif [[ "$git_status" =~ nothing\ added\ to\ commit\ but\ untracked\ files\ present ]]; then
-				local colour=$BG_MAGENTA
+		[ -n "$(git status --porcelain)" ] && marks+=" ${GIT_BRANCH_CHANGED_SYMBOL}"
+		git_status="`git status -unormal --ignore-submodules=all 2>&1`"
+		if ! [[ "${git_status}" =~ Not\ a\ git\ repo ]]; then
+			if [[ "${git_status}" =~ nothing\ to\ commit ]]; then
+				colour=${BG_GREEN}
+			elif [[ "${git_status}" =~ nothing\ added\ to\ commit\ but\ untracked\ files\ present ]]; then
+				colour=${BG_MAGENTA}
 			else
-				local colour=$BG_YELLOW
+				colour=${BG_YELLOW}
 			fi
 		fi
 
 		# How many commits local branch is ahead/behind of remote?
-		local stat="$(git status --porcelain --branch | grep '^##' | grep -o '\[.\+\]$')"
-		local aheadN="$(echo $stat | grep -o 'ahead \d\+' | grep -o '\d\+')"
-		local behindN="$(echo $stat | grep -o 'behind \d\+' | grep -o '\d\+')"
+		stat="$(git status --porcelain --branch | grep '^##' | grep -o '\[.\+\]$')"
+		aheadN="$(echo $stat | grep -o 'ahead \d\+' | grep -o '\d\+')"
+		behindN="$(echo $stat | grep -o 'behind \d\+' | grep -o '\d\+')"
 		[ -n "$aheadN" ] && marks+=" $GIT_NEED_PUSH_SYMBOL$aheadN"
 		[ -n "$behindN" ] && marks+=" $GIT_NEED_PULL_SYMBOL$behindN"
 
@@ -145,25 +152,28 @@ function __powerline() {
 	}
 
 	function __info() {
+		local BG_COLOR
+		local FG_COLOR
+	
 		case "${PS_INFO_BRAND}" in
 			success)
-				local BG_COLOR=${BG_GREEN}
-				local FG_COLOR=${FG_BASE2}
+				BG_COLOR=${BG_GREEN}
+				FG_COLOR=${FG_BASE2}
 				;;
 			warn)
-				local BG_COLOR=${BG_ORANGE}
-				local FG_COLOR=${FG_BASE2}
+				BG_COLOR=${BG_ORANGE}
+				FG_COLOR=${FG_BASE2}
 				;;
 			danger)
-				local BG_COLOR=${BG_RED}
-				local FG_COLOR=${FG_BASE3}
+				BG_COLOR=${BG_RED}
+				FG_COLOR=${FG_BASE3}
 				;;
 			[hH][oO][tT][fF][iI][xX]*)
 				readonly GIT_BRANCH_SYMBOL=$GIT_BRANCH_HOTFIX
 				;;
 			*)
-				local BG_COLOR=${BG_BLUE}
-				local FG_COLOR=${FG_BASE2}
+				BG_COLOR=${BG_BLUE}
+				FG_COLOR=${FG_BASE2}
 		esac
 
 		if [[ ! -z ${PS_INFO} ]]; then
@@ -172,13 +182,15 @@ function __powerline() {
 	}
 
 
-	ps1() {
+	function ps1() {
+		local BG_EXIT
+
 		# Check the exit code of the previous command and display different
 		# colors in the prompt accordingly.
 		if [ $? -eq 0 ]; then
-			local BG_EXIT="$BG_GREEN"
+			BG_EXIT="$BG_GREEN"
 		else
-			local BG_EXIT="$BG_RED"
+			BG_EXIT="$BG_RED"
 		fi
 
 		PS1="$BG_BASE02$FG_BASE00 \w $RESET"
@@ -190,5 +202,5 @@ function __powerline() {
 	PROMPT_COMMAND=ps1
 }
 
-__powerline
-unset __powerline
+__bashlight
+unset __bashlight

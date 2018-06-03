@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 ####################################################################################
 # Bashlight 	: 0.1.5
@@ -14,6 +14,7 @@
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
 	test -r ~/.dircolors && eval "$(dircolors -b~/.dircolors)" || eval "$(dircolors -b)"
+
 	alias ls='ls --color=auto'
 	alias dir='dir --color=auto'
 	alias vdir='vdir --color=auto'
@@ -28,9 +29,10 @@ alias ll='ls -ahlF'
 alias la='ls -A'
 alias l='ls -CF'
 
-alias ".."="cd .."
-alias "..."="cd ../.."
-alias "...."="cd ../../.."
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
 
 # git aliases
 alias gs='git status '
@@ -49,12 +51,10 @@ alias master='git checkout master && git pull && git remote prune origin'
 alias staging='git checkout agp-staging && git pull && git remote prune origin'
 alias rebase='git pull && git rebase -i origin/master'
 alias flush='git push -f'
-alias po='git checkout $0 && git pull'
-alias create='git checkout master&&git pull&&git checkout -B $1'
 
 # git typos
 alias got='git '
 alias get='git '
 
 # File system
-alias shared="find . -type d -exec chmod 2770 {} \;find . -type f -exec chmod 0660 {} \;"
+alias shared="find . -type d -exec chmod 2770 {};find . -type f -exec chmod 0660 {};"

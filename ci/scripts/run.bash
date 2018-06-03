@@ -7,14 +7,18 @@
 # Repository	: https://github.com/vergissberlin/bashlight
 ####################################################################################
 
-# ~/src/logout: executed by bash(1) when login shell exits.
-# when leaving the console clear the screen to increase privacy
+export CI=true
+export TERM=xterm
 
-if [ -n "${SHLVL}" ]; then
-	[ -x /usr/bin/clear_console ] && /usr/bin/clear_console -q
-fi
+figlet "bashlight"
+figlet -f digital "Run tests"
 
-function goodBye() {
-	blSay "Thank you for using ${USER}"
-	blPlay Hero
-}
+echo
+echo
+echo "$(uname -a)"
+echo
+[ -e /etc/lsb-release ] && cat /etc/lsb-release
+echo
+
+cd ./resource-bashlight/
+bash ./test/suite.sh

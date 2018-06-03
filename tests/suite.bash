@@ -30,9 +30,6 @@ function setup() {
   . ${PATH_HELPER}/assert.sh
   . ${PATH_HELPER}/is.sh
 
-  cd ./tests
-  ls -lisah
-
   # Create fixtures
   mkdir -p ${PATH_FIXTURES}/without-git
   mkdir -p ${PATH_FIXTURES}/with-git
@@ -50,13 +47,13 @@ function test_prompt() {
   PROMPT_CUSTOM=$PS1
   echo ${PROMPT_CUSTOM}
 
-  if is not equal $PROMPT_DEFAULT $PROMPT_CUSTOM; then
+  if is not equal ${PROMPT_DEFAULT} ${PROMPT_CUSTOM}; then
     echo "Prompt is not equal"
     exit 1;
   else
     echo "Prompt is equal"
   fi
-  PS1=$PROMPT_DEFAULT
+  PS1=${PROMPT_DEFAULT}
 }
 
 
@@ -70,13 +67,13 @@ function test_update() {
   PROMPT_CUSTOM=$PS1
   echo ${PROMPT_CUSTOM}
 
-  if is not equal $PROMPT_DEFAULT $PROMPT_CUSTOM; then
+  if is not equal ${PROMPT_DEFAULT} ${PROMPT_CUSTOM}; then
     echo "Prompt is not equal"
     exit 1;
   else
     echo "Prompt is equal"
   fi
-  PS1=$PROMPT_DEFAULT
+  PS1=${PROMPT_DEFAULT}
 }
 
 
@@ -92,11 +89,11 @@ function teardown() {
 # Helpers
 #
 assert_true() {
-  assert_raises "$1" 0
+  assert_raises "${1}" 0
 }
 
 assert_false() {
-  assert_raises "$1" 1
+  assert_raises "${1}" 1
 }
 
 

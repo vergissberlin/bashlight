@@ -7,14 +7,9 @@
 # Repository	: https://github.com/vergissberlin/bashlight
 ####################################################################################
 
-# ~/src/logout: executed by bash(1) when login shell exits.
-# when leaving the console clear the screen to increase privacy
+mkdir results
+pwd
+ls -lisah
 
-if [ -n "${SHLVL}" ]; then
-	[ -x /usr/bin/clear_console ] && /usr/bin/clear_console -q
-fi
-
-function goodBye() {
-	blSay "Thank you for using ${USER}"
-	blPlay Hero
-}
+echo "bashlight" > releases/name
+echo "0.0.1" > releases/version
