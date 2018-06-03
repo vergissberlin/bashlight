@@ -53,11 +53,3 @@ fi
 	# shellcheck source=src/prompt.bash
 	. "${PATH_BASHLIGHT}/src/prompt.bash";
 	}
-
-# enable programmable completion features
-# shellcheck disable=SC1091
-if ! shopt -oq posix; then
-	if [ -f /usr/share/bash-completion/bash_completion ]; then
-		. /usr/share/bash-completion/bash_completion
-	fi
-fi

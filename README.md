@@ -45,10 +45,6 @@
 - Display "+" symbol when current branch is changed but uncommited
 - Display current git branch name, or short SHA1 hash when the head is detached
 
-**Git completion**
-
-- [git-bash-completion](https://github.com/markgandolfo/git-bash-completion) is included as subtree to this project. Use <code>git [tab][tab]</code> to list all available commands.
-
 ### Prompt
 
 - Platform-dependent prompt symbol for macOS and Linux
@@ -195,7 +191,7 @@ You can contact me (@vergissberlin) on GitHub. Use the issue tracker to report b
 ## Thank you
 
 - .. to @riobard, the founder of [bash-powrline](https://github.com/riobard/bash-powerline) which this project is based on.
-- .. to @markgandolfo, the founder of [git-bash-completion](https://github.com/markgandolfo/git-bash-completion), which is included as subtree to this project.
+- .. to the contributers and testers, who help to further improve the project.
 - Further thanks to **GitHub** for Atom.io.
 
 ---
