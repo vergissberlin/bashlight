@@ -1,5 +1,10 @@
 ##  (2018-06-03)
 
+
+
+
+## <small>0.1.6 (2018-06-03)</small>
+
 * Added bats test framework ([049e7a6](https://github.com/vergissberlin/bashlight/commit/049e7a6))
 * Added CHANGELOG ([923fb06](https://github.com/vergissberlin/bashlight/commit/923fb06))
 * Added shellchecker script to improve the code quality ([bd5cd05](https://github.com/vergissberlin/bashlight/commit/bd5cd05))
@@ -15,6 +20,7 @@
 * Skip test while not implemented ([42599ca](https://github.com/vergissberlin/bashlight/commit/42599ca))
 * Switch to https ([89e72f3](https://github.com/vergissberlin/bashlight/commit/89e72f3))
 * Updated file headers ([8b3e8d3](https://github.com/vergissberlin/bashlight/commit/8b3e8d3))
+* Updated the changelog ([13a9dd0](https://github.com/vergissberlin/bashlight/commit/13a9dd0))
 * Upgrade git for osX on TravisCI ([6401868](https://github.com/vergissberlin/bashlight/commit/6401868))
 * Use bats test framework ([b74e976](https://github.com/vergissberlin/bashlight/commit/b74e976))
 * We make no mistakes! ([ca0a870](https://github.com/vergissberlin/bashlight/commit/ca0a870))
