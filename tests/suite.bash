@@ -106,5 +106,5 @@ assert_false() {
 # Tests
 #
 setup
-test_prompt
+test_prompt "$@"
 teardown
