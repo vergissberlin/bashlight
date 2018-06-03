@@ -196,7 +196,7 @@ You can contact me (@vergissberlin) on GitHub. Use the issue tracker to report b
 
 - .. to @riobard, the founder of [bash-powrline](https://github.com/riobard/bash-powerline) which this project is based on.
 - .. to @markgandolfo, the founder of [git-bash-completion](https://github.com/markgandolfo/git-bash-completion), which is included as subtree to this project.
-- Further thanks **JetBrains** for a free license for PhpStorm.
+- Further thanks to **GitHub** for Atom.io.
 
 ---
 
