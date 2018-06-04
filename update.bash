@@ -49,7 +49,7 @@ else
      while true; do
        read -rp "Do you wish to install this program (yes/no)? " yn
        case ${yn} in
-         [Yy]* ) GIT_DIR=~/bashlight/.git git pull --tags; echo "${DAY_TODAY}" > ${DAY_UPDATE}; break;;
+         [Yy]* ) GIT_DIR=~/bashlight/.git git pull;GIT_DIR=~/bashlight/.git git pull --tags; echo "${DAY_TODAY}" > ${DAY_UPDATE}; break;;
          [Nn]* ) break;;
          * ) echo "Please answer yes or no.";;
        esac

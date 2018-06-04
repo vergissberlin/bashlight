@@ -1,12 +1,19 @@
-##  (2018-06-03)
+<a name=""></a>
+##  (2018-06-04)
+
+* Added all arguments to call the test method ([dd8109a](https://github.com/vergissberlin/bashlight/commit/dd8109a))
+* Hotfix update script ([fc3df00](https://github.com/vergissberlin/bashlight/commit/fc3df00))
 
 
 
-
+<a name="0.1.6"></a>
 ## <small>0.1.6 (2018-06-03)</small>
 
+* Added badge for commit since last release ([b856471](https://github.com/vergissberlin/bashlight/commit/b856471))
+* Added badge for commit since last release ([169c65f](https://github.com/vergissberlin/bashlight/commit/169c65f))
 * Added bats test framework ([049e7a6](https://github.com/vergissberlin/bashlight/commit/049e7a6))
 * Added CHANGELOG ([923fb06](https://github.com/vergissberlin/bashlight/commit/923fb06))
+* Added license info ([270c4a6](https://github.com/vergissberlin/bashlight/commit/270c4a6))
 * Added shellchecker script to improve the code quality ([bd5cd05](https://github.com/vergissberlin/bashlight/commit/bd5cd05))
 * Added sudo right on travis ci ([a8844bd](https://github.com/vergissberlin/bashlight/commit/a8844bd))
 * Improve coding style ([571d25b](https://github.com/vergissberlin/bashlight/commit/571d25b))
@@ -16,9 +23,12 @@
 * Install shellchecker with homebrew ([b4671ac](https://github.com/vergissberlin/bashlight/commit/b4671ac))
 * Point bats to a directory ([5f82702](https://github.com/vergissberlin/bashlight/commit/5f82702))
 * Remove bats log ([0850eee](https://github.com/vergissberlin/bashlight/commit/0850eee))
+* Remove git-bash-complition ([ef37bbb](https://github.com/vergissberlin/bashlight/commit/ef37bbb))
 * Remove old tests ([f9978cc](https://github.com/vergissberlin/bashlight/commit/f9978cc))
 * Skip test while not implemented ([42599ca](https://github.com/vergissberlin/bashlight/commit/42599ca))
 * Switch to https ([89e72f3](https://github.com/vergissberlin/bashlight/commit/89e72f3))
+* Updated badges and version number ([dea05ec](https://github.com/vergissberlin/bashlight/commit/dea05ec))
+* Updated changelog file ([4ee0a52](https://github.com/vergissberlin/bashlight/commit/4ee0a52))
 * Updated file headers ([8b3e8d3](https://github.com/vergissberlin/bashlight/commit/8b3e8d3))
 * Updated the changelog ([13a9dd0](https://github.com/vergissberlin/bashlight/commit/13a9dd0))
 * Upgrade git for osX on TravisCI ([6401868](https://github.com/vergissberlin/bashlight/commit/6401868))
@@ -27,12 +37,14 @@
 
 
 
+<a name="0.1.5"></a>
 ## <small>0.1.5 (2018-05-17)</small>
 
 * Added update script ([c0a9b01](https://github.com/vergissberlin/bashlight/commit/c0a9b01))
 
 
 
+<a name="0.1.4"></a>
 ## <small>0.1.4 (2018-05-17)</small>
 
 * Added global gitignore file ([da05870](https://github.com/vergissberlin/bashlight/commit/da05870))
@@ -40,6 +52,7 @@
 
 
 
+<a name="0.1.2"></a>
 ## <small>0.1.2 (2018-05-08)</small>
 
 * Activate welcome message with notifications ([eb5045e](https://github.com/vergissberlin/bashlight/commit/eb5045e))
