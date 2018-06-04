@@ -10,8 +10,8 @@
 ## Testing
 
 ```
-bash tests/suite.bash
-bats ./tests/
+bash tests/functional/suite.bash
+bats ./tests/acceptance/
 ```
 
 ## CI

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ####################################################################################
-# Bashlight 	: 0.1.6
+# Bashlight 	: 0.1.8
 # Copyright		: 2018, MIT
 # Author		: André Lademann <vergissberlin@googlemail.com>
 # Repository	: https://github.com/vergissberlin/bashlight
@@ -28,37 +28,40 @@ if [ -x /usr/bin/dircolors ]; then
 	alias egrep='egrep --color=auto'
 fi
 
-# some more ls aliases
-alias ll='ls -ahlF'
-alias la='ls -A'
-alias l='ls -CF'
+function setAliases() {
+	# some more ls aliases
+	alias ll='ls -ahlF'
+	alias la='ls -A'
+	alias l='ls -CF'
 
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
+	alias ..="cd .."
+	alias ...="cd ../.."
+	alias ....="cd ../../.."
+	alias .....="cd ../../../.."
 
-# git aliases
-alias gs='git status '
-alias ga='git add '
-alias gb='git branch '
-alias gc='git commit'
-alias gd='git diff'
-alias go='git checkout '
-alias gp='git pull'
-alias gk='gitk --all&'
-alias gx='gitx --all'
+	# git aliases
+	alias ga='git add '
+	alias gb='git branch '
+	alias gc='git commit'
+	alias gd='git diff'
+	alias gk='gitk --all&'
+	alias go='git checkout '
+	alias gp='git pull'
+	alias gs='git status '
+	alias gx='gitx --all'
 
-alias hard="git reset --hard && git clean -fd"
-alias purge='git branch --merged | grep -v "\*" | grep -v "master" | grep -v "develop" | grep -v "staging" | xargs -n 1 git branch -d'
-alias master='git checkout master && git pull && git remote prune origin'
-alias staging='git checkout agp-staging && git pull && git remote prune origin'
-alias rebase='git pull && git rebase -i origin/master'
-alias flush='git push -f'
+	alias hard="git reset --hard && git clean -fd"
+	alias purge='git branch --merged | grep -v "\*" | grep -v "master" | grep -v "develop" | grep -v "staging" | xargs -n 1 git branch -d'
+	alias master='git checkout master && git pull && git remote prune origin'
+	alias staging='git checkout agp-staging && git pull && git remote prune origin'
+	alias rebase='git pull && git rebase -i origin/master'
+	alias flush='git push -f'
 
-# git typos
-alias got='git '
-alias get='git '
+	# git typos
+	alias got='git '
+	alias get='git '
+	alias gut='git '
 
-# File system
-alias shared="find . -type d -exec chmod 2770 {};find . -type f -exec chmod 0660 {};"
+	# File system
+	alias shared="find . -type d -exec chmod 2770 {};find . -type f -exec chmod 0660 {};"
+}

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ####################################################################################
-# Bashlight 	: 0.1.6
+# Bashlight 	: 0.1.8
 # Copyright		: 2018, MIT
 # Author		: André Lademann <vergissberlin@googlemail.com>
 # Repository	: https://github.com/vergissberlin/bashlight
@@ -21,4 +21,5 @@ echo
 echo
 
 cd ./resource-bashlight/ || exit 1;
-bash ./test/suite.bash
+bash ./tests/functional/suite.bash
+bats ./tests/acceptance/

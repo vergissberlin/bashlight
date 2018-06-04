@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ####################################################################################
-# Bashlight 	: 0.1.5
+# Bashlight 	: 0.1.8
 # Copyright		: 2018, MIT
 # Author		: André Lademann <vergissberlin@googlemail.com>
 # Repository	: https://github.com/vergissberlin/bashlight
@@ -29,6 +29,7 @@ fi
 [ -f "${PATH_BASHLIGHT}/src/aliases.bash"  ] && {
 	# shellcheck source=src/aliases.bash
 	. "${PATH_BASHLIGHT}/src/aliases.bash";
+	setAliases
 	}
 
 # shellcheck source=src/logout.bash

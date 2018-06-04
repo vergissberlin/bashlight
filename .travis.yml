@@ -6,7 +6,6 @@ os:
 addons:
   apt:
     sources:
-    - bats
     - sourceline: 'ppa:duggan/bats'
     packages:
       - libcurl4-openssl-dev
@@ -15,6 +14,15 @@ addons:
       - cmake
       - git-core
       - bats
+
+before_install:
+  - if [ $TRAVIS_OS_NAME = osx ]; then brew update && brew upgrade git && brew install bats shellcheck; fi
+
+script:
+  - bats ./tests/acceptance/
+  - shellcheck -x bashlight
+  - shellcheck -x *.bash
+  - shellcheck -x **/*.bash
 
 after_success: |
   wget https://github.com/SimonKagstrom/kcov/archive/master.tar.gz &&
@@ -30,12 +38,3 @@ after_success: |
   mkdir -p coverage &&
   kcov coverage bashlight &&
   bash <(curl -s https://codecov.io/bash)
-
-before_install:
-  - if [ $TRAVIS_OS_NAME = osx ]; then brew update && brew upgrade git && brew install bats shellcheck; fi
-
-script:
-  - bats ./tests/
-  - shellcheck -x bashlight
-  - shellcheck -x *.bash
-  - shellcheck -x **/*.bash
