@@ -1,6 +1,7 @@
 # bashlight
 
 [![Build Status](https://travis-ci.org/vergissberlin/bashlight.svg?branch=master)](https://travis-ci.org/vergissberlin/bashlight)
+[![codecov](https://codecov.io/gh/vergissberlin/bashlight/branch/master/graph/badge.svg)](https://codecov.io/gh/vergissberlin/bashlight)
 [![Releases](https://img.shields.io/github/release/vergissberlin/bashlight.svg)](https://github.com/vergissberlin/bashlight/releases)
 [![Github commits (since latest release)](https://img.shields.io/github/commits-since/vergissberlin/bashlight/latest.svg)](https://github.com/vergissberlin/bashlight/commits)
 

@@ -13,3 +13,6 @@
 !/install.bash
 !/README.md
 !/update.bash
+
+# Exclusion
+/ci/variables/credentials.yml
