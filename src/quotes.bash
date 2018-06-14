@@ -8,4 +8,4 @@
 ####################################################################################
 
 curl https://taeglicheszit.at/zitat-api.php?format=full
-echo -e "\n"
+echo -e "\\n"
