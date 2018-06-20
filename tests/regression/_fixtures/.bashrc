@@ -76,6 +76,11 @@ esac
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 
+export LANGUAGE=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/src/aliases, instead of adding them here directly.
