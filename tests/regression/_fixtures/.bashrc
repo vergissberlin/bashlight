@@ -90,6 +90,9 @@ if [ -f ~/src/aliases ]; then
     . ~/src/aliases
 fi
 
+export PS_INFO="regression"
+export PS_INFO_BRAND="danger"
+
 . ~/bashlight/bashlight
 
 EDITOR=vim
