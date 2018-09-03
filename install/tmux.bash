@@ -8,6 +8,6 @@
 ####################################################################################
 
 # Copy configurations
-cp -n ~/bashlight/config/tmux/* ~/
+cp -u ~/bashlight/config/tmux/* ~/
 
 echo "    ✓  All tmux configurations have been adjusted successfully."
