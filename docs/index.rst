@@ -1,8 +1,9 @@
 .. include:: ./README.rst
 
 .. toctree::
-   :caption: bashlight
+   :caption: Table of contente
    :maxdepth: 2
 
    installation
    features
+   contribute
