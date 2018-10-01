@@ -29,8 +29,8 @@ You can contact me (@vergissberlin) on GitHub. Use the issue tracker to report b
 Thank you
 ---------
 
--  .. to @riobard, the founder of `bash-powrline <https://github.com/riobard/bash-powerline>`__ which this project is based on.
--  .. to the contributers and testers, who help to further improve the project.
+-  to @riobard, the founder of `bash-powrline <https://github.com/riobard/bash-powerline>`__ which this project is based on.
+-  to the contributers and testers, who help to further improve the project.
 -  Further thanks to **GitHub** for Atom.io.
 
 --------------
