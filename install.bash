@@ -8,7 +8,7 @@
 ####################################################################################
 
 # shellcheck source=install/git.bash
-. ~/bashlight/install/git.bash
+. ~/.bin/bashlight/install/git.bash
 
 # shellcheck source=install/tmux.bash
-. ~/bashlight/install/tmux.bash
+. ~/.bin/bashlight/install/tmux.bash

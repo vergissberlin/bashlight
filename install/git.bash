@@ -26,7 +26,7 @@ if [ -z "$(git config --global --get user.email)" ]; then
 fi
 
 # Copy configurations
-cp -u ~/bashlight/config/git/.gitignore_global ~/.gitignore_global
+cp -u ~/.bin/bashlight/config/git/.gitignore_global ~/.gitignore_global
 
 ## Aliases
 git config --global alias.br "branch -av"
