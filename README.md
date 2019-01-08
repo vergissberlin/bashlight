@@ -113,7 +113,8 @@ It also include a shell script to set common global bash settings. Before you ru
 **1.** get the source code
 
 ```
-cd
+mkdir -p ~/.bin
+cd ~/.bin
 git clone https://github.com/vergissberlin/bashlight.git
 ```
 
@@ -124,8 +125,8 @@ git clone https://github.com/vergissberlin/bashlight.git
 **3.** Include bashlight/bashlight with the following line at the end of the bash file
 
 ```
-if [ -f ~/bashlight/bashlight ]; then
-    . ~/bashlight/bashlight
+if [ -f ~/.bin/bashlight/bashlight ]; then
+    . ~/.bin/bashlight/bashlight
 fi
 ```
 
@@ -134,7 +135,7 @@ fi
 To install common git and tmux settings are tailored to bashlight simply run:
 
 ```
-bash ~/bashlight/install.bash
+bash ~/.bin/bashlight/install.bash
 ```
 
 ### Supported operating systems

@@ -10,7 +10,7 @@
 
 # Your settings here
 if [ -z "${PATH_BASHLIGHT}" ]; then
-	PATH_BASHLIGHT="${HOME}/bashlight"
+	PATH_BASHLIGHT="${HOME}/.bin/bashlight"
 fi
 
 # Check update
