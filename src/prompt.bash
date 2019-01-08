@@ -178,7 +178,7 @@ function __bashlight() {
 				FG_COLOR=${FG_BASE2}
 		esac
 
-		if [[ ! -z ${PS_INFO} ]]; then
+		if [[ -n ${PS_INFO} ]]; then
 			printf  "%s%s %s %s" "${BG_COLOR}" "${FG_COLOR}" "${PS_INFO}" "${RESET}"
 		fi
 	}
