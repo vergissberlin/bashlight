@@ -6,11 +6,11 @@
 [![Github commits (since latest release)](https://img.shields.io/github/commits-since/vergissberlin/bashlight/latest.svg)](https://github.com/vergissberlin/bashlight/commits)
 
 
-> This bash script enhanced your OSX/Linux console.
-> The console or "terminal" on macOS comes in the basic equipment therefore very slim. This is good as long as you do not work with it every day. If you often go to the console, you should do something for their eyes and install the [Solarized
+> This bash script enhances your OSX/Linux console.
+> The console or "terminal" on macOS comes in the basic equipment therefore it is very slim. This is good as long as you do not work with it every day. If you often go into the console, you should do something for your eyes and install the [Solarized
       colorscheme](https://github.com/altercation/solarized) theme.
 > If you working a lot with **GIT**, *then bashlight can* be you a great help. The Bash extension offers you information for Branch and status of your current GIT repositories.
-> Furthermore it contains many commonly used aliases, which allow a fast working on the console. *Let amazed your colleagues!*
+> Furthermore it contains many commonly used aliases, which allow for fast working on the console. *Let your colleagues be amazed !*
 
 
 ```
@@ -26,13 +26,13 @@
 ## Features
 ### Git management
 
-**The background colour** represents the git status
+**The background colour** represents the current git status
 
 - green = no changes
 - yellow = changes detected
 - red = untracked files
 
-**The chess figure** represents the branch you are. [Git flow](https://github.com/nvie/gitflow) is also supported.
+**The chess figure** represents the branch you are on. [Git flow](https://github.com/nvie/gitflow) is also supported.
 
 - ♔ = king = master
 - ♙ = pawn = development
@@ -40,16 +40,16 @@
 - ♗ = bishop = hotfix
 - ☂ = umbrella = *other*
 
-**Ohter signs**
+**Other symbols**
 
-- Arrows "⇡⇣"  and number behind represent how many commits you are behind/ahead of the remote
-- Display "+" symbol when current branch is changed but uncommited
-- Display current git branch name, or short SHA1 hash when the head is detached
+- "⇡⇣" and number behind them show how many commits you are behind/ahead of the remote
+- "+"  symbol when current branch has been changed but uncommited
+- current git branch name, or short SHA1 hash when the head is detached
 
 ### Prompt
 
 - Platform-dependent prompt symbol for macOS and Linux
-- No need for patched fonts Remote
+- No need for patched fonts on remote when using ssh
 
 #### Additional information
 
@@ -79,13 +79,15 @@ blPlay Submarine
 #### Say something
 
 ```
-blSay "OK Computer. I just understand train station."
+blSay "OK Computer!"
 ```
 
 #### Notification messages
 
+Note: On macOS you can use two arguments.
+
 ```
-alert "This is the title" "... and this is the content"
+alert "This is the message"
 ```
 ![Notifications](https://farm6.staticflickr.com/5568/15131688612_12f1cd7a2b_o.png)
 
@@ -93,8 +95,8 @@ alert "This is the title" "... and this is the content"
 
 1. **Git global config**
    - Shortcuts for all commands
-   - Enhanced git history with colours with <code>git sl</code>
-   - Colours Which harmonize with the colors used as background
+   - Enhanced git history with colors with <code>git sl</code>
+   - Colous which harmonize with the colors used as background
    - Branch setting
 
 - **Bash aliases (shortcuts)**
@@ -122,7 +124,7 @@ git clone https://github.com/vergissberlin/bashlight.git
 
 ``~/.bashrc`` on *linux* **or** ``~/src/profile`` on *macOS*
 
-**3.** Include bashlight/bashlight with the following line at the end of the bash file
+**3.** Include bashlight/bashlight with the following line at the end of the file
 
 ```
 if [ -f ~/.bin/bashlight/bashlight ]; then
@@ -132,7 +134,7 @@ fi
 
 ### Optional settings
 
-To install common git and tmux settings are tailored to bashlight simply run:
+To install common git and tmux settings are tailored with use for bashlight simply run:
 
 ```
 bash ~/.bin/bashlight/install.bash
@@ -142,17 +144,19 @@ bash ~/.bin/bashlight/install.bash
 
 - Linux
 - macOS
-- Windows with bash shell
+- Windows with bash shell (Windows subsystem for Linux, WSL)
 
 ### Optional dependencies
 
 - `coreutils` for a colourful, easy to handle directory listing
+
 -- `apt install coreutils`
+
 -- `brew install coreutils`
 
 ## Support or Contact
 
-You can contact me (@vergissberlin) on GitHub. Use the issue tracker to report bugs.
+You can contact me (@vergissberlin) or TheDevMinerTV (@TheDevMinerTV) on GitHub. Use the issue tracker to report bugs.
 
 
 ## Thank you
