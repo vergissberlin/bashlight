@@ -59,7 +59,6 @@ function setAliases() {
 
 	# git typos
 	alias got='git '
-	alias get='git '
 	alias gut='git '
 
 	# File system
