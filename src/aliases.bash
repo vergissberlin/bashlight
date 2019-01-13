@@ -40,15 +40,15 @@ function setAliases() {
 	alias .....="cd ../../../.."
 
 	# git aliases
-	alias ga='git add '
-	alias gb='git branch '
-	alias gc='git commit'
-	alias gd='git diff'
-	alias gk='gitk --all&'
-	alias go='git checkout '
-	alias gp='git pull'
-	alias gs='git status '
-	alias gx='gitx --all'
+	alias gad='git add '
+	alias gbr='git branch '
+	alias gco='git commit'
+	alias gdi='git diff'
+	alias gik='gitk --all&'
+	alias gig='gitg &'
+	alias gch='git checkout '
+	alias gpu='git pull'
+	alias gst='git status '
 
 	alias hard="git reset --hard && git clean -fd"
 	alias purge='git branch --merged | grep -v "\*" | grep -v "master" | grep -v "develop" | grep -v "staging" | xargs -n 1 git branch -d'
