@@ -11,9 +11,6 @@ addons:
       - sourceline: 'ppa:duggan/bats'
         packages:
           - bats
-      - sourceline: 'ppa:adrienverge/ppa'
-        packages:
-          - yamllint
     packages:
       - bats
       - cmake
@@ -26,7 +23,11 @@ addons:
     packages:
       - bats
       - git
+      - python
+      - python-pip
       - shellcheck
+  pip:
+    packages:
       - yamllint
 
 script:
