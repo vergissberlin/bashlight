@@ -13,13 +13,13 @@ addons:
           - libelf-dev
           - libdw-dev
           - cmake
-          - git-core
+          - git
           - bats
           - yamllint
 
 before_install:
   - "if [ $TRAVIS_OS_NAME = osx ]; then
-        brew update && brew upgrade git && brew install bats shellcheck;
+        brew update && brew upgrade git && brew install bats shellcheck yamllint;
     fi"
 
 script:
