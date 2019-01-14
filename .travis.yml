@@ -9,18 +9,21 @@ addons:
     sources:
       - sourceline: 'ppa:duggan/bats'
         packages:
-          - libcurl4-openssl-dev
-          - libelf-dev
-          - libdw-dev
-          - cmake
-          - git
           - bats
-          - yamllint
-
-before_install:
-  - "if [ $TRAVIS_OS_NAME = osx ]; then
-        brew update && brew upgrade git && brew install bats shellcheck yamllint;
-    fi"
+    packages:
+      - cmake
+      - libcurl4-openssl-dev
+      - libelf-dev
+      - libdw-dev
+      - git
+      - shellcheck
+      - yamllint
+  homebrew:
+    packages:
+      - bats
+      - git
+      - shellcheck
+      - yamllint
 
 script:
   - bats ./tests/acceptance/
