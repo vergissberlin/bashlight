@@ -15,6 +15,7 @@ addons:
           - cmake
           - git-core
           - bats
+          - yamllint
 
 before_install:
   - "if [ $TRAVIS_OS_NAME = osx ]; then
@@ -26,6 +27,7 @@ script:
   - shellcheck -x bashlight
   - shellcheck -x *.bash
   - shellcheck -x **/*.bash
+  - yamllint .
 
 after_success: |
   wget https://github.com/SimonKagstrom/kcov/archive/master.tar.gz &&
