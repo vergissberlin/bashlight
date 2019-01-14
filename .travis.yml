@@ -11,6 +11,9 @@ addons:
       - sourceline: 'ppa:duggan/bats'
         packages:
           - bats
+      - sourceline: 'ppa:adrienverge/ppa'
+        packages:
+          - yamllint      
     packages:
       - cmake
       - libcurl4-openssl-dev
@@ -18,7 +21,6 @@ addons:
       - libdw-dev
       - git
       - shellcheck
-      - yamllint
   homebrew:
     packages:
       - bats
