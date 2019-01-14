@@ -6,6 +6,7 @@ os:
 
 addons:
   apt:
+    update: true
     sources:
       - sourceline: 'ppa:duggan/bats'
         packages:
