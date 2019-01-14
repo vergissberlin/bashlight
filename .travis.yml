@@ -8,19 +8,17 @@ addons:
   apt:
     update: true
     sources:
-      - sourceline: 'ppa:duggan/bats'
-        packages:
-          - bats
-      - sourceline: 'ppa:adrienverge/ppa'
-        packages:
-          - yamllint      
+      - ppa:duggan/bats
+      - ppa:adrienverge/ppa
     packages:
+      - bats
       - cmake
       - libcurl4-openssl-dev
       - libelf-dev
       - libdw-dev
       - git
       - shellcheck
+      - yamllint
   homebrew:
     packages:
       - bats
