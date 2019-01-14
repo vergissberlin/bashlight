@@ -26,9 +26,9 @@ addons:
       - python
       - python-pip
       - shellcheck
-  pip:
-    packages:
       - yamllint
+install:
+  - if [ $TRAVIS_OS_NAME = linux ]; then sudo pip install yamllint; fi
 
 script:
   - bats ./tests/acceptance/
