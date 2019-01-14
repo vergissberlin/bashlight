@@ -5,10 +5,10 @@ image_resource:
   source: {repository: vergissberlin/opensuse-development}
 
 inputs:
-- name: resource-bashlight
+  - name: resource-bashlight
 
 outputs:
-- name: test-result
+  - name: test-result
 
 run:
   path: sh

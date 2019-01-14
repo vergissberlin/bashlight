@@ -1,3 +1,4 @@
+---
 language: bash
 os:
   - linux
@@ -6,17 +7,19 @@ os:
 addons:
   apt:
     sources:
-    - sourceline: 'ppa:duggan/bats'
-    packages:
-      - libcurl4-openssl-dev
-      - libelf-dev
-      - libdw-dev
-      - cmake
-      - git-core
-      - bats
+      - sourceline: 'ppa:duggan/bats'
+        packages:
+          - libcurl4-openssl-dev
+          - libelf-dev
+          - libdw-dev
+          - cmake
+          - git-core
+          - bats
 
 before_install:
-  - if [ $TRAVIS_OS_NAME = osx ]; then brew update && brew upgrade git && brew install bats shellcheck; fi
+  - "if [ $TRAVIS_OS_NAME = osx ]; then
+        brew update && brew upgrade git && brew install bats shellcheck;
+    fi"
 
 script:
   - bats ./tests/acceptance/
