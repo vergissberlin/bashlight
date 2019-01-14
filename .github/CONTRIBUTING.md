@@ -9,26 +9,26 @@
 
 ## Testing
 
-```
+```bash
 bash tests/functional/suite.bash
 bats ./tests/acceptance/
 ```
 
 ## CI
 
-```
+```bash
 fly set-pipeline \
-	-t box \
-	-p bashlight \
-	-c ci/pipeline.yml \
-	-l ci/variables/messages.yml \
-	-l ci/variables/credentials.yml -n
+    -t box \
+    -p bashlight \
+    -c ci/pipeline.yml \
+    -l ci/variables/messages.yml \
+    -l ci/variables/credentials.yml -n
 ```
-
 
 ## Change log
 
 Update the changelog
-```
+
+```bash
 conventional-changelog -i CHANGELOG.md -s -r 0
 ```
