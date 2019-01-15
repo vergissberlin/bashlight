@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 ####################################################################################
-# Bashlight 	: 0.1.8
-# Copyright		: 2018, MIT
-# Author		: André Lademann <vergissberlin@googlemail.com>
+# Bashlight 	: 0.2.0
+# Copyright		: 2019, MIT
+# Author	   	: TheDevMinerTV <tobigames200@gmail.com>
 # Repository	: https://github.com/vergissberlin/bashlight
 ####################################################################################
 
@@ -26,7 +26,7 @@ if [ -z "$(git config --global --get user.email)" ]; then
 fi
 
 # Copy configurations
-cp -u ~/.bin/bashlight/config/git/.gitignore_global ~/.gitignore_global
+cp -u ./config/git/.gitignore_global ~/.gitignore_global
 
 ## Aliases
 git config --global alias.br "branch -av"
