@@ -114,6 +114,7 @@ alert "This is the message"
   - _git_
     - `gad` --- "`git add`"
     - `gbr` --- "`git branch`"
+    - `gst` --- "`git status`"
     - `gco` --- "`git commit`"
     - `gcs` --- "`git commit -S`"
     - `gdi` --- "`git diff`"
