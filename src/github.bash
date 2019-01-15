@@ -43,5 +43,5 @@ EOF
 	}
 
 	echo "Create release $version with name $name for repo: $user/$repo branch: $branch"
-	curl -u $user --data "$(generate_post_data)" "https://api.github.com/repos/$user/$repo/releases"
+	curl -u "$user" --data "$(generate_post_data)" "https://api.github.com/repos/$user/$repo/releases"
 }
