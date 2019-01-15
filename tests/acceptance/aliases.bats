@@ -65,32 +65,32 @@ teardown() {
 }
 
 # Git micros
-@test "ga: git add" {
+@test "gad: git add" {
 	command -v go
 	run alias go
 	[ $status -eq 1 ]
 }
-@test "gb: git branch" {
+@test "gbr: git branch" {
 	run alias gb
 	[ $status -eq 1 ]
 }
-@test "gc: git commit" {
+@test "gco: git commit" {
 	run alias gc
 	[ $status -eq 1 ]
 }
-@test "gd: git diff" {
+@test "gdi: git diff" {
 	run alias gd
 	[ $status -eq 1 ]
 }
-@test "go: git checkout" {
+@test "gch: git checkout" {
 	run alias gp
 	[ $status -eq 1 ]
 }
-@test "gp: git pull" {
+@test "gpu: git pull" {
 	run alias gp
 	[ $status -eq 1 ]
 }
-@test "gs: git status" {
+@test "gst: git status" {
 	run alias gs
 	[ $status -eq 1 ]
 }
