@@ -51,8 +51,11 @@
 
 ### Github releases
 
+- This tool written by ![TheDevMinerTV](https://github.com/TheDevMinerTV) allows you to create new GitHub releases via the commandline.
+- To use the tool you need to be in the repository of the branch you want to make a release of.
+
 ```bash
-ghr v0.2.1 "New aliases" "We've got a new update where we changed a lot of aliases"
+ghr v0.2.1 "New aliases" "We've got a new update where we have changed a lot of aliases"
 ```
 
          /|\         /|\                                 /|\
