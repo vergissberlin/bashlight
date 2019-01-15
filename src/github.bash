@@ -40,5 +40,6 @@ EOF
 	}
 
 	echo "Create release $version with name $name for repo: $user/$repo branch: $branch"
+	# shellcheck disable=SC1117
 	curl -u "$user" --data "$(generate_post_data)" "https://api.github.com/repos/$user/$repo/releases"
 }
