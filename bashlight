@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 ####################################################################################
-# Bashlight 	: 0.1.8
-# Copyright		: 2018, MIT
+# Bashlight 	: 0.2.0
+# Copyright		: 2019, MIT
 # Author		: André Lademann <vergissberlin@googlemail.com>
 # Repository	: https://github.com/vergissberlin/bashlight
 ####################################################################################
