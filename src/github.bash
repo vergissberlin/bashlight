@@ -17,6 +17,7 @@ function ghr() {
 	branch=$(git rev-parse --abbrev-ref HEAD)
 	repo_full_name=$(git config --get remote.origin.url)
 	url=$repo_full_name
+	# shellcheck disable=SC1117
 	re="^(https|git)(:\/\/|@)([^\/:]+)[\/:]([^\/:]+)\/(.+).git$"
 
 
