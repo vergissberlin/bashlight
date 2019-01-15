@@ -49,6 +49,16 @@
 - Platform-dependent prompt symbol for macOS and Linux
 - No need for patched fonts on remote when using ssh
 
+### Github releases
+
+```bash
+ghr v0.2.1 "New aliases" "We've got a new update where we changed a lot of aliases"
+```
+
+         /|\         /|\                                 /|\
+          |           |                                   |
+       version      name                             description
+
 ### Additional information
 
 You are able to add informations to you prompt by setting following environment variables.
@@ -109,7 +119,7 @@ alert "This is the message"
     - `gdi` --- "`git diff`"
     - `gch` --- "`git checkout`"
     - `gpu` --- "`git pull`"
-    - `gst` --- "`git status`"
+    - `ghr` --- "`github-release`"
   - _git-ui_
     - `gig` --- "`gitg --all`"
     - `gik` --- "`gitk --all`"

@@ -54,3 +54,8 @@ fi
 	# shellcheck source=src/prompt.bash
 	. "${PATH_BASHLIGHT}/src/prompt.bash";
 	}
+
+[ -f "${PATH_BASHLIGHT}/src/github.bash"  ] && {
+	# shellcheck source=src/github.bash
+	. "${PATH_BASHLIGHT}/src/github.bash";
+	}
