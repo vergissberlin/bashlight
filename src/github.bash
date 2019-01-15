@@ -32,7 +32,6 @@ function ghr() {
 		repo=${BASH_REMATCH[5]}
 	fi
 
-
 	# We assemble the gathered data into json
 	generate_post_data() {
 		cat <<EOF
