@@ -21,9 +21,6 @@ function ghr() {
 
 
 	if [[ $url =~ $re ]]; then
-		protocol=${BASH_REMATCH[1]}
-		separator=${BASH_REMATCH[2]}
-		hostname=${BASH_REMATCH[3]}
 		user=${BASH_REMATCH[4]}
 		repo=${BASH_REMATCH[5]}
 	fi
