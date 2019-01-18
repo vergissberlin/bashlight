@@ -29,7 +29,10 @@ addons:
       - yamllint
 install:
   - if [ $TRAVIS_OS_NAME = linux ]; then sudo pip install yamllint; fi
-
+before_script:
+  - bats -v
+  - shellcheck -v
+  - yamllint -v
 script:
   - bats ./tests/acceptance/
   - shellcheck -x bashlight
