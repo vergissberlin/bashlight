@@ -13,7 +13,8 @@
 load helper
 load ../../src/aliases
 
-BATS_TEST_NAME="aliases"
+TEST_NAME="aliases"
+BATS_TEST_NAME="${TEST_NAME}"
 BATS_TEST_DESCRIPTION="Test aliases"
 
 setup() {
@@ -27,70 +28,67 @@ teardown() {
     rm -Rf tmp
 }
 
-@test "test if alias command exists" {
+@test "${TEST_NAME}: Test if alias command exists" {
 	command -v alias
 }
-
-@test "set all aliases" {
+@test "${TEST_NAME}: Test set all aliases" {
 	run setAliases
 	[ $status -eq 0 ]
 	[ "$output" = "" ]
 }
-
-@test "ll: list directory advanced style exists" {
+@test "${TEST_NAME}: Test ll list directory advanced style exists" {
 	run alias ll
 	[ $status -eq 1 ]
 }
 
 # Git shortcuts
-@test "hard: git reset hard" {
+@test "${TEST_NAME}: Test \"hard\" is a \"git reset --hard\"" {
 	run alias hard
 	[ $status -eq 1 ]
 }
-@test "purge: git purge all unused branches" {
+@test "${TEST_NAME}: Test purge: git purge all unused branches" {
 	run alias purge
 	[ $status -eq 1 ]
 }
-@test "master: Switch to master and purge all unused branches" {
+@test "${TEST_NAME}: Test master: Switch to master and purge all unused branches" {
 	run alias master
 	[ $status -eq 1 ]
 }
-@test "staging: switch to staging branch" {
+@test "${TEST_NAME}: Test staging: switch to staging branch" {
 	run alias staging
 	[ $status -eq 1 ]
 }
-@test "rebase: rebase against origin master" {
+@test "${TEST_NAME}: Test rebase: rebase against origin master" {
 	run alias rebase
 	[ $status -eq 1 ]
 }
 
 # Git micros
-@test "gad: git add" {
-	command -v go
-	run alias go
+@test "${TEST_NAME}: Test gad: git add" {
+	run alias gad
 	[ $status -eq 1 ]
 }
-@test "gbr: git branch" {
-	run alias gb
+@test "${TEST_NAME}: Test gbr: git branch" {
+	run alias gbr
 	[ $status -eq 1 ]
 }
-@test "gco: git commit" {
-	run alias gc
+@test "${TEST_NAME}: Test gco: git commit" {
+	run alias gco
 	[ $status -eq 1 ]
 }
-@test "gdi: git diff" {
-	run alias gd
+@test "${TEST_NAME}: Test gdi: git diff" {
+	run alias gdi
 	[ $status -eq 1 ]
 }
-@test "gch: git checkout" {
-	run alias gp
+@test "${TEST_NAME}: Test gch: git checkout" {
+	run alias gch
 	[ $status -eq 1 ]
 }
-@test "gpu: git pull" {
-	run alias gp
+@test "${TEST_NAME}: Test gpu: git pull" {
+	run alias gpu
 	[ $status -eq 1 ]
 }
-@test "gst: git status" {
-	run alias gs
+@test "${TEST_NAME}: Test gst: git status" {
+	run alias gst
 	[ $status -eq 1 ]
 }

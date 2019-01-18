@@ -1,3 +1,5 @@
+
+
 # bashlight
 
 [![Build Status](https://travis-ci.org/vergissberlin/bashlight.svg?branch=master)](https://travis-ci.org/vergissberlin/bashlight)
@@ -186,7 +188,7 @@ You can contact me (@vergissberlin) or TheDevMinerTV (@TheDevMinerTV) on GitHub.
 
 - .. to @riobard, the founder of [bash-powrline](https://github.com/riobard/bash-powerline) which this project is based on.
 - .. to the contributers and testers, who help to further improve the project.
-- Further thanks to **GitHub** for Atom.io.
+- Further thanks to **GitHub** for Atom.io and **Microsoft** for [Visual Studio Code](https://code.visualstudio.com).
 
 ---
 

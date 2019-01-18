@@ -12,7 +12,8 @@
 
 load ../../src/github
 
-BATS_TEST_NAME="github"
+TEST_NAME="github"
+BATS_TEST_NAME="${TEST_NAME}"
 BATS_TEST_DESCRIPTION="Test github-releases"
 
 setup() {
@@ -24,7 +25,7 @@ teardown() {
 }
 
 # GitHub releases
-@test "ghr: github releases" {
-	run ghr v0.2.0 "GitHub-releases" "This is a bats test." --simulate
-	[ "${lines[1]}" = "T35T-R4N-5Ucc355Fu11y on version \"v0.2.0\" \"GitHub-releases\" with description \"This is a bats test.\"" ]
+@test "${TEST_NAME}: Test github releases" {
+	run ghr 0.2.0 "GitHub-releases" "This is a bats test." --simulate
+	[ "${lines[1]}" = "T35T-R4N-5Ucc355Fu11y on version \"0.2.0\" \"GitHub-releases\" with description \"This is a bats test.\"" ]
 }

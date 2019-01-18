@@ -35,6 +35,12 @@ fi
 	setAliases
 	}
 
+# shellcheck source=src/bashlight.bash
+[ -f "${BASHLIGHT_PATH}/src/bashlight.bash"  ] && {
+	# shellcheck source=src/bashlight.bash
+	. "${BASHLIGHT_PATH}/src/bashlight.bash";
+	}
+
 # shellcheck source=src/logout.bash
 [ -f "${BASHLIGHT_PATH}/src/logout.bash"   ] && {
 	# shellcheck source=src/logout.bash
@@ -62,46 +68,3 @@ fi
 	# shellcheck source=src/github.bash
 	. "${BASHLIGHT_PATH}/src/github.bash";
 	}
-
-
-####################################################################################
-# Commandline
-####################################################################################
-
-BASHLIGHT_IDENTIFIER="bashlight"
-BASHLIGHT_VERSION="0.2.1"
-
-function bashlightLogo() {
-	echo -e "\\033[34;5;;172m"
-	cat "${BASHLIGHT_PATH}/assets/logo.txt"
-	echo -e "\\033[0m"
-}
-
-function bashlightHelp() {
-	echo -e "${BASHLIGHT_IDENTIFIER} version ${BASHLIGHT_VERSION}"
-	echo -e "Usage: ${BASHLIGHT_IDENTIFIER} [OPTIONS]\\n"
-	echo -e "OPTIONS include:"
-	echo -e "   -v  | --version  - prints out version information for this script"
-	echo -e "   -h  | --help     - displays this message\\n"
-}
-
-function bashlight() {
-	while [ "$1" != "" ]; 
-	do
-		case $1 in
-		-v | --version )
-			bashlightLogo
-			echo -e "${BASHLIGHT_IDENTIFIER} version ${BASHLIGHT_VERSION}"
-			;;
-		-h | --help ) 
-			bashlightLogo
-			bashlightHelp
-			;;
-		* ) 
-			echo -e "Invalid option: ${1}\\n"
-			bashlightHelp
-			;;
-		esac
-		shift
-	done
-}
