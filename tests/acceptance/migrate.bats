@@ -11,7 +11,8 @@
 
 load helper
 
-BATS_TEST_NAME="Migration test"
+TEST_NAME="migrate"
+BATS_TEST_NAME="${TEST_NAME}"
 BATS_TEST_DESCRIPTION="Test migrations after breaking updates"
 TEMP_DIRECTORY=tests/tmp
 
@@ -26,7 +27,7 @@ teardown() {
     rm -rf ${TEMP_DIRECTORY}
 }
 
-@test "Migration is needed: returns 1 if migration was successfull" {
+@test "${TEST_NAME}: Test migration is needed: returns 1 if migration was successfull" {
   skip "Not implemented yet"
   # run HOME="$(pwd)/${TEMP_DIRECTORY}" migrate.bash
   # $[ ! "$output" = "Migrate installation path from ~/bashlight to ~/.bin/bashlight" ]

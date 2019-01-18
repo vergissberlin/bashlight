@@ -11,7 +11,8 @@
 
 load helper
 
-BATS_TEST_NAME="prompt"
+TEST_NAME="prompt"
+BATS_TEST_NAME="${TEST_NAME}"
 BATS_TEST_DESCRIPTION="Testing prompt outputs"
 
 setup() {
@@ -22,7 +23,7 @@ teardown() {
     echo "teardown ${BATS_TEST_NAME} ..." >> ./bats.log
 }
 
-@test "addition using bc" {
+@test "${TEST_NAME}: Test addition using bc" {
     skip "Not implemented yet"
     result="$(echo 2 + 2 | bc)"
 

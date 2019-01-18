@@ -11,7 +11,8 @@
 
 load helper
 
-BATS_TEST_NAME="Update test"
+TEST_NAME="update"
+BATS_TEST_NAME="${TEST_NAME}"
 BATS_TEST_DESCRIPTION="Update test"
 
 setup() {
@@ -22,13 +23,13 @@ teardown() {
     echo "teardown ${BATS_TEST_NAME} ..." >> ./bats.log
 }
 
-@test "Udate needed" {
+@test "${TEST_NAME}: Test udate needed" {
   skip "Not implemented yet"
 
   [ 4 -eq 4 ]
 }
 
-@test "Udate not needed" {
+@test "${TEST_NAME}: Test udate not needed" {
   skip "Not implemented yet"
 
   [ 4 -eq 4 ]
