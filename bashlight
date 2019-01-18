@@ -1,21 +1,24 @@
 #!/usr/bin/env bash
 
 ####################################################################################
-# Bashlight 	: 0.2.0
-# Copyright		: 2019, MIT
-# Author		: André Lademann <vergissberlin@googlemail.com>
-# Repository	: https://github.com/vergissberlin/bashlight
+# Bashlight  : 0.2.1
+# Copyright  : 2019, MIT
+# Author     : André Lademann <vergissberlin@googlemail.com>
+# Repository : https://github.com/vergissberlin/bashlight
 ####################################################################################
 
+####################################################################################
+# Configuration
+####################################################################################
 
 # Your settings here
-if [ -z "${PATH_BASHLIGHT}" ]; then
-	PATH_BASHLIGHT="${HOME}/.bin/bashlight"
+if [ -z "${BASHLIGHT_PATH}" ]; then
+	BASHLIGHT_PATH="${HOME}/.bin/bashlight"
 fi
 
 # Check update
 # shellcheck source=update.bash
-. "${PATH_BASHLIGHT}/update.bash" "${PATH_BASHLIGHT}"
+. "${BASHLIGHT_PATH}/update.bash" "${BASHLIGHT_PATH}"
 
 ####################################################################################
 # Include modules
@@ -26,36 +29,79 @@ fi
 # ~/src/aliases, instead of adding them here directly.
 
 # shellcheck source=src/aliases.bash
-[ -f "${PATH_BASHLIGHT}/src/aliases.bash"  ] && {
+[ -f "${BASHLIGHT_PATH}/src/aliases.bash"  ] && {
 	# shellcheck source=src/aliases.bash
-	. "${PATH_BASHLIGHT}/src/aliases.bash";
+	. "${BASHLIGHT_PATH}/src/aliases.bash";
 	setAliases
 	}
 
 # shellcheck source=src/logout.bash
-[ -f "${PATH_BASHLIGHT}/src/logout.bash"   ] && {
+[ -f "${BASHLIGHT_PATH}/src/logout.bash"   ] && {
 	# shellcheck source=src/logout.bash
-	. "${PATH_BASHLIGHT}/src/logout.bash";
+	. "${BASHLIGHT_PATH}/src/logout.bash";
 	}
 
 # shellcheck source=src/notify.bash
-[ -f "${PATH_BASHLIGHT}/src/notify.bash"   ] && {
+[ -f "${BASHLIGHT_PATH}/src/notify.bash"   ] && {
 	# shellcheck source=src/notify.bash
-	. "${PATH_BASHLIGHT}/src/notify.bash";
+	. "${BASHLIGHT_PATH}/src/notify.bash";
 	}
 
 # shellcheck source=src/settings.bash
-[ -f "${PATH_BASHLIGHT}/src/settings.bash" ] && {
+[ -f "${BASHLIGHT_PATH}/src/settings.bash" ] && {
 	# shellcheck source=src/settings.bash
-	. "${PATH_BASHLIGHT}/src/settings.bash";
+	. "${BASHLIGHT_PATH}/src/settings.bash";
 	}
 # shellcheck source=src/prompt.bash
-[ -f "${PATH_BASHLIGHT}/src/prompt.bash"   ] && {
+[ -f "${BASHLIGHT_PATH}/src/prompt.bash"   ] && {
 	# shellcheck source=src/prompt.bash
-	. "${PATH_BASHLIGHT}/src/prompt.bash";
+	. "${BASHLIGHT_PATH}/src/prompt.bash";
 	}
 
-[ -f "${PATH_BASHLIGHT}/src/github.bash"  ] && {
+[ -f "${BASHLIGHT_PATH}/src/github.bash"  ] && {
 	# shellcheck source=src/github.bash
-	. "${PATH_BASHLIGHT}/src/github.bash";
+	. "${BASHLIGHT_PATH}/src/github.bash";
 	}
+
+
+####################################################################################
+# Commandline
+####################################################################################
+
+BASHLIGHT_IDENTIFIER="bashlight"
+BASHLIGHT_VERSION="0.2.1"
+
+function bashlightLogo() {
+	echo -e "\\033[34;5;;172m"
+	cat "${BASHLIGHT_PATH}/assets/logo.txt"
+	echo -e "\\033[0m"
+}
+
+function bashlightHelp() {
+	echo -e "${BASHLIGHT_IDENTIFIER} version ${BASHLIGHT_VERSION}"
+	echo -e "Usage: ${BASHLIGHT_IDENTIFIER} [OPTIONS]\\n"
+	echo -e "OPTIONS include:"
+	echo -e "   -v  | --version  - prints out version information for this script"
+	echo -e "   -h  | --help     - displays this message\\n"
+}
+
+function bashlight() {
+	while [ "$1" != "" ]; 
+	do
+		case $1 in
+		-v | --version )
+			bashlightLogo
+			echo -e "${BASHLIGHT_IDENTIFIER} version ${BASHLIGHT_VERSION}"
+			;;
+		-h | --help ) 
+			bashlightLogo
+			bashlightHelp
+			;;
+		* ) 
+			echo -e "Invalid option: ${1}\\n"
+			bashlightHelp
+			;;
+		esac
+		shift
+	done
+}

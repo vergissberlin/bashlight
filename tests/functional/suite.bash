@@ -9,9 +9,9 @@
 
 
 # Variables
-PATH_BASHLIGHT=$(pwd)
+BASHLIGHT_PATH=$(pwd)
 PROMPT_DEFAULT=${PS1}
-readonly PATH_TESTS="${PATH_BASHLIGHT}/tests"
+readonly PATH_TESTS="${BASHLIGHT_PATH}/tests"
 readonly PATH_HELPER="${PATH_TESTS}/helper"
 readonly PATH_FIXTURES="${PATH_TESTS}/fixtures"
 
@@ -45,7 +45,7 @@ function setup() {
 function test_prompt() {
   echo "${PROMPT_DEFAULT}"
   # shellcheck source=bashlight
-  . "${PATH_BASHLIGHT}/bashlight" || exit 1;
+  . "${BASHLIGHT_PATH}/bashlight" || exit 1;
 
   PROMPT_CUSTOM="${PS1}"
   echo "${PROMPT_CUSTOM}"
@@ -67,7 +67,7 @@ function test_update() {
   echo "${PROMPT_DEFAULT}"
 
   # shellcheck source=bashlight
-  . "${PATH_BASHLIGHT}/bashlight"
+  . "${BASHLIGHT_PATH}/bashlight"
 
   PROMPT_CUSTOM="${PS1}"
   echo "${PROMPT_CUSTOM}"
@@ -84,7 +84,7 @@ function test_update() {
 
 # Roll back
 function teardown() {
-  cd "${PATH_BASHLIGHT}" || exit 1;
+  cd "${BASHLIGHT_PATH}" || exit 1;
   rm -Rf "${PATH_FIXTURES}" "${PATH_HELPER}"
   assert_end bashlight
 }

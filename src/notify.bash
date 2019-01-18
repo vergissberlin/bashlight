@@ -1,31 +1,33 @@
 #!/usr/bin/env bash
 
 ####################################################################################
-# Bashlight 	: 0.1.8
-# Copyright		: 2018, MIT
+# Bashlight 	: 0.2.2
+# Copyright		: 2019, MIT
 # Author		: André Lademann <vergissberlin@googlemail.com>
 # Repository	: https://github.com/vergissberlin/bashlight
 ####################################################################################
 
 ####################################################################################
-readonly SOUND_RATE=2
 
-# what OS?
-case "$(uname)" in
-	Darwin)
-		readonly SOUND_PATH='/System/Library/Sounds/';
-		readonly SOUND_FORMAT='aiff';
-		readonly VOICE_RATE=280
-		readonly VOICE_TYPE="Bruce"
-	;;
-	Linux)
-		readonly SOUND_PATH='/usr/share/sounds/alsa/';
-		readonly SOUND_FORMAT='wav';
-	;;
-	*)
-		readonly PS_SYMBOL=$PS_SYMBOL_OTHER
-esac
+[[ ! -z ${SOUND_RATE} ]] || readonly SOUND_RATE=2
 
+# Which OS?
+if [ -z "${SOUND_PATH}" ]; then
+	case "$(uname)" in
+		Darwin)
+			readonly SOUND_PATH='/System/Library/Sounds/';
+			readonly SOUND_FORMAT='aiff';
+			readonly VOICE_RATE=280
+			readonly VOICE_TYPE="Bruce"
+		;;
+		Linux)
+			readonly SOUND_PATH='/usr/share/sounds/alsa/';
+			readonly SOUND_FORMAT='wav';
+		;;
+		*)
+			readonly PS_SYMBOL=$PS_SYMBOL_OTHER
+	esac
+fi
 ### sound
 
 # Available sounds on OS X

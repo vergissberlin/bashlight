@@ -8,12 +8,12 @@
 ####################################################################################
 
 if [ -z "${1}" ]; then
-	PATH_BASHLIGHT="${HOME}/.bin/bashlight"
+	BASHLIGHT_PATH="${HOME}/.bin/bashlight"
 else
-	PATH_BASHLIGHT="${1}"
+	BASHLIGHT_PATH="${1}"
 fi
 
-GIT_DIR="${PATH_BASHLIGHT}/.git"
+GIT_DIR="${BASHLIGHT_PATH}/.git"
 GIT_REPOSITORY="https://github.com/vergissberlin/bashlight.git"
 
 VERSION_LOCAL="$(GIT_DIR=${GIT_DIR} git describe --tags --abbrev=0)"
