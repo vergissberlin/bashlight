@@ -33,5 +33,5 @@ teardown() {
 
 @test "${TEST_NAME}: Test logo output with version number" {
 	run bashlightLogo "1.2.3"
-    [ "${lines[6]}" = "                           |___/  1.2.3" ]
+    [ "${lines[6]}" = "                           |___/  v1.2.3" ]
 }
