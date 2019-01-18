@@ -1,147 +1,199 @@
-<a name=""></a>
-##  (2018-06-04)
+2019-01-16
+==========
 
-* Added all arguments to call the test method ([dd8109a](https://github.com/vergissberlin/bashlight/commit/dd8109a))
-* Hotfix update script ([fc3df00](https://github.com/vergissberlin/bashlight/commit/fc3df00))
+  * Update version numbers and fix typos
+  * Use relative paths in install/*.bash
+  * Comment the code in github.bash
 
+2019-01-15
+==========
 
+  * Add tests for migration
+  * Add comments and tests to github.bash ([#30](https://github.com/vergissberlin/bashlight/issues/30))
+    * Fix the aliases for bats
+    * Add github release
+    * Add git status
+    * Add tabs to github.bash
+    * Add double-quotes to curl in github.bash
+    * Removed unneeded variables
+    * Disable shellcheck test SC1117 for curl in github.bash
+    * Disable shellcheck SC1117 for regex splitting in github.bash
+    * Silence the curl in github.bash
+    * Comment the code in github.bash
+    * Fix two typos in github.bash
+    * Restructure github.bash
+    * Add bats-test for github.bash
+    * Enhanche the documentation for github-releases
+  * Disable shellcheck SC1117 for regex splitting in github.bash
+  * Disable shellcheck test SC1117 for curl in github.bash
+  * Removed unneeded variables
+  * Add double-quotes to curl in github.bash
+  * Add tabs to github.bash
+  * Add git status
+  * Add github release
+  * Fix the aliases for bats
 
-<a name="0.1.6"></a>
-## <small>0.1.6 (2018-06-03)</small>
+2019-01-14
+==========
 
-* Added badge for commit since last release ([b856471](https://github.com/vergissberlin/bashlight/commit/b856471))
-* Added badge for commit since last release ([169c65f](https://github.com/vergissberlin/bashlight/commit/169c65f))
-* Added bats test framework ([049e7a6](https://github.com/vergissberlin/bashlight/commit/049e7a6))
-* Added CHANGELOG ([923fb06](https://github.com/vergissberlin/bashlight/commit/923fb06))
-* Added license info ([270c4a6](https://github.com/vergissberlin/bashlight/commit/270c4a6))
-* Added shellchecker script to improve the code quality ([bd5cd05](https://github.com/vergissberlin/bashlight/commit/bd5cd05))
-* Added sudo right on travis ci ([a8844bd](https://github.com/vergissberlin/bashlight/commit/a8844bd))
-* Improve coding style ([571d25b](https://github.com/vergissberlin/bashlight/commit/571d25b))
-* Improve testing ([fc853e2](https://github.com/vergissberlin/bashlight/commit/fc853e2))
-* Install bats on osX ([c00bbbd](https://github.com/vergissberlin/bashlight/commit/c00bbbd))
-* Install bats on OSX with homebrew ([720c1be](https://github.com/vergissberlin/bashlight/commit/720c1be))
-* Install shellchecker with homebrew ([b4671ac](https://github.com/vergissberlin/bashlight/commit/b4671ac))
-* Point bats to a directory ([5f82702](https://github.com/vergissberlin/bashlight/commit/5f82702))
-* Remove bats log ([0850eee](https://github.com/vergissberlin/bashlight/commit/0850eee))
-* Remove git-bash-complition ([ef37bbb](https://github.com/vergissberlin/bashlight/commit/ef37bbb))
-* Remove old tests ([f9978cc](https://github.com/vergissberlin/bashlight/commit/f9978cc))
-* Skip test while not implemented ([42599ca](https://github.com/vergissberlin/bashlight/commit/42599ca))
-* Switch to https ([89e72f3](https://github.com/vergissberlin/bashlight/commit/89e72f3))
-* Updated badges and version number ([dea05ec](https://github.com/vergissberlin/bashlight/commit/dea05ec))
-* Updated changelog file ([4ee0a52](https://github.com/vergissberlin/bashlight/commit/4ee0a52))
-* Updated file headers ([8b3e8d3](https://github.com/vergissberlin/bashlight/commit/8b3e8d3))
-* Updated the changelog ([13a9dd0](https://github.com/vergissberlin/bashlight/commit/13a9dd0))
-* Upgrade git for osX on TravisCI ([6401868](https://github.com/vergissberlin/bashlight/commit/6401868))
-* Use bats test framework ([b74e976](https://github.com/vergissberlin/bashlight/commit/b74e976))
-* We make no mistakes! ([ca0a870](https://github.com/vergissberlin/bashlight/commit/ca0a870))
+  * Pip once more
+  * Try to use pip to install yamllint
+  * Revert reorganisation
+  * Reorganize sources
+  * Add ppa for yamllit
+  * Add update to apt addon
+  * Install all dependencies with addons
+  * Add yamllint to os x test environment
+  * Add yamllint to travis-ci
+  * Fix and add aliases to readme
+  * Fixed contribute.md with MarkDown-Linter
+  * Fixed files with yamllinter
+  * Fix README.me grammar issues
+  * Merge pull request [#26](https://github.com/vergissberlin/bashlight/issues/26) from TheDevMinerTV/patch-1
+    Fix some aliases
 
+2019-01-13
+==========
 
+  * Remove get as a alias
+    This is not a good practice!
+  * Fix some aliases
+    Go is here!
 
-<a name="0.1.5"></a>
-## <small>0.1.5 (2018-05-17)</small>
+2019-01-08
+==========
 
-* Added update script ([c0a9b01](https://github.com/vergissberlin/bashlight/commit/c0a9b01))
+  * Merge pull request [#12](https://github.com/vergissberlin/bashlight/issues/12) from TheDevMinerTV/master
+    Replace ! -z with -n, 'cause shellcheck complains about it.
+  * Fix the install script
+  * Replace ! -z with -n, 'cause shellcheck complains about it.
+  * Move bashlight to ~/.bin/bashlight
 
+2018-11-20
+==========
 
+  * Activate autocomplete
 
-<a name="0.1.4"></a>
-## <small>0.1.4 (2018-05-17)</small>
+2018-10-01
+==========
 
-* Added global gitignore file ([da05870](https://github.com/vergissberlin/bashlight/commit/da05870))
-* Improve directory structure and file naming ([01f3c95](https://github.com/vergissberlin/bashlight/commit/01f3c95))
+  * Fix typo
+  * Intruduction
+  * Tidy up the documentation
+  * Added toc tree
+  * rename to index again
+  * Add thanks to someone
+  * Split documentation in different files
+  * Add read the docs documentation
 
+2018-09-03
+==========
 
+  * Update tmux.bash
+  * Update git.bash
 
-<a name="0.1.2"></a>
-## <small>0.1.2 (2018-05-08)</small>
+2018-06-20
+==========
 
-* Activate welcome message with notifications ([eb5045e](https://github.com/vergissberlin/bashlight/commit/eb5045e))
-* Add alias to checkout master and pull in git reporisitories ([92954da](https://github.com/vergissberlin/bashlight/commit/92954da))
-* Add aliases, logout and prompt as module ([cb60d00](https://github.com/vergissberlin/bashlight/commit/cb60d00))
-* Add analytics to README ([a759026](https://github.com/vergissberlin/bashlight/commit/a759026))
-* Add beep sound and linux support for say with espeak. ([03ce70f](https://github.com/vergissberlin/bashlight/commit/03ce70f))
-* Add chess figures to show branch level with git-flow ([12ca9df](https://github.com/vergissberlin/bashlight/commit/12ca9df))
-* Add condition to check if bashlight available ([17c69c5](https://github.com/vergissberlin/bashlight/commit/17c69c5))
-* Add doc blocks ([67b4626](https://github.com/vergissberlin/bashlight/commit/67b4626))
-* Add file system alias ([14b0bbd](https://github.com/vergissberlin/bashlight/commit/14b0bbd))
-* Add git checkout and pull combination ([53a0920](https://github.com/vergissberlin/bashlight/commit/53a0920))
-* Add git completion as subtree ([9354cf5](https://github.com/vergissberlin/bashlight/commit/9354cf5))
-* Add git completion module ([b119218](https://github.com/vergissberlin/bashlight/commit/b119218))
-* Add git flush alias ([a78f58f](https://github.com/vergissberlin/bashlight/commit/a78f58f))
-* Add git fush as alias for git push -f ([510653c](https://github.com/vergissberlin/bashlight/commit/510653c))
-* Add git master alias ([20a805e](https://github.com/vergissberlin/bashlight/commit/20a805e))
-* Add git purge command to delete all local branches qhich does not exist on remote ([8052121](https://github.com/vergissberlin/bashlight/commit/8052121))
-* Add git reset hard to aliases ([707bb6d](https://github.com/vergissberlin/bashlight/commit/707bb6d))
-* Add installation hints to README ([f1fc09a](https://github.com/vergissberlin/bashlight/commit/f1fc09a))
-* Add logout message ([64026fd](https://github.com/vergissberlin/bashlight/commit/64026fd))
-* Add more common git settings ([25b7a83](https://github.com/vergissberlin/bashlight/commit/25b7a83))
-* Add more git aliaises ([6cea72b](https://github.com/vergissberlin/bashlight/commit/6cea72b))
-* Add more git aliases ([9899b0f](https://github.com/vergissberlin/bashlight/commit/9899b0f))
-* Add notification module ([5accdc7](https://github.com/vergissberlin/bashlight/commit/5accdc7))
-* Add option and shortcut to push tags ([d426d98](https://github.com/vergissberlin/bashlight/commit/d426d98))
-* Add prompt vor name and email in git init ([dee3519](https://github.com/vergissberlin/bashlight/commit/dee3519))
-* Add prune as alias ([09a88cd](https://github.com/vergissberlin/bashlight/commit/09a88cd))
-* Add prune on switch to master ([89d73f8](https://github.com/vergissberlin/bashlight/commit/89d73f8))
-* Add pull before rebase ([54bc4cb](https://github.com/vergissberlin/bashlight/commit/54bc4cb))
-* Add quality assurence alias for phpcs changes on current branch ([b1a9d46](https://github.com/vergissberlin/bashlight/commit/b1a9d46))
-* Add rebase as alias ([b446013](https://github.com/vergissberlin/bashlight/commit/b446013))
-* Add settings as module ([43334fc](https://github.com/vergissberlin/bashlight/commit/43334fc))
-* Added concourse ci pipeline ([7084c2e](https://github.com/vergissberlin/bashlight/commit/7084c2e))
-* Added first test ([d2753e2](https://github.com/vergissberlin/bashlight/commit/d2753e2))
-* Added gitignore global ([74ccaa5](https://github.com/vergissberlin/bashlight/commit/74ccaa5))
-* Added status info ([11f202a](https://github.com/vergissberlin/bashlight/commit/11f202a))
-* Added the channel ([7b8b342](https://github.com/vergissberlin/bashlight/commit/7b8b342))
-* Added tmux configuration ([5e16c77](https://github.com/vergissberlin/bashlight/commit/5e16c77))
-* Added travis ci as preparation for continues integration tests ([31ff4ab](https://github.com/vergissberlin/bashlight/commit/31ff4ab))
-* Change added file to green and modified to yellow ([fcd33fd](https://github.com/vergissberlin/bashlight/commit/fcd33fd))
-* Check git requirements ([9bfe4de](https://github.com/vergissberlin/bashlight/commit/9bfe4de))
-* Completion of documentation ([5847da7](https://github.com/vergissberlin/bashlight/commit/5847da7))
-* Create a create alias to create new branches from the current origin master ([26fd755](https://github.com/vergissberlin/bashlight/commit/26fd755))
-* Disable message on logout caused bugs with livereload ([da660d3](https://github.com/vergissberlin/bashlight/commit/da660d3))
-* Disable welcome message caused lost bugs ([d339d46](https://github.com/vergissberlin/bashlight/commit/d339d46))
-* Enhancements on notification module and CS ([cad9714](https://github.com/vergissberlin/bashlight/commit/cad9714))
-* Fix grammar in git-init.sh ([abfe364](https://github.com/vergissberlin/bashlight/commit/abfe364))
-* Fix grammar in readme ([00aff2e](https://github.com/vergissberlin/bashlight/commit/00aff2e))
-* Fix master brach switch alias ([124c701](https://github.com/vergissberlin/bashlight/commit/124c701))
-* Fixed dir colours condition ([0ae9454](https://github.com/vergissberlin/bashlight/commit/0ae9454))
-* Fixed git global configurations ([80c1265](https://github.com/vergissberlin/bashlight/commit/80c1265))
-* Fixed git init settings ([15f0c03](https://github.com/vergissberlin/bashlight/commit/15f0c03))
-* Fixed grep warning ([7486a33](https://github.com/vergissberlin/bashlight/commit/7486a33))
-* Fixed headings in README ([d896d05](https://github.com/vergissberlin/bashlight/commit/d896d05))
-* Fixed naming ([1cde815](https://github.com/vergissberlin/bashlight/commit/1cde815))
-* Fixed path in travis yml ([d6cfa6e](https://github.com/vergissberlin/bashlight/commit/d6cfa6e))
-* Fixed position of JetBrains logo in README ([b16232a](https://github.com/vergissberlin/bashlight/commit/b16232a))
-* Fixed resource path ([5776f76](https://github.com/vergissberlin/bashlight/commit/5776f76))
-* fixed typo on alias ([d5a7fba](https://github.com/vergissberlin/bashlight/commit/d5a7fba))
-* Fixes #3 issue with error prompt on none git directories ([e8c7fa8](https://github.com/vergissberlin/bashlight/commit/e8c7fa8)), closes [#3](https://github.com/vergissberlin/bashlight/issues/3)
-* Get acces to prompt in test cases ([f7ca764](https://github.com/vergissberlin/bashlight/commit/f7ca764))
-* Git branch out is now more detailed ([c59055f](https://github.com/vergissberlin/bashlight/commit/c59055f))
-* git pull before rebase in rebase alias ([41b0afa](https://github.com/vergissberlin/bashlight/commit/41b0afa))
-* Improve README ([8b777a0](https://github.com/vergissberlin/bashlight/commit/8b777a0))
-* Improved create new branch from master ([8ab615e](https://github.com/vergissberlin/bashlight/commit/8ab615e))
-* Inital commit ([9e1a3b7](https://github.com/vergissberlin/bashlight/commit/9e1a3b7))
-* More details install instructions for README ([a637e8c](https://github.com/vergissberlin/bashlight/commit/a637e8c))
-* New signs for prompt ([87b78f7](https://github.com/vergissberlin/bashlight/commit/87b78f7))
-* Remove Bitdeli Badge ([0c7fa48](https://github.com/vergissberlin/bashlight/commit/0c7fa48))
-* Remove broken image ([a3479ff](https://github.com/vergissberlin/bashlight/commit/a3479ff))
-* Rename test folder to singlulary ([2b9dc39](https://github.com/vergissberlin/bashlight/commit/2b9dc39))
-* Replace git-config with shell script ([645e0b9](https://github.com/vergissberlin/bashlight/commit/645e0b9))
-* replace sign for other branches ([51068f4](https://github.com/vergissberlin/bashlight/commit/51068f4))
-* Squashed 'git-bash-completion/' content from commit d1d2502 ([c82d520](https://github.com/vergissberlin/bashlight/commit/c82d520))
-* Star prompt for linux ([0315b4e](https://github.com/vergissberlin/bashlight/commit/0315b4e))
-* Swtich alert arguments in notifications ([a8bfd3e](https://github.com/vergissberlin/bashlight/commit/a8bfd3e))
-* Update brew for travis ci ([33a9be8](https://github.com/vergissberlin/bashlight/commit/33a9be8))
-* Update README.md ([7d2ee8e](https://github.com/vergissberlin/bashlight/commit/7d2ee8e))
-* Update README.md ([e0e65aa](https://github.com/vergissberlin/bashlight/commit/e0e65aa))
-* Update README.md ([200abb2](https://github.com/vergissberlin/bashlight/commit/200abb2))
-* Update README.md ([70aba28](https://github.com/vergissberlin/bashlight/commit/70aba28))
-* Update README.md ([4851e01](https://github.com/vergissberlin/bashlight/commit/4851e01))
-* Update README.md ([8d6676a](https://github.com/vergissberlin/bashlight/commit/8d6676a))
-* Updated path to test script ([ccc7359](https://github.com/vergissberlin/bashlight/commit/ccc7359))
-* Use round braces in pipeline ([8bebced](https://github.com/vergissberlin/bashlight/commit/8bebced))
-* Using bash for test ([13421dc](https://github.com/vergissberlin/bashlight/commit/13421dc))
-* NRFE: Fixed merging failure ([e597b40](https://github.com/vergissberlin/bashlight/commit/e597b40))
-* NRFE: Fixed typo ([3621972](https://github.com/vergissberlin/bashlight/commit/3621972))
+  * Setup prompt identifier for tests
+  * Install test tools in Vagrant boxes for regression tests
+  * Update Linx test instances for better regression test results
 
+2018-06-14
+==========
 
+  * Set theme jekyll-theme-tactile
+  * Fixed code styling
+  * Merge branch 'master' of github.com:vergissberlin/bashlight
+  * Added quote of the day
 
+2018-06-13
+==========
+
+  * Set theme jekyll-theme-architect
+
+2018-06-05
+==========
+
+  * Added tests for aliases
+
+2018-06-04
+==========
+
+  * Added github templates
+  * Create CODE_OF_CONDUCT.md
+  * Merge branch 'master' of github.com:vergissberlin/bashlight
+  * Added gitattributes to excluded development files from release
+  * Update bug_report.md
+  * Update issue templates
+  * Fixed name of apt source
+  * Changed way how to install build dependencies for linux on travis ci
+  * Added code coverage test
+  * Hotfix update script
+
+2018-06-03
+==========
+
+  * Added all arguments to call the test method
+  * Remove git-bash-complition
+  * Added badge for commit since last release
+  * Added license info
+  * Updated badges and version number
+  * Updated changelog file
+  * Updated the changelog
+  * Install shellchecker with homebrew
+  * Improve coding style
+  * Added shellchecker script to improve the code quality
+  * Upgrade git for osX on TravisCI
+  * Install bats on osX
+
+2018-06-02
+==========
+
+  * Added CHANGELOG
+  * Added sudo right on travis ci
+  * Remove old tests
+  * Install bats on OSX with homebrew
+  * Updated file headers
+  * Use bats test framework
+
+2018-05-18
+==========
+
+  * Skip test while not implemented
+  * Point bats to a directory
+  * We make no mistakes!
+  * Switch to https
+  * Remove bats log
+  * Added bats test framework
+
+2018-05-17
+==========
+
+  * Improve testing
+  * Added update script
+  * Improve directory structure and file naming
+  * Added global gitignore file
+
+2018-05-08
+==========
+
+  * Fix grammar in readme
+  * Fix grammar in git-init.sh
+
+2018-03-26
+==========
+
+  * Add condition to check if bashlight available
+
+2018-02-07
+==========
+
+  * Fixed git init settings
+
+2017-12-14
+==========
+
+  * Merge pull request [#4](https://github.com/vergissberlin/bashlight/issues/4) from tomahi/master
+    Bugfixes for .bash_aliases and git_init.sh
+    @tomahi Thank you!
