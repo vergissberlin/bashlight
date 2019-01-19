@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ####################################################################################
-# Bashlight  : 0.2.1
+# Bashlight  : 0.2.2
 # Copyright  : 2019, MIT
 # Author     : André Lademann <vergissberlin@googlemail.com>
 # Repository : https://github.com/vergissberlin/bashlight
@@ -11,14 +11,18 @@
 # Configuration
 ####################################################################################
 
-# Your settings here
-if [ -z "${BASHLIGHT_PATH}" ]; then
-	BASHLIGHT_PATH="${HOME}/.bin/bashlight"
-fi
+# Load configuration
+readonly THIS_FILE="$(dirname "$0")"
+# shellcheck source=config.bash
+. "${THIS_FILE}/config.bash"
 
 # Check update
 # shellcheck source=update.bash
 . "${BASHLIGHT_PATH}/update.bash" "${BASHLIGHT_PATH}"
+
+# Check migrate
+# shellcheck source=migrate.bash
+. "${BASHLIGHT_PATH}/migrate.bash" "${BASHLIGHT_PATH}"
 
 ####################################################################################
 # Include modules
@@ -58,6 +62,7 @@ fi
 	# shellcheck source=src/settings.bash
 	. "${BASHLIGHT_PATH}/src/settings.bash";
 	}
+
 # shellcheck source=src/prompt.bash
 [ -f "${BASHLIGHT_PATH}/src/prompt.bash"   ] && {
 	# shellcheck source=src/prompt.bash

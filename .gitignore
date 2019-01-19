@@ -13,8 +13,10 @@
 !/.gitignore
 !/.travis.yml
 !/bashlight
+!/config.bash
 !/docs
 !/install.bash
+!/migrate.bash
 !/README.md
 !/update.bash
 

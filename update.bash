@@ -7,17 +7,16 @@
 # Repository	: https://github.com/vergissberlin/bashlight
 ####################################################################################
 
-if [ -z "${1}" ]; then
-	BASHLIGHT_PATH="${HOME}/.bin/bashlight"
-else
-	BASHLIGHT_PATH="${1}"
-fi
+# Load configuration
+readonly THIS_FILE="$(dirname "$0")"
+# shellcheck source=config.bash
+. "${THIS_FILE}/config.bash"
 
 GIT_DIR="${BASHLIGHT_PATH}/.git"
 GIT_REPOSITORY="https://github.com/vergissberlin/bashlight.git"
 
 VERSION_LOCAL="$(GIT_DIR=${GIT_DIR} git describe --tags --abbrev=0)"
-DAY_UPDATE=~/.bin/bashlight/DAY_UPDATE
+DAY_UPDATE=${BASHLIGHT_PATH}/DAY_UPDATE
 DAY_TODAY="$(date +%j)"
 
 function version_gt() {
@@ -26,16 +25,17 @@ function version_gt() {
 
 # Update check only once a day
 if [ ! -f "${DAY_UPDATE}" ]; then
-  echo "${DAY_TODAY}" > ${DAY_UPDATE}
+  echo "${DAY_TODAY}" > "${DAY_UPDATE}"
 fi
 
-if [ "${DAY_TODAY}" -le "$(cat ${DAY_UPDATE})" ]; then
+if [ "${DAY_TODAY}" -le "$(cat "${DAY_UPDATE}")" ]; then
   echo -e "\\033[34;5;;172mBashlight ${VERSION_LOCAL}\\033[0m"
 else
   # Update check
   VERSION_REMOTE=$(git ls-remote --tags ${GIT_REPOSITORY} | sort -t '/' -k 3 -V | awk -F/ '{ print $3 }' | tail -1)
 
   if version_gt "${VERSION_REMOTE}" "${VERSION_LOCAL}"; then
+    bashlightLogo "${VERSION_LOCAL}"
     echo -e "\\a";
     echo -e "\\033[34;5;;172m"\
      "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\\n"\
@@ -49,7 +49,7 @@ else
      while true; do
        read -rp "Do you wish to install this program (yes/no)? " yn
        case ${yn} in
-         [Yy]* ) GIT_DIR=~/.bin/bashlight/.git git pull;GIT_DIR=~/.bin/bashlight/.git git pull --tags; echo "${DAY_TODAY}" > ${DAY_UPDATE}; break;;
+         [Yy]* ) GIT_DIR=${BASHLIGHT_PATH}/.git git pull;GIT_DIR=${BASHLIGHT_PATH}/.git git pull --tags; echo "${DAY_TODAY}" > "${DAY_UPDATE}"; break;;
          [Nn]* ) break;;
          * ) echo "Please answer yes or no.";;
        esac

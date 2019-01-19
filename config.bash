@@ -7,13 +7,6 @@
 # Repository	: https://github.com/vergissberlin/bashlight
 ####################################################################################
 
-# Load configuration
-readonly THIS_FILE="$(dirname "$0")"
-# shellcheck source=config.bash
-. "${THIS_FILE}/config.bash"
-
-# shellcheck source=install/git.bash
-. "${BASHLIGHT_PATH}/install/git.bash"
-
-# shellcheck source=install/tmux.bash
-. "${BASHLIGHT_PATH}/install/tmux.bash"
+if [ -z "${BASHLIGHT_PATH}" ]; then
+	export BASHLIGHT_PATH="${HOME}/.bin/bashlight"
+fi

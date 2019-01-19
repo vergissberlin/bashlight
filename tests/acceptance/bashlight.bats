@@ -32,9 +32,6 @@ teardown() {
 }
 
 @test "${TEST_NAME}: Test logo output with version number" {
-	run bashlightLogo "1.2.4"
-    echo -e $output
-    echo ${HOME}
-    pwd
+	run bashlightLogo "1.2.3"
     [ "${lines[6]}" == '                           |___/  v1.2.3' ]
 }
