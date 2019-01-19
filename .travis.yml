@@ -5,8 +5,8 @@ os:
   - osx
 
 env:
-  - SH=bash
-  - BASHLIGHT_PATH=/home/travis/build/vergissberlin
+  global:
+    - BASHLIGHT_PATH=/home/travis/build/vergissberlin
 
 addons:
   apt:
