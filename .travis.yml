@@ -33,6 +33,8 @@ before_script:
   - bats --version
   - shellcheck --version
   - yamllint --version
+  - ls -lisah ~
+  - pwd
 script:
   - bats ./tests/acceptance/
   - shellcheck -x bashlight
