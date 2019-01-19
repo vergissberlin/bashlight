@@ -1,6 +1,4 @@
-
-
-# bashlight
+# ![bashlight](assets/logo.png)
 
 [![Build Status](https://travis-ci.org/vergissberlin/bashlight.svg?branch=master)](https://travis-ci.org/vergissberlin/bashlight)
 [![codecov](https://codecov.io/gh/vergissberlin/bashlight/branch/master/graph/badge.svg)](https://codecov.io/gh/vergissberlin/bashlight)
