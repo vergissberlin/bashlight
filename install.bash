@@ -8,7 +8,7 @@
 ####################################################################################
 
 # Load configuration
-readonly THIS_FILE="$(dirname "$0")"
+readonly THIS_FILE=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 # shellcheck source=config.bash
 . "${THIS_FILE}/config.bash"
 

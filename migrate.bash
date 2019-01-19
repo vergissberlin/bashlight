@@ -7,11 +7,6 @@
 # Repository  : https://github.com/vergissberlin/bashlight
 ####################################################################################
 
-# Load configuration
-readonly THIS_FILE="$(dirname "$0")"
-# shellcheck source=config.bash
-. "${THIS_FILE}/config.bash"
-
 # Migrate installation directory
 # @version 0.2.0
 # shellcheck disable=SC1090

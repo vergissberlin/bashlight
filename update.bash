@@ -7,11 +7,6 @@
 # Repository	: https://github.com/vergissberlin/bashlight
 ####################################################################################
 
-# Load configuration
-readonly THIS_FILE="$(dirname "$0")"
-# shellcheck source=config.bash
-. "${THIS_FILE}/config.bash"
-
 GIT_DIR="${BASHLIGHT_PATH}/.git"
 GIT_REPOSITORY="https://github.com/vergissberlin/bashlight.git"
 
