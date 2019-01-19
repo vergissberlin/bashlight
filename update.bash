@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 ####################################################################################
-# Bashlight 	: 0.1.8
-# Copyright		: 2018, MIT
+# Bashlight 	: 0.2.2
+# Copyright		: 2019, MIT
 # Author  		: André Lademann <vergissberlin@googlemail.com>
 # Repository	: https://github.com/vergissberlin/bashlight
 ####################################################################################
@@ -35,7 +35,6 @@ else
   VERSION_REMOTE=$(git ls-remote --tags ${GIT_REPOSITORY} | sort -t '/' -k 3 -V | awk -F/ '{ print $3 }' | tail -1)
 
   if version_gt "${VERSION_REMOTE}" "${VERSION_LOCAL}"; then
-    bashlightLogo "${VERSION_LOCAL}"
     echo -e "\\a";
     echo -e "\\033[34;5;;172m"\
      "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\\n"\
@@ -47,11 +46,10 @@ else
      "\\033[0m"
 
      while true; do
-       read -rp "Do you wish to install this program (yes/no)? " yn
+       read -rp "Do you wish to install this program (Y/n)? " yn
        case ${yn} in
-         [Yy]* ) GIT_DIR=${BASHLIGHT_PATH}/.git git pull;GIT_DIR=${BASHLIGHT_PATH}/.git git pull --tags; echo "${DAY_TODAY}" > "${DAY_UPDATE}"; break;;
          [Nn]* ) break;;
-         * ) echo "Please answer yes or no.";;
+         * ) GIT_DIR=${BASHLIGHT_PATH}/.git git pull;GIT_DIR=${BASHLIGHT_PATH}/.git git pull --tags; echo "${DAY_TODAY}" > "${DAY_UPDATE}"; break;;
        esac
      done
   else
