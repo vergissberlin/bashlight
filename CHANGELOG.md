@@ -1,3 +1,30 @@
+2019-01-20
+==========
+
+  * Fix bug with relative path on zsh
+
+2019-01-19
+==========
+
+  * Set BASHLIGHT_PATH as global variable in travis configuration
+  * Set update YES as default
+  * Use bashlight path variable
+  * Replace the logo
+  * Add more debug output to travis ci
+  * Add logo to readme
+  * Try to fix the test on travis ci
+  * Set long argument version for the version
+  * Refactore test prefixes
+  * Output version of the test tools and linter
+  * Fix test for logo with v char
+  * Add tests for version number
+
+2019-01-18
+==========
+
+  * Update the change log
+  * [#10](https://github.com/vergissberlin/bashlight/issues/10) Add bashlight command and versioning output
+
 2019-01-16
 ==========
 
@@ -155,45 +182,3 @@
   * Remove old tests
   * Install bats on OSX with homebrew
   * Updated file headers
-  * Use bats test framework
-
-2018-05-18
-==========
-
-  * Skip test while not implemented
-  * Point bats to a directory
-  * We make no mistakes!
-  * Switch to https
-  * Remove bats log
-  * Added bats test framework
-
-2018-05-17
-==========
-
-  * Improve testing
-  * Added update script
-  * Improve directory structure and file naming
-  * Added global gitignore file
-
-2018-05-08
-==========
-
-  * Fix grammar in readme
-  * Fix grammar in git-init.sh
-
-2018-03-26
-==========
-
-  * Add condition to check if bashlight available
-
-2018-02-07
-==========
-
-  * Fixed git init settings
-
-2017-12-14
-==========
-
-  * Merge pull request [#4](https://github.com/vergissberlin/bashlight/issues/4) from tomahi/master
-    Bugfixes for .bash_aliases and git_init.sh
-    @tomahi Thank you!

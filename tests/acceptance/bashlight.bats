@@ -33,5 +33,8 @@ teardown() {
 
 @test "${TEST_NAME}: Test logo output with version number" {
 	run bashlightLogo "1.2.3"
+    pwd
+    ls -lisah .
+    ls -lisah ../../src/bashlight
     [ "${lines[6]}" == '                           |___/  v1.2.3' ]
 }

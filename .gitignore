@@ -1,23 +1,24 @@
 /*
-!/assets
-!/CHANGELOG.md
-!/ci/
-!/config/
-!/install/
-!/LICENSE.md
-!/src/
-!/tests/
 !/.editorconfig
 !/.gitattributes
 !/.github/
 !/.gitignore
 !/.travis.yml
+!/assets
 !/bashlight
+!/CHANGELOG.md
+!/CONTRIBUTE.md
+!/ci/
+!/config/
 !/config.bash
 !/docs
+!/LICENSE.md
+!/install/
 !/install.bash
 !/migrate.bash
 !/README.md
+!/src/
+!/tests/
 !/update.bash
 
 # Exclusion

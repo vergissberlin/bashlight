@@ -38,6 +38,7 @@ before_script:
   - shellcheck --version
   - yamllint --version
   - ls -lisah ~
+  - ls -lisah /home/travis/build/vergissberlin/bashlight
   - pwd
 script:
   - bats ./tests/acceptance/
