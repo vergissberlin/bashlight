@@ -37,8 +37,8 @@ teardown() {
 	[ "$output" = "" ]
 }
 @test "${TEST_NAME}: Test ll list directory advanced style exists" {
-	run alias ll
-	[ $status -eq 1 ]
+	run assert_alias ll .
+	[ $status -eq 0 ]
 }
 
 # Git shortcuts

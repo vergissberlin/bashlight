@@ -18,3 +18,8 @@ assert_true() {
 assert_false() {
   assert_raises "$1" 1
 }
+
+assert_alias() {
+  $( echo "${BASH_ALIASES[assert_alias]}" "$@" )
+}
+

@@ -24,3 +24,4 @@
 # Exclusion
 /ci/variables/credentials.yml
 /tests/tmp/
+/tests/helpers/assertions
