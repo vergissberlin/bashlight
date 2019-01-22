@@ -19,7 +19,7 @@ BATS_TEST_DESCRIPTION="Test bashlight"
 
 setup() {
     echo "setup ${BATS_TEST_NAME} ..." >> ./bats.log
-    echo "path: ${BASHLIGHT_PATH}"
+    BASHLIGHT_VERSION=1.2.3
 }
 
 teardown() {
@@ -30,15 +30,25 @@ teardown() {
     command -v bashlight
 }
 
-@test "${TEST_NAME}: Test if command exists" {
-  run bashlight
-  [ "$status" -eq 0 ]
+@test "${TEST_NAME}: Test logo output with version number" {
+	run bashlightLogo "1.4.4"
+    [ "${lines[5]}" = '                           |___/  v1.4.4' ]
 }
 
-@test "${TEST_NAME}: Test logo output with version number" {
-	run bashlightLogo "1.2.3"
-    pwd
-    ls -lisah .
-    ls -lsiah ${BASHLIGHT_PATH}
-    [ "${lines[6]}" == '                           |___/  v1.2.3' ]
+@test "${TEST_NAME}: Test license output" {
+	run bashlightLicense
+    [ "$status" -eq 0 ]
+    [ "${lines[0]}" = 'Copyright 2019, MIT, André Lademann' ]
+}
+
+@test "${TEST_NAME}: Test help output" {
+	run bashlightHelp "1.4.4" "testflight"
+    #[ "$status" -eq 0 ]
+    [ "${lines[0]}" = "testflight version 1.4.4" ]
+}
+
+@test "${TEST_NAME}: Test bashlight command with logo output with version number" {
+	run bashlight -v
+    [ "${lines[5]}" = '                           |___/  v1.2.3' ]
+    [ "${lines[6]}" = 'bashlight version 1.2.3' ]
 }

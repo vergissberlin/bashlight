@@ -7,6 +7,11 @@
 # Repository	: https://github.com/vergissberlin/bashlight
 ####################################################################################
 
+# Reload bashlight
+# shellcheck disable=SC1090
+. ~/.bash_profile
+
+# Run the tests
 bats ./tests/acceptance/
 shellcheck -x ./bashlight
 shellcheck -x ./*.bash

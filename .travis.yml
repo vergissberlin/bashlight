@@ -6,7 +6,7 @@ os:
 
 env:
   global:
-    - BASHLIGHT_PATH=/home/travis/build/vergissberlin
+    - BASHLIGHT_PATH=${TRAVIS_BUILD_DIR}
 
 addons:
   apt:
@@ -37,9 +37,7 @@ before_script:
   - bats --version
   - shellcheck --version
   - yamllint --version
-  - ls -lisah ~
-  - ls -lisah /home/travis/build/vergissberlin/bashlight
-  - pwd
+  - source ${BASHLIGHT_PATH}/bashlight
 script:
   - bats ./tests/acceptance/
   - shellcheck -x bashlight
