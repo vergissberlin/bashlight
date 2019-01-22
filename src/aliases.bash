@@ -28,39 +28,37 @@ if [ -x /usr/bin/dircolors ]; then
 	alias egrep='egrep --color=auto'
 fi
 
-function setAliases() {
-	# some more ls aliases
-	alias ll='ls -ahlF'
-	alias la='ls -A'
-	alias l='ls -CF'
+# some more ls aliases
+alias ll='ls -ahlF'
+alias la='ls -A'
+alias l='ls -CF'
 
-	alias ..="cd .."
-	alias ...="cd ../.."
-	alias ....="cd ../../.."
-	alias .....="cd ../../../.."
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
 
-	# git aliases
-	alias gad='git add '
-	alias gbr='git branch '
-	alias gco='git commit'
-	alias gdi='git diff'
-	alias gik='gitk --all&'
-	alias gig='gitg &'
-	alias gch='git checkout '
-	alias gpu='git pull'
-	alias gst='git status '
+# git aliases
+alias gad='git add '
+alias gbr='git branch '
+alias gco='git commit'
+alias gdi='git diff'
+alias gik='gitk --all&'
+alias gig='gitg &'
+alias gch='git checkout '
+alias gpu='git pull'
+alias gst='git status '
 
-	alias hard="git reset --hard && git clean -fd"
-	alias purge='git branch --merged | grep -v "\*" | grep -v "master" | grep -v "develop" | grep -v "staging" | xargs -n 1 git branch -d'
-	alias master='git checkout master && git pull && git remote prune origin'
-	alias staging='git checkout agp-staging && git pull && git remote prune origin'
-	alias rebase='git pull && git rebase -i origin/master'
-	alias flush='git push -f'
+alias hard="git reset --hard && git clean -fd"
+alias purge='git branch --merged | grep -v "\*" | grep -v "master" | grep -v "develop" | grep -v "staging" | xargs -n 1 git branch -d'
+alias master='git checkout master && git pull && git remote prune origin'
+alias staging='git checkout agp-staging && git pull && git remote prune origin'
+alias rebase='git pull && git rebase -i origin/master'
+alias flush='git push -f'
 
-	# git typos
-	alias got='git '
-	alias gut='git '
+# git typos
+alias got='git '
+alias gut='git '
 
-	# File system
-	alias shared="find . -type d -exec chmod 2770 {};find . -type f -exec chmod 0660 {};"
-}
+# File system
+alias shared="find . -type d -exec chmod 2770 {};find . -type f -exec chmod 0660 {};"

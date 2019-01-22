@@ -36,7 +36,6 @@ readonly THIS_FILE=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 [ -f "${BASHLIGHT_PATH}/src/aliases.bash"  ] && {
 	# shellcheck source=src/aliases.bash
 	. "${BASHLIGHT_PATH}/src/aliases.bash";
-	setAliases
 	}
 
 # shellcheck source=src/bashlight.bash

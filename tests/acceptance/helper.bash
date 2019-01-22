@@ -3,23 +3,9 @@
 #
 # Helpers
 #
+load ../helpers/assertions/all
 
-assert_equal() {
-    if [ "${1}" != "${2}" ]; then
-        echo "${1} != ${2}"
-        return 1
-    fi
-}
-
-assert_true() {
-  assert_raises "$1" 0
-}
-
-assert_false() {
-  assert_raises "$1" 1
-}
-
+# Custom helpers
 assert_alias() {
-  $( echo "${BASH_ALIASES[assert_alias]}" "$@" )
+  	assert_equal $(alias "${1}" 2>/dev/null >/dev/null && echo "true") true
 }
-

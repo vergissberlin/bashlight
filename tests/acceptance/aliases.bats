@@ -31,64 +31,56 @@ teardown() {
 @test "${TEST_NAME}: Test if alias command exists" {
 	command -v alias
 }
-@test "${TEST_NAME}: Test set all aliases" {
-	run setAliases
-	[ $status -eq 0 ]
-	[ "$output" = "" ]
+
+@test "${TEST_NAME}: Test ll, ls and l list directory advanced style exists" {
+	assert_alias "ll"
+	assert_alias "la"
+	assert_alias "l"
 }
-@test "${TEST_NAME}: Test ll list directory advanced style exists" {
-	run assert_alias ll .
-	[ $status -eq 0 ]
+
+@test "${TEST_NAME}: Test alias for change directory with dots exists" {
+	assert_alias ".."
+	assert_alias "..."
+	assert_alias "...."
+	assert_alias "....."
 }
 
 # Git shortcuts
 @test "${TEST_NAME}: Test \"hard\" is a \"git reset --hard\"" {
-	run alias hard
-	[ $status -eq 1 ]
+	assert_alias "hard"
 }
 @test "${TEST_NAME}: Test purge: git purge all unused branches" {
-	run alias purge
-	[ $status -eq 1 ]
+	assert_alias "purge"
 }
 @test "${TEST_NAME}: Test master: Switch to master and purge all unused branches" {
-	run alias master
-	[ $status -eq 1 ]
+	assert_alias "master"
 }
 @test "${TEST_NAME}: Test staging: switch to staging branch" {
-	run alias staging
-	[ $status -eq 1 ]
+	assert_alias "staging"
 }
 @test "${TEST_NAME}: Test rebase: rebase against origin master" {
-	run alias rebase
-	[ $status -eq 1 ]
+	assert_alias "rebase"
 }
 
 # Git micros
 @test "${TEST_NAME}: Test gad: git add" {
-	run alias gad
-	[ $status -eq 1 ]
+	assert_alias "gad"
 }
 @test "${TEST_NAME}: Test gbr: git branch" {
-	run alias gbr
-	[ $status -eq 1 ]
+	assert_alias "gbr"
 }
 @test "${TEST_NAME}: Test gco: git commit" {
-	run alias gco
-	[ $status -eq 1 ]
+	assert_alias "gco"
 }
 @test "${TEST_NAME}: Test gdi: git diff" {
-	run alias gdi
-	[ $status -eq 1 ]
+	assert_alias "gdi"
 }
 @test "${TEST_NAME}: Test gch: git checkout" {
-	run alias gch
-	[ $status -eq 1 ]
+	assert_alias "gch"
 }
 @test "${TEST_NAME}: Test gpu: git pull" {
-	run alias gpu
-	[ $status -eq 1 ]
+	assert_alias "gpu"
 }
 @test "${TEST_NAME}: Test gst: git status" {
-	run alias gst
-	[ $status -eq 1 ]
+	assert_alias "gst"
 }
