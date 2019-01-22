@@ -19,11 +19,16 @@ BATS_TEST_DESCRIPTION="Test bashlight"
 
 setup() {
     echo "setup ${BATS_TEST_NAME} ..." >> ./bats.log
+    echo "path: ${BASHLIGHT_PATH}"
 	BASHLIGHT_PATH="${HOME}/.bin/bashlight"
 }
 
 teardown() {
     echo "teardown ${BATS_TEST_NAME} ..." >> ./bats.log
+}
+
+@test "${TEST_NAME}: Test if command exists" {
+    command -v bashlight
 }
 
 @test "${TEST_NAME}: Test if command exists" {
@@ -35,6 +40,6 @@ teardown() {
 	run bashlightLogo "1.2.3"
     pwd
     ls -lisah .
-    ls -lisah ../../src/bashlight
+    ls -lsiah ${BASHLIGHT_PATH}
     [ "${lines[6]}" == '                           |___/  v1.2.3' ]
 }
