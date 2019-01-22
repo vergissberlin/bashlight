@@ -20,7 +20,6 @@ BATS_TEST_DESCRIPTION="Test bashlight"
 setup() {
     echo "setup ${BATS_TEST_NAME} ..." >> ./bats.log
     echo "path: ${BASHLIGHT_PATH}"
-	BASHLIGHT_PATH="${HOME}/.bin/bashlight"
 }
 
 teardown() {
