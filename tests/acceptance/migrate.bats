@@ -1,7 +1,7 @@
 #!/usr/bin/env bats
 
 ####################################################################################
-# Bashlight   : 0.2.1
+# Bashlight   : 0.2.2
 # Copyright   : 2019, MIT
 # Author      : André Lademann <vergissberlin@googlemail.com>
 # Repository  : https://github.com/vergissberlin/bashlight
@@ -20,6 +20,7 @@ setup() {
     echo "setup ${BATS_TEST_NAME} ..." >> ./bats.log
     mkdir -p ${TEMP_DIRECTORY}
     cp -r tests/fixtures/0.2.0/ ${TEMP_DIRECTORY}
+    HOME="$(pwd)/${TEMP_DIRECTORY}"
 }
 
 teardown() {
@@ -28,7 +29,7 @@ teardown() {
 }
 
 @test "${TEST_NAME}: Test migration is needed: returns 1 if migration was successfull" {
-  skip "Not implemented yet"
-  # run HOME="$(pwd)/${TEMP_DIRECTORY}" migrate.bash
+  run migrate.bash
+  assert_success
   # $[ ! "$output" = "Migrate installation path from ~/bashlight to ~/.bin/bashlight" ]
 }

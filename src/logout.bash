@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 ####################################################################################
-# Bashlight 	: 0.1.8
-# Copyright		: 2018, MIT
-# Author		: André Lademann <vergissberlin@googlemail.com>
-# Repository	: https://github.com/vergissberlin/bashlight
+# Bashlight  : 0.2.2
+# Copyright  : 2019, MIT
+# Author     : André Lademann <vergissberlin@googlemail.com>
+# Repository : https://github.com/vergissberlin/bashlight
 ####################################################################################
 
 # ~/src/logout: executed by bash(1) when login shell exits.
@@ -13,8 +13,3 @@
 if [ -n "${SHLVL}" ]; then
 	[ -x /usr/bin/clear_console ] && /usr/bin/clear_console -q
 fi
-
-function goodBye() {
-	blSay "Thank you for using ${USER}"
-	blPlay Hero
-}

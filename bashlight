@@ -44,6 +44,12 @@ readonly THIS_FILE=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 	. "${BASHLIGHT_PATH}/src/bashlight.bash";
 	}
 
+# shellcheck source=src/github.bash
+[ -f "${BASHLIGHT_PATH}/src/github.bash"  ] && {
+	# shellcheck source=src/github.bash
+	. "${BASHLIGHT_PATH}/src/github.bash";
+	}
+
 # shellcheck source=src/logout.bash
 [ -f "${BASHLIGHT_PATH}/src/logout.bash"   ] && {
 	# shellcheck source=src/logout.bash
@@ -66,9 +72,4 @@ readonly THIS_FILE=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 [ -f "${BASHLIGHT_PATH}/src/prompt.bash"   ] && {
 	# shellcheck source=src/prompt.bash
 	. "${BASHLIGHT_PATH}/src/prompt.bash";
-	}
-
-[ -f "${BASHLIGHT_PATH}/src/github.bash"  ] && {
-	# shellcheck source=src/github.bash
-	. "${BASHLIGHT_PATH}/src/github.bash";
 	}

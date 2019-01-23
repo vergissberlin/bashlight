@@ -1,10 +1,10 @@
 #!/usr/bin/env bats
 
 ####################################################################################
-# Bashlight 	: 0.2.0
-# Copyright		: 2019, MIT
-# Author		: TheDevMinerTV <tobigames200@gmail.com>
-# Repository	: https://github.com/vergissberlin/bashlight
+# Bashlight  : 0.2.0
+# Copyright  : 2019, MIT
+# Author     : TheDevMinerTV <tobigames200@gmail.com>
+# Repository : https://github.com/vergissberlin/bashlight
 ####################################################################################
 
 # @link https://github.com/tkuchiki/bats-travis-ci
