@@ -15,6 +15,9 @@
 [[ ! -z $BASHLIGHT_VERSION ]] || BASHLIGHT_VERSION="0.2.2"
 
 function bashlightLogo() {
+	if [ "$1" == "" ]; then
+		return 128
+	fi
 	cat -v "${BASHLIGHT_PATH}/assets/logo.txt" | sed "s/mmm/v${1}/g"
 }
 
@@ -23,8 +26,11 @@ function bashlightLicense() {
 }
 
 function bashlightHelp() {
+	if [ "$1" == "" ] || [ "$2" == "" ]; then
+		return 128
+	fi
 	echo -e "${2} version ${1}"
-	echo -e "iiiUsage: ${2} [OPTIONS]\\n"
+	echo -e "Usage: ${2} [OPTIONS]\\n"
 	echo -e "OPTIONS include:"
 	echo -e "   -h  | --help     - displays this message"
 	echo -e "   -l  | --license  - prints out the license of this script"
@@ -33,6 +39,11 @@ function bashlightHelp() {
 }
 
 function bashlight() {
+	if [ "$1" == "" ]; then
+		bashlightLogo ${BASHLIGHT_VERSION}
+		bashlightHelp ${BASHLIGHT_VERSION} ${BASHLIGHT_IDENTIFIER}
+		return 128
+	fi
 	while [ "$1" != "" ]; 
 	do
 		case $1 in
@@ -50,6 +61,7 @@ function bashlight() {
 		* ) 
 			echo -e "Invalid option: ${1}\\n"
 			bashlightHelp ${BASHLIGHT_VERSION} ${BASHLIGHT_IDENTIFIER}
+			return 128
 			;;
 		esac
 		shift
