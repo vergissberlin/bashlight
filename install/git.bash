@@ -49,6 +49,7 @@ git config --global alias.staging "checkout staging"
 git config --global alias.create-branch "git push origin HEAD:refs/heads/${1} && git fetch origin && git branch --track ${1} origin/${1} && cd . && git checkout $1"
 git config --global alias.delete-branch "git push origin :refs/heads/${1} && git branch -D ${1}"
 git config --global alias.merge-branch "git checkout master && git merge @{-1}"
+git config --global alias.unadd "reset HEAD"
 
 ## Ignore setting
 git config --global core.excludesfile ~/.gitignore_global
